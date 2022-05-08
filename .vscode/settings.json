@@ -1,0 +1,13 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.autoIndent": "full",
+  "editor.autoClosingDelete": "auto",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.rulers": [120],
+  "explorer.openEditors.visible": 8
+}
