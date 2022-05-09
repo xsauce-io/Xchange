@@ -12,6 +12,7 @@ import React from "react";
 import theme from "../../../utils/theme/theme";
 import { ConnectWallet } from "../../molecule/ConnectWallet";
 
+/* */
 export const Header = () => {
   return (
     <Box
@@ -35,6 +36,7 @@ export const Header = () => {
             justifyContent="left"
             flex={1}
           >
+            {/* ----- XSauce Logo ---- */}
             <Flex flexDirection="row">
               <AspectRatio w="20px" ratio={1 / 1}>
                 <Box bg={theme.colors.green} />
@@ -45,61 +47,57 @@ export const Header = () => {
               </Text>
             </Flex>
           </Flex>
+          {/* ----- Top Nav ---- */}
           <Flex
             flexDirection="row"
             alignItems="center"
             justifyContent="center"
             flex={1}
           >
-            <Flex
-              flexDirection="row"
-              alignItems="center"
-              justifyContent="center"
-              w="100%"
+            <Button
+              leftIcon={<ArrowBackIcon />}
+              color={theme.colors.grey}
+              bg={theme.colors.dark}
+              borderRadius={0}
+              size="xsm"
+              fontSize={12}
+              fontWeight={350}
+              paddingLeft={2}
+              paddingRight={2}
             >
-              <Button
-                leftIcon={<ArrowBackIcon />}
-                color={theme.colors.grey}
-                bg={theme.colors.dark}
-                borderRadius={0}
-                size="xsm"
-                fontSize={12}
-                fontWeight={350}
-                paddingLeft={2}
-                paddingRight={2}
-              >
-                Xvault
-              </Button>
+              Xvault
+            </Button>
 
-              <Button
-                leftIcon={<ArrowBackIcon />}
-                color={theme.colors.grey}
-                bg={theme.colors.dark}
-                borderRadius={0}
-                size="xsm"
-                fontSize={12}
-                fontWeight={350}
-                paddingLeft={2}
-                paddingRight={2}
-              >
-                Xhibit
-              </Button>
+            <Button
+              leftIcon={<ArrowBackIcon />}
+              color={theme.colors.grey}
+              bg={theme.colors.dark}
+              borderRadius={0}
+              size="xsm"
+              fontSize={12}
+              fontWeight={350}
+              paddingLeft={2}
+              paddingRight={2}
+            >
+              Xhibit
+            </Button>
 
-              <Button
-                leftIcon={<ArrowBackIcon />}
-                color={theme.colors.grey}
-                bg={theme.colors.dark}
-                borderRadius={0}
-                size="xsm"
-                fontSize={12}
-                fontWeight={350}
-                paddingLeft={2}
-                paddingRight={2}
-              >
-                Xchange
-              </Button>
-            </Flex>
+            <Button
+              leftIcon={<ArrowBackIcon />}
+              color={theme.colors.grey}
+              bg={theme.colors.dark}
+              borderRadius={0}
+              size="xsm"
+              fontSize={12}
+              fontWeight={350}
+              paddingLeft={2}
+              paddingRight={2}
+            >
+              Xchange
+            </Button>
           </Flex>
+
+          {/* Wallet & Chain Buttons */}
           <Flex
             flexDirection="row"
             alignItems="center"

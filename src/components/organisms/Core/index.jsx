@@ -16,6 +16,7 @@ import theme from "../../../utils/theme/theme";
 export const Core = () => {
   return (
     <Box w="100%">
+      {/* Core Header Section */}
       <Flex flexDirection="column">
         <Box bg={theme.colors.dark} padding={1}>
           <Button
@@ -43,6 +44,8 @@ export const Core = () => {
             <Box width={140} height={1} bg={theme.colors.green} />
           </Flex>
         </Box>
+
+        {/* Core Body Section */}
         <Box bg={theme.colors.dark}>
           <Tabs>
             <TabList borderBottomWidth={1} color={theme.colors.grey}>

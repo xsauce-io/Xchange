@@ -21,34 +21,36 @@ export const Footer = () => {
     <Box w="100%">
       <Container maxWidth="85%" paddingInlineEnd={0} paddingInlineStart={0}>
         <Flex flexDirection="column">
+          {/* Logo */}
           <Box paddingTop={5} paddingBottom={5}>
             <AspectRatio w="20px" ratio={1 / 1}>
               <Box bg={theme.colors.green} />
             </AspectRatio>
           </Box>
+          {/* Message and Subscription to whitepaper section */}
           <Flex bg={theme.colors.dark} flexDirection="row">
-            <Box flex={1}>
-              <Container paddingInlineEnd={0} paddingInlineStart={0}>
-                <Flex flexDirection="column">
-                  <Text
-                    alignSelf="left"
-                    alignContent="left"
-                    fontSize={36}
-                    color={theme.colors.white}
-                  >
-                    Suite of tools that empower the evolution of cultural
-                    assets.
-                  </Text>
-                  <Spacer w={2} />
-                  <Box
-                    width={240}
-                    height={1}
-                    bg={theme.colors.green}
-                    alignSelf="center"
-                  />
-                </Flex>
-              </Container>
-            </Box>
+            {/* Message */}
+            <Container flex={1} paddingInlineEnd={0} paddingInlineStart={0}>
+              <Flex flexDirection="column">
+                <Text
+                  alignSelf="left"
+                  alignContent="left"
+                  fontSize={36}
+                  color={theme.colors.white}
+                >
+                  Suite of tools that empower the evolution of cultural assets.
+                </Text>
+                <Spacer w={2} />
+                <Box
+                  width={240}
+                  height={1}
+                  bg={theme.colors.green}
+                  alignSelf="center"
+                />
+              </Flex>
+            </Container>
+
+            {/* Subscription to whitepaper section */}
             <Flex flex={1} justifyContent="right">
               <InputGroup width="75%" alignSelf="center" border="0px">
                 <Input
@@ -73,6 +75,7 @@ export const Footer = () => {
               </InputGroup>
             </Flex>
           </Flex>
+          {/* Social Media Section */}
           <HStack paddingTop={5} paddingBottom={5}>
             <IconButton
               bg={theme.colors.dark}
@@ -100,6 +103,7 @@ export const Footer = () => {
             />
           </HStack>
 
+          {/* Ressources and references Section */}
           <Flex
             flexDirection="row"
             paddingInlineStart={0}
@@ -143,6 +147,8 @@ export const Footer = () => {
     </Box>
   );
 };
+
+/* ------- Style for the footer -------- */
 
 const style = {
   navButtonStyle: {
