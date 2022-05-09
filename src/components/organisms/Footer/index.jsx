@@ -19,7 +19,7 @@ import theme from "../../../utils/theme/theme";
 export const Footer = () => {
   return (
     <Box w="100%">
-      <Container maxWidth="85%" paddingInlineEnd={0} paddingInlineStart={0}>
+      <Container maxWidth="90%">
         <Flex flexDirection="column">
           {/* Logo */}
           <Box paddingTop={5} paddingBottom={5}>

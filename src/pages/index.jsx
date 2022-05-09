@@ -3,7 +3,6 @@ import React from "react";
 import { Core } from "../components/organisms/Core";
 import { Footer } from "../components/organisms/Footer";
 import { Header } from "../components/organisms/Header";
-import theme from "../utils/theme/theme";
 
 export const PageLayout = () => {
   return (
@@ -11,13 +10,13 @@ export const PageLayout = () => {
       maxW="100%"
       paddingInlineStart={0}
       paddingInlineEnd={0}
-      bg={theme.colors.dark}
+      bg="colors.dark"
     >
       <Box marginTop={0} marginBottom="5%">
         <Header />
       </Box>
 
-      <Container maxW="85%">
+      <Container maxW="90%">
         <Core />
       </Container>
       <Box marginBottom={0}>

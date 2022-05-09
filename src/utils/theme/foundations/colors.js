@@ -1,5 +1,4 @@
-// theme.js
-const theme = {
+const colors = {
   colors: {
     transparent: "transparent",
     dark: "#0C1615",
@@ -12,4 +11,4 @@ const theme = {
   },
 };
 
-export default theme;
+export default colors;

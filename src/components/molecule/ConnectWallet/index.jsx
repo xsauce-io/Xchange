@@ -15,7 +15,7 @@ export const ConnectWallet = () => {
           bg={theme.colors.dark}
           fontSize={10}
           border="1px solid"
-          borderColor={theme.colors.midgrey}
+          borderColor={theme.colors.darkgrey}
           color={theme.colors.white}
           height="0"
           padding={3}
@@ -27,7 +27,7 @@ export const ConnectWallet = () => {
           bg={theme.colors.dark}
           fontSize={10}
           border="1px solid"
-          borderColor={theme.colors.midgrey}
+          borderColor={theme.colors.darkgrey}
           onClick={connectWallet}
           color={theme.colors.white}
           height="0"

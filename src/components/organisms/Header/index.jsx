@@ -21,7 +21,7 @@ export const Header = () => {
       borderBottom="1px solid"
       borderColor={theme.colors.darkgrey}
     >
-      <Container maxW="85%">
+      <Container maxW="90%">
         <Flex
           flexDirection="row"
           paddingInlineStart={0}
@@ -108,7 +108,7 @@ export const Header = () => {
               bg={theme.colors.dark}
               fontSize={10}
               border="1px solid"
-              borderColor={theme.colors.midgrey}
+              borderColor={theme.colors.darkgrey}
               height="0"
               padding={3}
             >
