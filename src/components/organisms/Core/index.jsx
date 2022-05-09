@@ -37,13 +37,9 @@ export const Core = () => {
         </Box>
         <Box bg={theme.colors.dark}>
           <Tabs>
-            <TabList
-              borderBottomWidth={1}
-              color={theme.colors.grey}
-              fontFamily="Futura"
-            >
+            <TabList borderBottomWidth={1} color={theme.colors.grey}>
               <Tab _selected={{ color: "white" }} padding={2} fontSize={16}>
-                PortFolio
+                Portfolio
               </Tab>
               <Tab _selected={{ color: "white" }} padding={2} fontSize={16}>
                 Markets
@@ -53,7 +49,7 @@ export const Core = () => {
               </Tab>
             </TabList>
 
-            <TabPanels color={theme.colors.grey}>
+            <TabPanels color={theme.colors.grey} isLazy>
               <TabPanel>
                 <p>PortFolio</p>
               </TabPanel>
