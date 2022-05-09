@@ -1,13 +1,11 @@
-import { Box, Button, Container, Spinner, Text } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import React from "react";
 import { Core } from "../components/organisms/Core";
+import { Footer } from "../components/organisms/Footer";
 import { Header } from "../components/organisms/Header";
-import { useAuthContext } from "../context";
 import theme from "../utils/theme/theme";
 
 export const PageLayout = () => {
-  const { connecting, address, connectWallet } = useAuthContext();
-
   return (
     <Container
       maxW="100%"
@@ -15,19 +13,16 @@ export const PageLayout = () => {
       paddingInlineEnd={0}
       bg={theme.colors.dark}
     >
-      <Header />
-      <Box>
-        {connecting ? (
-          <Spinner />
-        ) : address ? (
-          <Text w="100%">Wallet Connected at: {address}</Text>
-        ) : (
-          <Button onClick={connectWallet}>Connect Wallet</Button>
-        )}
+      <Box marginTop={0} marginBottom="5%">
+        <Header />
       </Box>
+
       <Container maxW="85%">
         <Core />
       </Container>
+      <Box marginBottom={0}>
+        <Footer />
+      </Box>
     </Container>
   );
 };
