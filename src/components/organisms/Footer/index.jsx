@@ -52,7 +52,12 @@ export const Footer = () => {
 
             {/* Subscription to whitepaper section */}
             <Flex flex={1} justifyContent="right">
-              <InputGroup width="75%" alignSelf="center" border="0px">
+              <InputGroup
+                width="75%"
+                alignSelf="center"
+                border="0px"
+                maxW={400}
+              >
                 <Input
                   type="email"
                   placeholder="Email@hotmail.com"
