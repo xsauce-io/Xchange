@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import theme from "../../../utils/theme/theme";
+import { MintingCell } from "../../molecule/MintingCell/index.js";
 import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
 
 export const Core = () => {
@@ -72,6 +73,18 @@ export const Core = () => {
             >
               {/* Portfolio Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>
+                <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+                  <GridItem colSpan={3} h="10" bg="tomato" />
+
+                  <GridItem colStart={4} colEnd={6} h="10">
+                    <MintingCell width="530px" />
+                    <ProductDescriptionCell width="530px" />
+                  </GridItem>
+                </Grid>
+              </TabPanel>
+
+              {/* Market Tab */}
+              <TabPanel paddingLeft={0} paddingRight={0} paddingTop={8}>
                 <Box
                   border="1px solid"
                   borderColor={theme.colors.darkgrey}
@@ -80,18 +93,8 @@ export const Core = () => {
                   borderRadius={20}
                   padding={4}
                 >
-                  <p>PortFolio</p>
+                  <p>Market</p>
                 </Box>
-              </TabPanel>
-
-              {/* Market Tab */}
-              <TabPanel paddingLeft={0} paddingRight={0} paddingTop={8}>
-                <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-                  <GridItem colSpan={3} h="10" bg="tomato" />
-                  <GridItem colStart={4} colEnd={6} h="10">
-                    <ProductDescriptionCell width="530px" />
-                  </GridItem>
-                </Grid>
               </TabPanel>
               {/* Swaps Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>

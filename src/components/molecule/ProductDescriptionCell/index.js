@@ -1,4 +1,12 @@
-import { Box, Container, Flex, Spacer, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Spacer,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 
 /*
@@ -41,7 +49,7 @@ export const ProductDescriptionCell = (props) => {
       {/* Price Statistics Section */}
       <Box>
         {/* Retail Price Secion  */}
-        <Flex width="100%" borderBottom="1px solid">
+        <Flex width="100%">
           <Box justifyContent="center" paddingBottom={3} paddingTop={3}>
             <Text fontSize={12}>Retail</Text>
           </Box>
@@ -52,8 +60,11 @@ export const ProductDescriptionCell = (props) => {
             </Text>
           </Box>
         </Flex>
+
+        <Divider color="color.darkgrey" />
+
         {/* Release Date Section  */}
-        <Flex width="100%" borderBottom="1px solid">
+        <Flex width="100%">
           <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
             <Text fontSize={12}>Release Date</Text>
           </Box>
@@ -64,8 +75,9 @@ export const ProductDescriptionCell = (props) => {
             </Text>
           </Box>
         </Flex>
+        <Divider color="color.darkgrey" />
         {/* All time high Section  */}
-        <Flex width="100%" borderBottom="1px solid">
+        <Flex width="100%">
           <Box
             justifyContent="center"
             alignSelf="center"
@@ -96,16 +108,16 @@ export const ProductDescriptionCell = (props) => {
             </Text>
           </Box>
         </Flex>
-
+        <Divider color="color.darkgrey" />
         {/* All time low Section  */}
-        <Flex width="100%" borderBottom="1px solid">
+        <Flex width="100%">
           <Box
             justifyContent="center"
             alignSelf="center"
             paddingBottom={3}
             paddingTop={3}
           >
-            <Text fontSize={12}>All-time high</Text>
+            <Text fontSize={12}>All-time low</Text>
           </Box>
           <Spacer />
           <Box
