@@ -21,14 +21,14 @@ export const Header = () => {
       borderBottom="1px solid"
       borderColor={theme.colors.darkgrey}
     >
-      <Container maxW="90%">
+      <Container maxW="85%">
         <Flex
           flexDirection="row"
           paddingInlineStart={0}
           paddingInlineEnd={0}
           alignItems="center"
-          paddingTop={2}
-          paddingBottom={2}
+          paddingTop={4}
+          paddingBottom={4}
         >
           <Flex
             flexDirection="row"
@@ -110,7 +110,9 @@ export const Header = () => {
               border="1px solid"
               borderColor={theme.colors.darkgrey}
               height="0"
-              padding={3}
+              padding={4}
+              width="120px"
+              borderRadius={45}
             >
               <Text color={theme.colors.white}>Polygone</Text>
             </Button>

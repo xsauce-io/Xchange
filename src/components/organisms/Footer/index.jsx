@@ -19,7 +19,7 @@ import theme from "../../../utils/theme/theme";
 export const Footer = () => {
   return (
     <Box w="100%">
-      <Container maxWidth="90%">
+      <Container maxWidth="85%">
         <Flex flexDirection="column">
           {/* Logo */}
           <Box paddingTop={5} paddingBottom={5}>
@@ -35,7 +35,7 @@ export const Footer = () => {
                 <Text
                   alignSelf="left"
                   alignContent="left"
-                  fontSize={36}
+                  fontSize={48}
                   color={theme.colors.white}
                 >
                   Suite of tools that empower the evolution of cultural assets.
@@ -108,7 +108,7 @@ export const Footer = () => {
             />
           </HStack>
 
-          {/* Ressources and references Section */}
+          {/* Resources and references Section */}
           <Flex
             flexDirection="row"
             paddingInlineStart={0}

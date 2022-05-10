@@ -18,7 +18,9 @@ export const ConnectWallet = () => {
           borderColor={theme.colors.darkgrey}
           color={theme.colors.white}
           height="0"
-          padding={3}
+          padding={4}
+          width="120px"
+          borderRadius={45}
         >
           <Text>Wallet Connected at: {address}</Text>
         </Box>
@@ -31,7 +33,9 @@ export const ConnectWallet = () => {
           onClick={connectWallet}
           color={theme.colors.white}
           height="0"
-          padding={3}
+          padding={4}
+          width="140px"
+          borderRadius={45}
         >
           Connect Wallet
         </Button>

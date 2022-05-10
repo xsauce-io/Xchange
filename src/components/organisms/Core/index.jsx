@@ -3,6 +3,8 @@ import {
   Box,
   Button,
   Flex,
+  Grid,
+  GridItem,
   Heading,
   Tab,
   TabList,
@@ -12,10 +14,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import theme from "../../../utils/theme/theme";
+import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
 
 export const Core = () => {
   return (
-    <Box w="100%">
+    <Box w="100%" minHeight="fit-content">
       {/* Core Header Section */}
       <Flex flexDirection="column">
         <Box bg={theme.colors.dark} padding={1}>
@@ -64,8 +67,10 @@ export const Core = () => {
               color={theme.colors.grey}
               isLazy
               width="100%"
-              height={1000}
+              minHeight="1300px"
+              height="fit-content"
             >
+              {/* Portfolio Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>
                 <Box
                   border="1px solid"
@@ -78,18 +83,17 @@ export const Core = () => {
                   <p>PortFolio</p>
                 </Box>
               </TabPanel>
-              <TabPanel paddingLeft={0} paddingRight={0}>
-                <Box
-                  border="1px solid"
-                  borderColor={theme.colors.darkgrey}
-                  width="100%"
-                  height={500}
-                  borderRadius={20}
-                  padding={4}
-                >
-                  <p>Markets</p>
-                </Box>
+
+              {/* Market Tab */}
+              <TabPanel paddingLeft={0} paddingRight={0} paddingTop={8}>
+                <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+                  <GridItem colSpan={3} h="10" bg="tomato" />
+                  <GridItem colStart={4} colEnd={6} h="10">
+                    <ProductDescriptionCell width="530px" />
+                  </GridItem>
+                </Grid>
               </TabPanel>
+              {/* Swaps Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>
                 <Box
                   border="1px solid"
