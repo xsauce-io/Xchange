@@ -15,6 +15,7 @@ import {
 import React from "react";
 import theme from "../../../utils/theme/theme";
 import { MintingCell } from "../../molecule/MintingCell/index.js";
+import { ProductCell } from "../../molecule/ProductCell";
 import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
 
 export const Core = () => {
@@ -74,8 +75,9 @@ export const Core = () => {
               {/* Portfolio Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>
                 <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-                  <GridItem colSpan={3} h="10" bg="tomato" />
-
+                  <GridItem colSpan={3} h="10">
+                    <ProductCell width="100%" />
+                  </GridItem>
                   <GridItem colStart={4} colEnd={6} h="10">
                     <MintingCell width="530px" />
                     <ProductDescriptionCell width="530px" />

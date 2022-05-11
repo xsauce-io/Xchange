@@ -120,7 +120,7 @@ export const MintingCell = (props) => {
         </Flex>
       </Flex>
 
-      <Box width="100%">
+      <Box width="100%" paddingBottom={5}>
         <Flex border="1px solid" borderRadius={10} padding={4}>
           <QuestionIcon color="orange" alignSelf="center" />
           <Text color="colors.white">
@@ -132,7 +132,9 @@ export const MintingCell = (props) => {
           </Text>
           <Text>MAX</Text>
         </Flex>
-        <Text fontSize={10}>Balance 2,333,333 DAI</Text>
+        <Text fontSize={10} paddingBottom={2} paddingTop={2}>
+          Balance: 2,333,333 DAI
+        </Text>
       </Box>
 
       <Button
