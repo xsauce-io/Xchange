@@ -13,7 +13,6 @@ import {
   Tabs,
 } from "@chakra-ui/react";
 import React from "react";
-import theme from "../../../utils/theme/theme";
 import { MintingCell } from "../../molecule/MintingCell/index.js";
 import { ProductCell } from "../../molecule/ProductCell";
 import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
@@ -23,37 +22,37 @@ export const Core = () => {
     <Box w="100%" minHeight="fit-content">
       {/* Core Header Section */}
       <Flex flexDirection="column">
-        <Box bg={theme.colors.dark} padding={1}>
+        <Box bg="colors.primary.900" padding={1}>
           <Button
             leftIcon={<ArrowBackIcon />}
-            color={theme.colors.grey}
-            bg={theme.colors.dark}
+            color="colors.gray.500"
+            bg="colors.primary.900"
             borderRadius={0}
-            size="xsm"
-            fontSize={12}
+            size="xs"
+            fontSize="xs"
           >
             Go Back
           </Button>
         </Box>
-        <Box bg={theme.colors.dark}>
+        <Box bg="colors.primary.900">
           <Flex flexDirection="column" paddingBottom={5}>
             <Heading
-              color={theme.colors.white}
-              fontSize={64}
+              color="colors.white"
+              fontSize="7xl"
               fontWeight={400}
               marginTop={1}
               marginBottom={1}
             >
               Xchange
             </Heading>
-            <Box width={140} height={1} bg={theme.colors.green} />
+            <Box width={140} height={1} bg="colors.secondary.500" />
           </Flex>
         </Box>
 
         {/* Core Body Section */}
-        <Box bg={theme.colors.dark}>
+        <Box bg="colors.primary.900">
           <Tabs>
-            <TabList borderBottomWidth={1} color={theme.colors.grey}>
+            <TabList borderBottomWidth={1} color="colors.gray.500">
               <Tab _selected={{ color: "white" }} padding={2} fontSize={16}>
                 Portfolio
               </Tab>
@@ -66,7 +65,7 @@ export const Core = () => {
             </TabList>
 
             <TabPanels
-              color={theme.colors.grey}
+              color="colors.gray.500"
               isLazy
               width="100%"
               minHeight="1300px"
@@ -89,7 +88,7 @@ export const Core = () => {
               <TabPanel paddingLeft={0} paddingRight={0} paddingTop={8}>
                 <Box
                   border="1px solid"
-                  borderColor={theme.colors.darkgrey}
+                  borderColor="colors.gray.700"
                   width="100%"
                   height={500}
                   borderRadius={20}
@@ -102,7 +101,7 @@ export const Core = () => {
               <TabPanel paddingLeft={0} paddingRight={0}>
                 <Box
                   border="1px solid"
-                  borderColor={theme.colors.darkgrey}
+                  borderColor="colors.gray.700"
                   width="100%"
                   height={500}
                   borderRadius={20}

@@ -9,7 +9,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import theme from "../../../utils/theme/theme";
 import { ConnectWallet } from "../../molecule/ConnectWallet";
 
 /* */
@@ -17,9 +16,9 @@ export const Header = () => {
   return (
     <Box
       width="100%"
-      bg={theme.colors.dark}
+      bg="colors.primary.900"
       borderBottom="1px solid"
-      borderColor={theme.colors.darkgrey}
+      borderColor="colors.grey.700"
     >
       <Container maxW="85%">
         <Flex
@@ -39,10 +38,10 @@ export const Header = () => {
             {/* ----- XSauce Logo ---- */}
             <Flex flexDirection="row">
               <AspectRatio w="20px" ratio={1 / 1}>
-                <Box bg={theme.colors.green} />
+                <Box bg="colors.secondary.500" />
               </AspectRatio>
               <Spacer w={2} />
-              <Text color={theme.colors.white} fontSize={14} fontWeight={700}>
+              <Text color="colors.white" fontSize={14} fontWeight="bold">
                 Xsauce
               </Text>
             </Flex>
@@ -56,12 +55,11 @@ export const Header = () => {
           >
             <Button
               leftIcon={<ArrowBackIcon />}
-              color={theme.colors.grey}
-              bg={theme.colors.dark}
+              variant="solid"
               borderRadius={0}
-              size="xsm"
-              fontSize={12}
-              fontWeight={350}
+              size="xs"
+              fontSize="xs"
+              fontWeight="normal"
               paddingLeft={2}
               paddingRight={2}
             >
@@ -70,12 +68,11 @@ export const Header = () => {
 
             <Button
               leftIcon={<ArrowBackIcon />}
-              color={theme.colors.grey}
-              bg={theme.colors.dark}
+              variant="solid"
               borderRadius={0}
-              size="xsm"
-              fontSize={12}
-              fontWeight={350}
+              size="xs"
+              fontSize="xs"
+              fontWeight="normal"
               paddingLeft={2}
               paddingRight={2}
             >
@@ -84,12 +81,13 @@ export const Header = () => {
 
             <Button
               leftIcon={<ArrowBackIcon />}
-              color={theme.colors.grey}
-              bg={theme.colors.dark}
+              // color={theme.colors.grey}
+              // bg={theme.colors.dark}
+              variant="solid"
               borderRadius={0}
-              size="xsm"
-              fontSize={12}
-              fontWeight={350}
+              size="xs"
+              fontSize="xs"
+              fontWeight="normal"
               paddingLeft={2}
               paddingRight={2}
             >
@@ -105,16 +103,15 @@ export const Header = () => {
             flex={1}
           >
             <Button
-              bg={theme.colors.dark}
-              fontSize={10}
-              border="1px solid"
-              borderColor={theme.colors.darkgrey}
-              height="0"
+              fontSize="xs"
+              borderColor="colors.gray.700"
+              height={0}
               padding={4}
               width="120px"
-              borderRadius={45}
+              borderRadius="2xl"
+              variant="outline"
             >
-              <Text color={theme.colors.white}>Polygone</Text>
+              <Text color="colors.white">Polygone</Text>
             </Button>
             <Spacer maxWidth={2} />
             <ConnectWallet />

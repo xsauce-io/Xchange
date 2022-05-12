@@ -34,11 +34,11 @@ export const MintingCell = (props) => {
       borderRadius={10}
     >
       <Box>
-        <Text color="colors.white" fontSize={40}>
+        <Text color="colors.white" fontSize={"4xl"}>
           XJ1 Retro Chicago <br /> 2022 first edition
         </Text>
       </Box>
-      <Divider color="color.darkgrey" />
+      <Divider color="colors.gray.700" />
 
       {/* Price Statistics Section */}
       <Box>
@@ -50,21 +50,25 @@ export const MintingCell = (props) => {
             paddingTop={3}
             textAlign={"left"}
           >
-            <Text color="colors.grey" fontSize={12}>
+            <Text color="colors.gray.500" fontSize={"sm"}>
               Retail Price for xAsset
             </Text>
             <Box display={"inline-flex"} flexDirection="row">
               <Box
-                bg="colors.green"
-                color="colors.dark"
+                bg="colors.secondary.500"
+                color="colors.primary.900"
                 fontSize={10}
                 padding={1}
-                borderRadius={5}
+                borderRadius={"md"}
               >
                 <ArrowUpIcon />
                 $891.60
               </Box>
-              <Text color="colors.grey" fontSize={10} alignSelf={"center"}>
+              <Text
+                color="colors.gray.500"
+                fontSize={"sm"}
+                alignSelf={"center"}
+              >
                 &nbsp; Last 6 days
               </Text>
             </Box>
@@ -76,52 +80,51 @@ export const MintingCell = (props) => {
             paddingBottom={3}
             paddingTop={3}
           >
-            <Text fontSize={12} color="colors.white">
+            <Text fontSize={"sm"} color="colors.white">
               $889.23
             </Text>
           </Box>
         </Flex>
-        <Divider color="colors.darkgrey" />
+        <Divider color="colors.gray.700" />
         <Spacer />
         {/* Release Date Section  */}
         <Flex width="100%">
           <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
-            <Text fontSize={12}>Last Sale on this xAsset</Text>
+            <Text fontSize={"sm"}>Last Sale on this xAsset</Text>
           </Box>
           <Spacer />
           <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
-            <Text color="colors.white" fontSize={12}>
+            <Text color="colors.white" fontSize={"sm"}>
               $889.23
             </Text>
           </Box>
         </Flex>
-        <Divider color="color.darkgrey" />
+        <Divider color="colors.gray.700" />
       </Box>
 
       <Flex flexDirection="row" paddingBottom={5} paddingTop={5}>
         {/*This "double button will be removed later*/}
-        <Flex bg="colors.darkgrey" borderRadius={5} width="100%">
+        <Flex borderRadius={"xl"} width="100%" bg="colors.gray.700">
           <Button
             flex={1}
-            bg="colors.green"
-            color="colors.darkgrey"
+            sizes={"md"}
+            //TODO: implement custom button group
+            //variant={"solid"}
+            bg="colors.gray.700"
+            color="colors.white"
             height={63}
+            //focus
           >
             Long 2x
           </Button>
-          <Button
-            flex={1}
-            bg="colors.darkgrey"
-            color="colors.white"
-            height={63}
-          >
+          <Button flex={1} sizes={"md"} variant={"flashy"} height={63}>
             Short 2x
           </Button>
         </Flex>
       </Flex>
 
       <Box width="100%" paddingBottom={5}>
-        <Flex border="1px solid" borderRadius={10} padding={4}>
+        <Flex border="1px solid" borderRadius="xl" padding={4}>
           <QuestionIcon color="orange" alignSelf="center" />
           <Text color="colors.white">
             <pre> DAI</pre>
@@ -132,17 +135,12 @@ export const MintingCell = (props) => {
           </Text>
           <Text>MAX</Text>
         </Flex>
-        <Text fontSize={10} paddingBottom={2} paddingTop={2}>
+        <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
           Balance: 2,333,333 DAI
         </Text>
       </Box>
 
-      <Button
-        bg="colors.green"
-        color="colors.darkgrey"
-        fontSize={16}
-        height={53}
-      >
+      <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
         Mint Short Position
       </Button>
     </VStack>

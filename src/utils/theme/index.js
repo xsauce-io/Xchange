@@ -1,12 +1,12 @@
 // theme/index.js
 import { extendTheme } from "@chakra-ui/react";
 // Component style overrides
-import Button from "./components/button";
+import { ButtonStyles as Button } from "./components/buttonStyles";
 // Foundational style overrides
 import borders from "./foundations/borders";
 import colors from "./foundations/colors";
 // Global style overrides
-import styles from "./styles";
+import { styles } from "./styles";
 
 const overrides = {
   styles,

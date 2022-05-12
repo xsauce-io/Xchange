@@ -16,6 +16,13 @@ Props:
 */
 
 export const ProductDescriptionCell = (props) => {
+  // const style = {
+  //   topBottomPadding: {
+  //     paddingBottom: 12px,
+  //     paddingTop: 12px,
+  //   },
+  // };
+
   return (
     <VStack
       marginTop={0}
@@ -25,12 +32,12 @@ export const ProductDescriptionCell = (props) => {
       maxWidth="100%"
       minW={250}
       minHeight="fit-content"
-      bg="colors.dark"
+      bg="colors.primary.900"
       alignItems="left"
       padding={12}
       border="1px solid"
-      borderColor="colors.grey"
-      borderRadius={10}
+      borderColor="colors.grey.500"
+      borderRadius={"xl"}
     >
       <Box>
         <Text color="colors.white" fontSize="lg">
@@ -38,7 +45,7 @@ export const ProductDescriptionCell = (props) => {
         </Text>
       </Box>
       <Container paddingInlineStart={0}>
-        <Text color="colors.grey" fontSize="sm" alignContent="left">
+        <Text color="colors.grey.500" fontSize="sm" alignContent="left">
           This Xsauce Vault NFT represents and tracks proof of ownership of the
           actual sneaker stored within our Xsauce Vault, which has been verified
           via Xsauce’s authentication process. Note only 250 out of 500 editions
@@ -49,13 +56,13 @@ export const ProductDescriptionCell = (props) => {
       {/* Price Statistics Section */}
       <Box>
         {/* Retail Price Secion  */}
-        <Flex width="100%">
-          <Box justifyContent="center" paddingBottom={3} paddingTop={3}>
-            <Text fontSize={12}>Retail</Text>
+        <Flex width="100%" paddingBottom={3} paddingTop={3}>
+          <Box justifyContent="center">
+            <Text fontSize="xs">Retail</Text>
           </Box>
           <Spacer />
-          <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
-            <Text color="colors.white" fontSize={12}>
+          <Box justifyContent={"center"}>
+            <Text color="colors.white" fontSize="xs">
               $100.01
             </Text>
           </Box>
@@ -64,18 +71,18 @@ export const ProductDescriptionCell = (props) => {
         <Divider color="color.darkgrey" />
 
         {/* Release Date Section  */}
-        <Flex width="100%">
-          <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
-            <Text fontSize={12}>Release Date</Text>
+        <Flex width="100%" paddingBottom={3} paddingTop={3}>
+          <Box justifyContent={"center"}>
+            <Text fontSize="xs">Release Date</Text>
           </Box>
           <Spacer />
-          <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
-            <Text color="colors.white" fontSize={12}>
-              $100.01
+          <Box justifyContent={"center"}>
+            <Text color="colors.white" fontSize="xs">
+              $120.01
             </Text>
           </Box>
         </Flex>
-        <Divider color="color.darkgrey" />
+        <Divider color="color.grey.700" />
         {/* All time high Section  */}
         <Flex width="100%">
           <Box
@@ -84,7 +91,7 @@ export const ProductDescriptionCell = (props) => {
             paddingBottom={3}
             paddingTop={3}
           >
-            <Text fontSize={12}>All-time high</Text>
+            <Text fontSize="xs">All-time high</Text>
           </Box>
           <Spacer />
           <Box
@@ -94,21 +101,21 @@ export const ProductDescriptionCell = (props) => {
             textAlign={"right"}
           >
             <Box display={"inline-flex"} flexDirection="row">
-              <Text color="colors.white" fontSize={12}>
+              <Text color="colors.white" fontSize="xs">
                 $460.48
               </Text>
 
-              <Text color="red" fontSize={12}>
+              <Text color="colors.alert" fontSize="xs">
                 &nbsp;-81.6%
               </Text>
             </Box>
 
-            <Text color="colors.grey" fontSize={12}>
+            <Text color="colors.grey.500" fontSize="xs">
               Jul 09, 2020 (over 1 year)
             </Text>
           </Box>
         </Flex>
-        <Divider color="color.darkgrey" />
+        <Divider color="color.grey.700" />
         {/* All time low Section  */}
         <Flex width="100%">
           <Box
@@ -117,7 +124,7 @@ export const ProductDescriptionCell = (props) => {
             paddingBottom={3}
             paddingTop={3}
           >
-            <Text fontSize={12}>All-time low</Text>
+            <Text fontSize="xs"> All-time low</Text>
           </Box>
           <Spacer />
           <Box
@@ -127,15 +134,15 @@ export const ProductDescriptionCell = (props) => {
             textAlign={"right"}
           >
             <Box display={"inline-flex"} flexDirection="row">
-              <Text color="colors.white" fontSize={12}>
+              <Text color="colors.white" fontSize="xs">
                 $231.28
               </Text>
 
-              <Text color="colors.green" fontSize={12}>
+              <Text color="colors.success" fontSize="xs">
                 &nbsp;+81.6%
               </Text>
             </Box>
-            <Text color="colors.grey" fontSize={12}>
+            <Text color="colors.grey.500" fontSize="xs">
               Jul 09, 2020 (over 1 year)
             </Text>
           </Box>

@@ -10,7 +10,7 @@ export const PageLayout = () => {
       maxW="100%"
       paddingInlineStart={0}
       paddingInlineEnd={0}
-      bg="colors.dark" // testing extended theme
+      bg="colors.primary.900" // testing extended theme
     >
       <Box marginTop={0} marginBottom="5%">
         <Header />

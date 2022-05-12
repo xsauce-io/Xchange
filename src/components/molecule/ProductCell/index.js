@@ -28,17 +28,17 @@ export const ProductCell = (props) => {
       maxWidth="100%"
       minW={350}
       minHeight="fit-content"
-      bg="colors.dark"
+      bg="colors.primary.900"
       alignItems="left"
       border="1px solid"
-      borderColor="colors.grey"
-      borderRadius={10}
+      borderColor="colors.grey.500"
+      borderRadius="xl"
     >
       <Box padding={4}>
-        <Text color="colors.white" fontSize={20}>
+        <Text color="colors.white" fontSize="xl">
           Sneaker xAssets
         </Text>
-        <Breadcrumb fontSize={12}>
+        <Breadcrumb fontSize="xs">
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Xchange</BreadcrumbLink>
           </BreadcrumbItem>
@@ -58,38 +58,48 @@ export const ProductCell = (props) => {
         </Breadcrumb>
       </Box>
       <Box
-        bg="colors.dark"
+        bg="colors.primary.900"
         alignItems="left"
         padding={12}
         border="1px solid"
         width="100%"
-        borderColor="colors.grey"
-        borderRadius={10}
+        borderColor="colors.grey.500"
+        borderRadius="xl"
       >
-        <Text color="colors.white" fontSize={24}>
+        <Text color="colors.white" fontSize="2xl">
           XJ1 Retro Chicago 2022 first edition
         </Text>
-        <Box height={400}>
+        <Box h={400} padding={4}>
           <Slider
             dots="true"
             infinite=" true"
             speed="500"
             slidesToShow={1}
             slidesToScroll={1}
-            height={400}
+            h={400}
           >
-            <Box height={400} w="100%" bg="colors.green" textAlign="center">
-              <Text fontSize={40} color="colors.white">
+            <Box h={400} w="100%" bg="colors.secondary.500" textAlign="center">
+              <Text fontSize={"4xl"} color="colors.white">
                 1
               </Text>
             </Box>
-            <Box height={400} w="100%" bg="colors.green" textAlign="center">
-              <Text fontSize={40} color="colors.white">
+            <Box
+              height={400}
+              w="100%"
+              bg="colors.secondary.500"
+              textAlign="center"
+            >
+              <Text fontSize={"4xl"} color="colors.white">
                 2
               </Text>
             </Box>{" "}
-            <Box height={400} w="100%" bg="colors.green" textAlign="center">
-              <Text fontSize={40} color="colors.white">
+            <Box
+              height={400}
+              w="100%"
+              bg="colors.secondary.500"
+              textAlign="center"
+            >
+              <Text fontSize={"4xl"} color="colors.white">
                 3
               </Text>
             </Box>

@@ -14,7 +14,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import theme from "../../../utils/theme/theme";
 
 export const Footer = () => {
   return (
@@ -23,20 +22,20 @@ export const Footer = () => {
         <Flex flexDirection="column">
           {/* Logo */}
           <Box paddingTop={5} paddingBottom={5}>
-            <AspectRatio w="20px" ratio={1 / 1}>
-              <Box bg={theme.colors.green} />
+            <AspectRatio w={6} ratio={1 / 1}>
+              <Box bg="colors.secondary.500" />
             </AspectRatio>
           </Box>
           {/* Message and Subscription to whitepaper section */}
-          <Flex bg={theme.colors.dark} flexDirection="row">
+          <Flex bg="colors.primary.900" flexDirection="row">
             {/* Message */}
             <Container flex={1} paddingInlineEnd={0} paddingInlineStart={0}>
               <Flex flexDirection="column">
                 <Text
                   alignSelf="left"
                   alignContent="left"
-                  fontSize={48}
-                  color={theme.colors.white}
+                  fontSize="5xl"
+                  color="colors.white"
                 >
                   Suite of tools that empower the evolution of cultural assets.
                 </Text>
@@ -44,7 +43,7 @@ export const Footer = () => {
                 <Box
                   width={240}
                   height={1}
-                  bg={theme.colors.green}
+                  bg="colors.secondary.500"
                   alignSelf="center"
                 />
               </Flex>
@@ -61,18 +60,24 @@ export const Footer = () => {
                 <Input
                   type="email"
                   placeholder="Email@hotmail.com"
-                  fontSize={12}
+                  fontSize="xs"
                   width="50%"
-                  bg={theme.colors.white}
+                  bg="colors.white"
+                  color="colors.primary.900"
                   border="0px"
                 />
                 <InputRightAddon
                   width="50%"
-                  bg={theme.colors.green}
-                  color={theme.colors.dark}
+                  bg="colors.secondary.500"
+                  color="colors.primary.900"
                   border="0px"
                 >
-                  <Button fontSize={12} bg={theme.colors.green} border="0px">
+                  <Button
+                    fontSize="xs"
+                    bg="colors.secondary.500"
+                    color="colors.primary.900"
+                    border="0px"
+                  >
                     Send the whitepaper
                   </Button>
                   <ArrowUpIcon w={3} h={3}></ArrowUpIcon>
@@ -83,28 +88,28 @@ export const Footer = () => {
           {/* Social Media Section */}
           <HStack paddingTop={5} paddingBottom={5}>
             <IconButton
-              bg={theme.colors.dark}
+              bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color={theme.colors.grey} />}
+              icon={<QuestionIcon color="colors.grey.500" />}
             />
             <IconButton
-              bg={theme.colors.dark}
+              bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color={theme.colors.grey} />}
+              icon={<QuestionIcon color="colors.grey.500" />}
             />
             <IconButton
-              bg={theme.colors.dark}
+              bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color={theme.colors.grey} />}
+              icon={<QuestionIcon color="colors.grey.500" />}
             />
             <IconButton
-              bg={theme.colors.dark}
+              bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color={theme.colors.grey} />}
+              icon={<QuestionIcon color="colors.grey.500" />}
             />
           </HStack>
 
@@ -117,28 +122,28 @@ export const Footer = () => {
             paddingTop={2}
             paddingBottom={2}
             w="100%"
-            borderTop={`1px solid ${theme.colors.grey}`}
+            borderTop={`1px solid "colors.primary.900"`}
           >
             <Box>
-              <Button bg={theme.colors.dark} style={style.navButtonStyle}>
+              <Button bg="colors.primary.900" style={style.navButtonStyle}>
                 Whitepaper
               </Button>
-              <Button bg={theme.colors.dark} style={style.navButtonStyle}>
+              <Button bg="colors.primary.900" style={style.navButtonStyle}>
                 Xvault
               </Button>
 
-              <Button bg={theme.colors.dark} style={style.navButtonStyle}>
+              <Button bg="colors.primary.900" style={style.navButtonStyle}>
                 Xhibit
               </Button>
 
-              <Button bg={theme.colors.dark} style={style.navButtonStyle}>
+              <Button bg="colors.primary.900" style={style.navButtonStyle}>
                 Xchange
               </Button>
 
-              <Button bg={theme.colors.dark} style={style.navButtonStyle}>
+              <Button bg="colors.primary.900" style={style.navButtonStyle}>
                 Docs
               </Button>
-              <Button bg={theme.colors.dark} style={style.navButtonStyle}>
+              <Button bg="colors.primary.900" style={style.navButtonStyle}>
                 Resources
               </Button>
             </Box>
@@ -157,19 +162,19 @@ export const Footer = () => {
 
 const style = {
   navButtonStyle: {
-    color: theme.colors.grey,
+    color: "colors.grey.500",
     borderRadius: 0,
-    size: "xsm",
-    fontSize: 12,
-    fontWeight: 350,
-    paddingLeft: 2,
-    paddingRight: 2,
+    size: "xs",
+    fontSize: "xs",
+    fontWeight: "normal",
+    paddingLeft: 5,
+    paddingRight: 5,
   },
 
   navTextStyle: {
-    color: theme.colors.grey,
-    size: "xsm",
-    fontSize: 12,
-    fontWeight: 350,
+    color: "colors.grey.500",
+    size: "xs",
+    fontSize: "xs",
+    fontWeight: "normal",
   },
 };
