@@ -31,7 +31,7 @@ export const ProductCell = (props) => {
       bg="colors.primary.900"
       alignItems="left"
       border="1px solid"
-      borderColor="colors.grey.500"
+      borderColor="colors.gray.500"
       borderRadius="xl"
     >
       <Box padding={4}>
@@ -63,7 +63,7 @@ export const ProductCell = (props) => {
         padding={12}
         border="1px solid"
         width="100%"
-        borderColor="colors.grey.500"
+        borderColor="colors.gray.500"
         borderRadius="xl"
       >
         <Text color="colors.white" fontSize="2xl">

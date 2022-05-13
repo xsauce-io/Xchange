@@ -21,8 +21,8 @@ export const colors = {
       100: "#e5ffae",
       200: "#d4ff7d",
       300: "#c4ff4b",
-      400: "#b4ff1a", ///main one
-      500: "#ACFF00",
+      400: "#b4ff1a",
+      500: "#ACFF00", ///main one
       600: "#77b300",
       700: "#558000",
       800: "#324d00",

@@ -18,7 +18,7 @@ export const Header = () => {
       width="100%"
       bg="colors.primary.900"
       borderBottom="1px solid"
-      borderColor="colors.grey.700"
+      borderColor="colors.gray.700"
     >
       <Container maxW="85%">
         <Flex
@@ -81,8 +81,6 @@ export const Header = () => {
 
             <Button
               leftIcon={<ArrowBackIcon />}
-              // color={theme.colors.grey}
-              // bg={theme.colors.dark}
               variant="solid"
               borderRadius={0}
               size="xs"
