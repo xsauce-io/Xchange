@@ -67,7 +67,6 @@ export const Core = () => {
 
             <TabPanels
               color="colors.gray.500"
-              isLazy
               width="100%"
               minHeight="1300px"
               height="fit-content"
