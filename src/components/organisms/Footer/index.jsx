@@ -19,7 +19,11 @@ export const Footer = () => {
   return (
     <Box w="100%">
       <Container maxWidth="85%">
-        <Flex flexDirection="column">
+        <Flex
+          flexDirection="column"
+          borderBottom="1px solid"
+          borderColor="colors."
+        >
           {/* Logo */}
           <Box paddingTop={5} paddingBottom={5}>
             <AspectRatio w={6} ratio={1 / 1}>
@@ -91,25 +95,25 @@ export const Footer = () => {
               bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color="colors.grey.500" />}
+              icon={<QuestionIcon color="colors.gray.500" />}
             />
             <IconButton
               bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color="colors.grey.500" />}
+              icon={<QuestionIcon color="colors.gray.500" />}
             />
             <IconButton
               bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color="colors.grey.500" />}
+              icon={<QuestionIcon color="colors.gray.500" />}
             />
             <IconButton
               bg="colors.primary.900"
               aria-label="Search database"
               minW={6}
-              icon={<QuestionIcon color="colors.grey.500" />}
+              icon={<QuestionIcon color="colors.gray.500" />}
             />
           </HStack>
 
@@ -122,7 +126,8 @@ export const Footer = () => {
             paddingTop={2}
             paddingBottom={2}
             w="100%"
-            borderTop={`1px solid "colors.primary.900"`}
+            borderTop="1px solid"
+            borderColor="colors.gray.700"
           >
             <Box>
               <Button bg="colors.primary.900" style={style.navButtonStyle}>
@@ -162,7 +167,7 @@ export const Footer = () => {
 
 const style = {
   navButtonStyle: {
-    color: "colors.grey.500",
+    color: "colors.gray.500",
     borderRadius: 0,
     size: "xs",
     fontSize: "xs",
@@ -172,7 +177,7 @@ const style = {
   },
 
   navTextStyle: {
-    color: "colors.grey.500",
+    color: "colors.gray.500",
     size: "xs",
     fontSize: "xs",
     fontWeight: "normal",

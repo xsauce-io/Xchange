@@ -8,7 +8,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
+import ButtonGroup from "../../atomic/ButtonGroup";
 
 /*
 Props:
@@ -17,6 +18,17 @@ Props:
 */
 
 export const MintingCell = (props) => {
+  const [isLong, setIsLong] = useState(true);
+
+  const printButtonLabel = (event) => {
+    console.log(event.target.value);
+    if (event.target.value === "Long 2x") {
+      setIsLong(true);
+    } else if (event.target.value === "Short 2x") {
+      setIsLong(false);
+    }
+  };
+
   return (
     <VStack
       marginTop={0}
@@ -26,11 +38,11 @@ export const MintingCell = (props) => {
       maxWidth="100%"
       minW={250}
       minHeight="fit-content"
-      bg="colors.dark"
+      bg="colors.primary.900"
       alignItems="left"
       padding={12}
       border="1px solid"
-      borderColor="colors.grey"
+      borderColor="colors.gray.500"
       borderRadius={10}
     >
       <Box>
@@ -102,37 +114,32 @@ export const MintingCell = (props) => {
         <Divider color="colors.gray.700" />
       </Box>
 
-      <Flex flexDirection="row" paddingBottom={5} paddingTop={5}>
+      <Box paddingBottom={5} paddingTop={5}>
         {/*This "double button will be removed later*/}
-        <Flex borderRadius={"xl"} width="100%" bg="colors.gray.700">
-          <Button
-            flex={1}
-            sizes={"md"}
-            //TODO: implement custom button group
-            //variant={"solid"}
-            bg="colors.gray.700"
-            color="colors.white"
-            height={63}
-            //focus
-          >
-            Long 2x
-          </Button>
-          <Button flex={1} sizes={"md"} variant={"flashy"} height={63}>
-            Short 2x
-          </Button>
-        </Flex>
-      </Flex>
+        <Box
+          display={"flex"}
+          borderRadius={"xl"}
+          width="100%"
+          bg="colors.gray.700"
+          sizes={"md"}
+          height={"63px"}
+        >
+          <ButtonGroup
+            buttons={["Long 2x", "Short 2x"]}
+            onClick={printButtonLabel}
+          />
+        </Box>
+      </Box>
 
       <Box width="100%" paddingBottom={5}>
         <Flex border="1px solid" borderRadius="xl" padding={4}>
           <QuestionIcon color="orange" alignSelf="center" />
-          <Text color="colors.white">
-            <pre> DAI</pre>
+          <Text color="colors.white" whiteSpace={"pre-wrap"}>
+            {" "}
+            DAI
           </Text>
           <Spacer />
-          <Text>
-            <pre>923 </pre>{" "}
-          </Text>
+          <Text whiteSpace={"pre-wrap"}> 923 </Text>
           <Text>MAX</Text>
         </Flex>
         <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
@@ -141,7 +148,7 @@ export const MintingCell = (props) => {
       </Box>
 
       <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
-        Mint Short Position
+        {isLong ? "Mint Long Position" : "Mint Short Position"}
       </Button>
     </VStack>
   );

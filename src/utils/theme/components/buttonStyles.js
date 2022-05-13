@@ -25,7 +25,7 @@ export const ButtonStyles = {
   variants: {
     outline: {
       border: "1px solid",
-      borderColor: "colors.grey.700",
+      borderColor: "colors.gray.700",
       color: "colors.white",
       borderRadius: "base",
     },
@@ -36,8 +36,14 @@ export const ButtonStyles = {
     },
 
     flashy: {
-      bg: "colors.secondary.400",
+      bg: "colors.secondary.500",
       color: "colors.primary.900",
+      border: "0px solid",
+    },
+
+    dimmy: {
+      bg: "colors.gray.700",
+      color: "colors.white",
       border: "0px solid",
     },
   },
