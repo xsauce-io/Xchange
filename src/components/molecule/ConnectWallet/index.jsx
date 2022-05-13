@@ -14,7 +14,6 @@ export const ConnectWallet = () => {
         <Button
           variant="outline"
           fontSize="xs"
-          borderColor="colors.gray.700"
           height="0"
           padding={4}
           width="120px"

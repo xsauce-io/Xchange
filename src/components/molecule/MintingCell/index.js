@@ -30,7 +30,7 @@ export const MintingCell = (props) => {
       alignItems="left"
       padding={12}
       border="1px solid"
-      borderColor="colors.grey"
+      borderColor="colors.gray.500"
       borderRadius={10}
     >
       <Box>

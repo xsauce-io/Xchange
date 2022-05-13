@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { MintingCell } from "../../molecule/MintingCell/index.js";
+import { PriceChartGraph } from "../../molecule/PriceChartGraph/index.js";
 import { ProductCell } from "../../molecule/ProductCell";
 import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
 
@@ -76,6 +77,7 @@ export const Core = () => {
                 <Grid templateColumns="repeat(5, 1fr)" gap={6}>
                   <GridItem colSpan={3} h="10">
                     <ProductCell width="100%" />
+                    <PriceChartGraph height={300} />
                   </GridItem>
                   <GridItem colStart={4} colEnd={6} h="10">
                     <MintingCell width="530px" />

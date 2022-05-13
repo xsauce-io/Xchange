@@ -36,7 +36,7 @@ export const ProductDescriptionCell = (props) => {
       alignItems="left"
       padding={12}
       border="1px solid"
-      borderColor="colors.grey.500"
+      borderColor="colors.gray.500"
       borderRadius={"xl"}
     >
       <Box>
@@ -45,7 +45,7 @@ export const ProductDescriptionCell = (props) => {
         </Text>
       </Box>
       <Container paddingInlineStart={0}>
-        <Text color="colors.grey.500" fontSize="sm" alignContent="left">
+        <Text color="colors.gray.500" fontSize="sm" alignContent="left">
           This Xsauce Vault NFT represents and tracks proof of ownership of the
           actual sneaker stored within our Xsauce Vault, which has been verified
           via Xsauce’s authentication process. Note only 250 out of 500 editions
@@ -68,7 +68,7 @@ export const ProductDescriptionCell = (props) => {
           </Box>
         </Flex>
 
-        <Divider color="color.darkgrey" />
+        <Divider color="colors.gray.700" />
 
         {/* Release Date Section  */}
         <Flex width="100%" paddingBottom={3} paddingTop={3}>
@@ -82,7 +82,7 @@ export const ProductDescriptionCell = (props) => {
             </Text>
           </Box>
         </Flex>
-        <Divider color="color.grey.700" />
+        <Divider color="colors.gray.700" />
         {/* All time high Section  */}
         <Flex width="100%">
           <Box
@@ -110,12 +110,12 @@ export const ProductDescriptionCell = (props) => {
               </Text>
             </Box>
 
-            <Text color="colors.grey.500" fontSize="xs">
+            <Text color="colors.gray.500" fontSize="xs">
               Jul 09, 2020 (over 1 year)
             </Text>
           </Box>
         </Flex>
-        <Divider color="color.grey.700" />
+        <Divider color="colors.gray.700" />
         {/* All time low Section  */}
         <Flex width="100%">
           <Box
@@ -142,7 +142,7 @@ export const ProductDescriptionCell = (props) => {
                 &nbsp;+81.6%
               </Text>
             </Box>
-            <Text color="colors.grey.500" fontSize="xs">
+            <Text color="colors.gray.500" fontSize="xs">
               Jul 09, 2020 (over 1 year)
             </Text>
           </Box>

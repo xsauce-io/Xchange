@@ -25,7 +25,7 @@ export const ButtonStyles = {
   variants: {
     outline: {
       border: "1px solid",
-      borderColor: "colors.grey.700",
+      borderColor: "colors.gray.700",
       color: "colors.white",
       borderRadius: "base",
     },
