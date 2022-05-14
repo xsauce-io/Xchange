@@ -94,8 +94,8 @@ export const PriceChartCell = (props) => {
               &nbsp; Last 6 days
             </Text>
           </Box>
-          <PriceChartGraph />
         </Box>
+        <PriceChartGraph />
       </Box>
     </VStack>
   );
