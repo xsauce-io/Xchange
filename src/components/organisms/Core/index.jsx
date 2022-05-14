@@ -75,11 +75,6 @@ export const Core = () => {
             >
               {/* Portfolio Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>
-                <p>Porfolio</p>
-              </TabPanel>
-
-              {/* Market Tab */}
-              <TabPanel paddingLeft={0} paddingRight={0}>
                 <Grid templateColumns="repeat(5, 1fr)" gap={6}>
                   <GridItem colSpan={3}>
                     <ProductCell width="100%" />
@@ -90,6 +85,12 @@ export const Core = () => {
                     <ProductDescriptionCell width="100%" />
                   </GridItem>
                 </Grid>
+                <p>Porfolio</p>
+              </TabPanel>
+
+              {/* Market Tab */}
+              <TabPanel paddingLeft={0} paddingRight={0}>
+                <p>Porfolio</p>
               </TabPanel>
               {/* Swaps Tab */}
               <TabPanel paddingLeft={0} paddingRight={0}>
