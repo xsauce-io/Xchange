@@ -5,6 +5,7 @@ import {
   Button,
   Container,
   Flex,
+  HStack,
   Spacer,
   Text,
 } from "@chakra-ui/react";
@@ -47,51 +48,24 @@ export const Header = () => {
             </Flex>
           </Flex>
           {/* ----- Top Nav ---- */}
-          <Flex
+          <HStack
             flexDirection="row"
             alignItems="center"
             justifyContent="center"
             flex={1}
           >
-            <Button
-              leftIcon={<ArrowBackIcon />}
-              variant="solid"
-              borderRadius={0}
-              size="xs"
-              fontSize="xs"
-              fontWeight="normal"
-              paddingLeft={2}
-              paddingRight={2}
-            >
+            <Button leftIcon={<ArrowBackIcon />} variant="solid" size="xs">
               Xvault
             </Button>
 
-            <Button
-              leftIcon={<ArrowBackIcon />}
-              variant="solid"
-              borderRadius={0}
-              size="xs"
-              fontSize="xs"
-              fontWeight="normal"
-              paddingLeft={2}
-              paddingRight={2}
-            >
+            <Button leftIcon={<ArrowBackIcon />} variant="solid" size="xs">
               Xhibit
             </Button>
 
-            <Button
-              leftIcon={<ArrowBackIcon />}
-              variant="solid"
-              borderRadius={0}
-              size="xs"
-              fontSize="xs"
-              fontWeight="normal"
-              paddingLeft={2}
-              paddingRight={2}
-            >
+            <Button leftIcon={<ArrowBackIcon />} variant="solid" size="xs">
               Xchange
             </Button>
-          </Flex>
+          </HStack>
 
           {/* Wallet & Chain Buttons */}
           <Flex
@@ -100,16 +74,10 @@ export const Header = () => {
             justifyContent="right"
             flex={1}
           >
-            <Button
-              fontSize="xs"
-              borderColor="colors.gray.700"
-              height={0}
-              padding={4}
-              width="120px"
-              borderRadius="2xl"
-              variant="outline"
-            >
-              <Text color="colors.white">Polygone</Text>
+            <Button width="120px" borderRadius="2xl" variant="outline">
+              <Text fontSize={"xs"} color="colors.white">
+                Polygone
+              </Text>
             </Button>
             <Spacer maxWidth={2} />
             <ConnectWallet />

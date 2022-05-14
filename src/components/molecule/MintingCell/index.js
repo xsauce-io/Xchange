@@ -1,4 +1,4 @@
-import { ArrowUpIcon, QuestionIcon } from "@chakra-ui/icons";
+import { QuestionIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -55,7 +55,11 @@ export const MintingCell = (props) => {
       {/* Price Statistics Section */}
       <Box>
         {/* All time high Section  */}
-        <Flex width="100%">
+        <Flex
+          width="100%"
+          borderBottom={"1px solid"}
+          borderColor="colors.gray.700"
+        >
           <Box
             justifyContent="center"
             paddingBottom={3}
@@ -73,7 +77,7 @@ export const MintingCell = (props) => {
                 padding={1}
                 borderRadius={"md"}
               >
-                <ArrowUpIcon />
+                <TriangleUpIcon />
                 $891.60
               </Box>
               <Text
@@ -97,10 +101,13 @@ export const MintingCell = (props) => {
             </Text>
           </Box>
         </Flex>
-        <Divider color="colors.gray.700" />
         <Spacer />
         {/* Release Date Section  */}
-        <Flex width="100%">
+        <Flex
+          width="100%"
+          borderBottom={"1px solid"}
+          borderColor="colors.gray.700"
+        >
           <Box justifyContent={"center"} paddingBottom={3} paddingTop={3}>
             <Text fontSize={"sm"}>Last Sale on this xAsset</Text>
           </Box>
@@ -111,7 +118,6 @@ export const MintingCell = (props) => {
             </Text>
           </Box>
         </Flex>
-        <Divider color="colors.gray.700" />
       </Box>
 
       <Box paddingBottom={5} paddingTop={5}>
@@ -139,7 +145,7 @@ export const MintingCell = (props) => {
             DAI
           </Text>
           <Spacer />
-          <Text whiteSpace={"pre-wrap"}> 923 </Text>
+          <Text whiteSpace={"pre-wrap"}>923 </Text>
           <Text>MAX</Text>
         </Flex>
         <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>

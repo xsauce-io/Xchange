@@ -17,9 +17,9 @@ export const PageLayout = () => {
       </Box>
 
       <Container maxW="85%">
-        <Core />
+        <Core minHeight="fit-content" />
       </Container>
-      <Box marginBottom={0}>
+      <Box marginBottom={0} marginTop={"5%"}>
         <Footer />
       </Box>
     </Container>
