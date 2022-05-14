@@ -1,4 +1,10 @@
-import { ArrowUpIcon, QuestionIcon } from "@chakra-ui/icons";
+import {
+  ArrowUpIcon,
+  EmailIcon,
+  PhoneIcon,
+  QuestionIcon,
+  SearchIcon,
+} from "@chakra-ui/icons";
 import {
   AspectRatio,
   Box,
@@ -75,15 +81,10 @@ export const Footer = () => {
                   bg="colors.secondary.500"
                   color="colors.primary.900"
                   border="0px"
+                  fontSize="xs"
+                  as={Button}
                 >
-                  <Button
-                    fontSize="xs"
-                    bg="colors.secondary.500"
-                    color="colors.primary.900"
-                    border="0px"
-                  >
-                    Send the whitepaper
-                  </Button>
+                  Send the whitepaper
                   <ArrowUpIcon w={3} h={3}></ArrowUpIcon>
                 </InputRightAddon>
               </InputGroup>
@@ -92,28 +93,28 @@ export const Footer = () => {
           {/* Social Media Section */}
           <HStack paddingTop={5} paddingBottom={5}>
             <IconButton
-              bg="colors.primary.900"
-              aria-label="Search database"
-              minW={6}
-              icon={<QuestionIcon color="colors.gray.500" />}
+              variant="solid"
+              color={"colors.gray.500"}
+              aria-label="Send email"
+              icon={<QuestionIcon />}
             />
             <IconButton
-              bg="colors.primary.900"
-              aria-label="Search database"
-              minW={6}
-              icon={<QuestionIcon color="colors.gray.500" />}
+              variant="solid"
+              color={"colors.gray.500"}
+              aria-label="Send email"
+              icon={<SearchIcon />}
             />
             <IconButton
-              bg="colors.primary.900"
-              aria-label="Search database"
-              minW={6}
-              icon={<QuestionIcon color="colors.gray.500" />}
+              variant="solid"
+              color={"colors.gray.500"}
+              aria-label="Send email"
+              icon={<PhoneIcon />}
             />
             <IconButton
-              bg="colors.primary.900"
-              aria-label="Search database"
-              minW={6}
-              icon={<QuestionIcon color="colors.gray.500" />}
+              variant="solid"
+              color={"colors.gray.500"}
+              aria-label="Send email"
+              icon={<EmailIcon />}
             />
           </HStack>
 
@@ -129,57 +130,31 @@ export const Footer = () => {
             borderTop="1px solid"
             borderColor="colors.gray.700"
           >
-            <Box>
-              <Button bg="colors.primary.900" style={style.navButtonStyle}>
-                Whitepaper
-              </Button>
-              <Button bg="colors.primary.900" style={style.navButtonStyle}>
-                Xvault
-              </Button>
+            <HStack>
+              <Button variant={"solid"}>Whitepaper</Button>
+              <Button variant={"solid"}>Xvault</Button>
 
-              <Button bg="colors.primary.900" style={style.navButtonStyle}>
-                Xhibit
-              </Button>
+              <Button variant={"solid"}>Xhibit</Button>
 
-              <Button bg="colors.primary.900" style={style.navButtonStyle}>
-                Xchange
-              </Button>
+              <Button variant={"solid"}>Xchange</Button>
 
-              <Button bg="colors.primary.900" style={style.navButtonStyle}>
+              <Button
+                //style={style.navButtonStyle}
+                variant={"solid"}
+              >
                 Docs
               </Button>
-              <Button bg="colors.primary.900" style={style.navButtonStyle}>
-                Resources
-              </Button>
-            </Box>
+              <Button variant={"solid"}>Resources</Button>
+            </HStack>
             <Spacer />
             <Box>
-              <Text style={style.navTextStyle}>© 2022 Xsauce platform</Text>
+              <Text color="colors.gray.500" fontSize="xs">
+                © 2022 Xsauce platform
+              </Text>
             </Box>
           </Flex>
         </Flex>
       </Container>
     </Box>
   );
-};
-
-/* ------- Style for the footer -------- */
-
-const style = {
-  navButtonStyle: {
-    color: "colors.gray.500",
-    borderRadius: 0,
-    size: "xs",
-    fontSize: "xs",
-    fontWeight: "normal",
-    paddingLeft: 5,
-    paddingRight: 5,
-  },
-
-  navTextStyle: {
-    color: "colors.gray.500",
-    size: "xs",
-    fontSize: "xs",
-    fontWeight: "normal",
-  },
 };
