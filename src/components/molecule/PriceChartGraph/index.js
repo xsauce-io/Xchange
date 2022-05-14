@@ -75,8 +75,10 @@ function CustomTooltip({ active, payload, label }) {
   if (active) {
     return (
       <div className="tooltip">
-        <h5 class="tooltip">{format(parseISO(label), "eeee, d MMM, yyyy")}</h5>
-        <p class="tooltip">${payload[0].value.toFixed(2)} DAI</p>
+        <h5 className="tooltip">
+          {format(parseISO(label), "eeee, d MMM, yyyy")}
+        </h5>
+        <p className="tooltip">${payload[0].value.toFixed(2)} DAI</p>
       </div>
     );
   }
