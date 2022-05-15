@@ -16,21 +16,12 @@ Props:
 */
 
 export const ProductDescriptionCell = (props) => {
-  // const style = {
-  //   topBottomPadding: {
-  //     paddingBottom: 12px,
-  //     paddingTop: 12px,
-  //   },
-  // };
-
   return (
     <VStack
       marginTop={0}
       marginBottom="5%"
       width={props.width}
       height={props.height}
-      maxWidth="100%"
-      minW={250}
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"

@@ -35,15 +35,14 @@ export const MintingCell = (props) => {
       marginBottom="5%"
       width={props.width}
       height={props.height}
-      maxWidth="100%"
-      minW={250}
+      minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
       padding={12}
       border="1px solid"
       borderColor="colors.gray.500"
-      borderRadius={10}
+      borderRadius={"xl"}
     >
       <Box>
         <Text color="colors.white" fontSize={"4xl"}>

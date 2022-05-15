@@ -28,15 +28,13 @@ export const ProductCell = (props) => {
   return (
     <VStack
       marginTop={0}
-      marginBottom="5%"
+      marginBottom="3%"
       width={props.width}
       height={props.height}
-      maxWidth="100%"
-      minW={350}
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
-      border="1px solid"
+      border="0.5px solid"
       borderColor="colors.gray.500"
       borderRadius="xl"
     >
@@ -67,7 +65,7 @@ export const ProductCell = (props) => {
         bg="colors.primary.900"
         alignItems="left"
         padding={12}
-        border="1px solid"
+        border="0.5px solid"
         width="100%"
         borderColor="colors.gray.500"
         borderRadius="xl"
@@ -75,9 +73,9 @@ export const ProductCell = (props) => {
         <Text color="colors.white" fontSize="2xl">
           XJ1 Retro Chicago 2022 first edition
         </Text>
-        <Box h={400} padding={4}>
+        <Box h="410px" padding={4}>
           <SimpleImageSlider
-            width="550px"
+            width="630px"
             height="inherit"
             images={images}
             showBullets={true}
