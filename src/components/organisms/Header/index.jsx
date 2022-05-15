@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { ConnectWallet } from "../../molecule/ConnectWallet";
 
 /* */
@@ -53,18 +54,33 @@ export const Header = () => {
             alignItems="center"
             justifyContent="center"
             flex={1}
+            color="colors.gray.500"
+            spacing={8}
           >
-            <Button leftIcon={<ArrowBackIcon />} variant="solid" size="xs">
-              Xvault
-            </Button>
-
-            <Button leftIcon={<ArrowBackIcon />} variant="solid" size="xs">
-              Xhibit
-            </Button>
-
-            <Button leftIcon={<ArrowBackIcon />} variant="solid" size="xs">
-              Xchange
-            </Button>
+            <NavLink to="Xvault" activeClassName="selected">
+              <NavLink to="" activeClassName="selected">
+                <Box
+                  display="flex"
+                  justifyContent={"center"}
+                  alignItems="center"
+                >
+                  <ArrowBackIcon />
+                  <Text fontSize={"xs"}>Xvault</Text>
+                </Box>
+              </NavLink>
+            </NavLink>
+            <NavLink to="Xhibit" activeClassName="selected">
+              <Box display="flex" justifyContent={"center"} alignItems="center">
+                <ArrowBackIcon />
+                <Text fontSize={"xs"}>Xhibit</Text>
+              </Box>
+            </NavLink>
+            <NavLink to="Xchange" activeClassName="selected">
+              <Box display="flex" justifyContent={"center"} alignItems="center">
+                <ArrowBackIcon />
+                <Text fontSize={"xs"}>Xchange</Text>
+              </Box>
+            </NavLink>
           </HStack>
 
           {/* Wallet & Chain Buttons */}

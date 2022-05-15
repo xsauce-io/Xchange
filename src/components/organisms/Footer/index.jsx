@@ -20,6 +20,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -129,22 +130,28 @@ export const Footer = () => {
             w="100%"
             borderTop="1px solid"
             borderColor="colors.gray.700"
+            color="colors.gray.500"
+            fontSize="sm"
           >
             <HStack>
-              <Button variant={"solid"}>Whitepaper</Button>
-              <Button variant={"solid"}>Xvault</Button>
-
-              <Button variant={"solid"}>Xhibit</Button>
-
-              <Button variant={"solid"}>Xchange</Button>
-
-              <Button
-                //style={style.navButtonStyle}
-                variant={"solid"}
-              >
-                Docs
-              </Button>
-              <Button variant={"solid"}>Resources</Button>
+              <Link to="/whitepaper" activeClassName="selected">
+                <Text padding={2}>Whitepaper</Text>
+              </Link>
+              <Link to="/xvault" activeClassName="selected">
+                <Text padding={2}>Xvault</Text>
+              </Link>
+              <Link to="/xhibit" activeClassName="selected">
+                <Text padding={2}>Xhibit</Text>
+              </Link>
+              <Link to="/xchange" activeClassName="selected">
+                <Text padding={2}>Xchange</Text>
+              </Link>
+              <Link to="/xhibit" activeClassName="selected">
+                <Text padding={2}>Docs</Text>
+              </Link>
+              <Link to="/xhibit" activeClassName="selected">
+                <Text padding={2}>Resources</Text>
+              </Link>
             </HStack>
             <Spacer />
             <Box>
