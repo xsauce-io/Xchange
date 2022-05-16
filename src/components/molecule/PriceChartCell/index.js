@@ -23,13 +23,14 @@ export const PriceChartCell = (props) => {
   return (
     <VStack
       marginTop={0}
+      marginBottom="5%"
       width={props.width}
       height={props.height}
-      maxWidth="100%"
-      minW={350}
+      minW="fit-content"
+      minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
-      border="1px solid"
+      border="0.5px solid"
       borderColor="colors.gray.500"
       borderRadius="xl"
     >
@@ -62,13 +63,14 @@ export const PriceChartCell = (props) => {
         </HStack>
       </Flex>
 
-      <Box
+      <Flex
+        flexDirection={"column"}
         bg="colors.primary.900"
         alignItems="left"
         padding={12}
-        border="1px solid"
+        border="0.5px solid"
         width="100%"
-        height={"100%"}
+        height="100%"
         borderColor="colors.gray.500"
         borderRadius="xl"
       >
@@ -96,7 +98,7 @@ export const PriceChartCell = (props) => {
           </Box>
           <PriceChartGraph />
         </Box>
-      </Box>
+      </Flex>
     </VStack>
   );
 };
