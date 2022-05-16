@@ -37,7 +37,7 @@ export const Xchange = () => {
         <HStack
           bg="colors.primary.900"
           borderBottomWidth={"1px"}
-          borderBottomColor="colors.gray.500"
+          borderBottomColor="colors.gray.700"
           color="colors.gray.500"
         >
           <NavLink to="portfolio" activeClassName="selected">

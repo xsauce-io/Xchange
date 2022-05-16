@@ -18,16 +18,16 @@ Props:
 
 //Images for the slider
 const images = [
-  { url: "public/logo512.png" },
-  { url: "public/logo512.png" },
-  { url: "public/logo512.png" },
-  { url: "public/logo512.png" },
-  { url: "public/logo512.png" },
+  { url: "https://via.placeholder.com/150" },
+  { url: "https://via.placeholder.com/150" },
+  { url: "https://via.placeholder.com/150" },
+  { url: "https://via.placeholder.com/150" },
+  { url: "https://via.placeholder.com/150" },
 ];
 
 export const ProductCell = (props) => {
   const location = useLocation();
-  console.log(location.pathname);
+  console.log(location.pathname); //TODO: Implement breadcrumb using this pathname.
   return (
     <VStack
       marginTop={0}
@@ -38,7 +38,7 @@ export const ProductCell = (props) => {
       bg="colors.primary.900"
       alignItems="left"
       border="0.5px solid"
-      borderColor="colors.gray.500"
+      borderColor="colors.gray.700"
       borderRadius="xl"
     >
       <Box padding={4}>
@@ -70,7 +70,7 @@ export const ProductCell = (props) => {
         padding={12}
         border="0.5px solid"
         width="100%"
-        borderColor="colors.gray.500"
+        borderColor="colors.gray.700"
         borderRadius="xl"
       >
         <Text color="colors.white" fontSize="2xl">
