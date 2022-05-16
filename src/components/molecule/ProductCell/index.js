@@ -7,6 +7,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { useLocation } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
 
 /*
@@ -25,6 +26,8 @@ const images = [
 ];
 
 export const ProductCell = (props) => {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <VStack
       marginTop={0}

@@ -5,7 +5,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 export const Xchange = () => {
   return (
-    <Box w="100%" minHeight="fit-content">
+    <Box w="100%" minHeight="800px">
       {/* Core Header Section */}
       <Flex flexDirection="column">
         <Box bg="colors.primary.900" padding={1}>

@@ -2,7 +2,12 @@ export const styles = {
   //global styles
 
   global: {
-    "html, body": {},
+    html: {
+      height: "100%",
+      width: "100%",
+      margin: 0,
+    },
+    body: { minHeight: "100vh", margin: "auto" },
     a: {
       color: "colors.grey.500",
     },
