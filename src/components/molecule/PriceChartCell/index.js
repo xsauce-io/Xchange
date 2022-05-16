@@ -31,7 +31,7 @@ export const PriceChartCell = (props) => {
       bg="colors.primary.900"
       alignItems="left"
       border="0.5px solid"
-      borderColor="colors.gray.500"
+      borderColor="colors.gray.700"
       borderRadius="xl"
     >
       {/*Cell Heading  */}
@@ -71,7 +71,7 @@ export const PriceChartCell = (props) => {
         border="0.5px solid"
         width="100%"
         height="100%"
-        borderColor="colors.gray.500"
+        borderColor="colors.gray.700"
         borderRadius="xl"
       >
         <Text color="colors.white" fontSize="md">
