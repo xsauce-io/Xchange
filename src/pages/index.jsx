@@ -7,7 +7,6 @@ import { Header } from "../components/organisms/Header";
 export const PageLayout = () => {
   return (
     <Box
-      maxW="100%"
       paddingInlineStart={0}
       paddingInlineEnd={0}
       bg="colors.primary.900"

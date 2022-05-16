@@ -57,8 +57,8 @@ export const Header = () => {
             color="colors.gray.500"
             spacing={8}
           >
-            <NavLink to="Xvault" activeClassName="selected">
-              <NavLink to="" activeClassName="selected">
+            <NavLink to="" activeClassName="selected">
+              <NavLink to="Xvault" activeClassName="selected">
                 <Box
                   display="flex"
                   justifyContent={"center"}
