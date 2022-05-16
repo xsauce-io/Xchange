@@ -27,7 +27,7 @@ export const ProductDescriptionCell = (props) => {
       alignItems="left"
       padding={12}
       border="1px solid"
-      borderColor="colors.gray.500"
+      borderColor="colors.gray.700"
       borderRadius={"xl"}
     >
       <Box>

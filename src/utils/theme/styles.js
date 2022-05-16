@@ -12,12 +12,19 @@ export const styles = {
       color: "colors.grey.500",
     },
 
-    // "button:focus": {
-    //   background: "colors.gray.700",
-    //   border: "1px solid colors.gray.700",
-    //   borderRadius: "xs",
-    //   color: "colors.white",
-    // },
+    ".staking-card-link": {
+      color: "colors.white",
+      fontSize: "10px",
+      alignSelf: "flex-end",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+
+    ".overfow-hidden-ellipsis": {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+
     "a.active": {
       color: "colors.white",
     },
@@ -47,6 +54,25 @@ export const styles = {
       fontSize: "xs",
       fontWeight: "normal",
       color: "colors.white",
+    },
+
+    ".filter-divider": {
+      color: "colors.gray.500",
+      strokeWidth: "1px",
+    },
+
+    ".filter-category-link": {
+      color: "colors.gray.500",
+      fontSize: "2xl",
+    },
+    ".filter-category-link-active": {
+      color: "colors.white",
+      fontSize: "2xl",
+    },
+
+    ".select-BlockChain": {
+      color: "colors.white",
+      borderColor: "colors.gray.500",
     },
   },
 };
