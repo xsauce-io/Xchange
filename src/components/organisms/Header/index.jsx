@@ -95,20 +95,7 @@ export const Header = () => {
                 Polygone
               </Text>
             </Button>
-            {/* <Select
-              placeholder="Polygone"
-              width="120px"
-              borderRadius="2xl"
-              borderColor={"colors.gray.500"}
-              fontSize="xs"
-              color="colors.white"
-              height="30px"
-              className="select-BlockChain"
-            >
-              <option value="polygone">Polygone</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-            </Select> */}
+
             <Spacer maxWidth={2} />
             <ConnectWallet />
           </Flex>

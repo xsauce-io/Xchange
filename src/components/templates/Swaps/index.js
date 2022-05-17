@@ -1,10 +1,24 @@
-import { Box, Text } from "@chakra-ui/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
+import { Flex, Spacer, VStack } from "@chakra-ui/react";
 import React from "react";
+import { SwapCard } from "../../molecule/SwapCard";
+import { SwapCell } from "../../molecule/SwapCell";
 
 export const Swaps = () => {
   return (
-    <Box w="100%" height={"200px"}>
-      <Text color={"colors.white"}>Hey I am the SWAPS Template </Text>
-    </Box>
+    <VStack spacing={8}>
+      <Flex w="100%">
+        <SwapCard h={509} w={528} />
+        <Spacer />
+        <ArrowLeftIcon color={"colors.secondary.500"} alignSelf="center" />
+        <Spacer />
+        <ArrowRightIcon color={"colors.secondary.500"} alignSelf="center" />
+        <Spacer />
+        <SwapCard h={509} w={528} />
+      </Flex>
+      <Flex w="100%">
+        <SwapCell h={170} w={"100%"} />
+      </Flex>
+    </VStack>
   );
 };
