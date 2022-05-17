@@ -13,10 +13,11 @@ import React from "react";
 Props:
     height: number
     width: number
+    price, title, subTitle
 */
 
 export const SwapCell = (props) => {
-  const { h, w, height, width, price, title, subTitle } = props;
+  const { h, w, height, width } = props;
   return (
     <Box
       bg="colors.primary.900"
