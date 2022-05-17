@@ -8,7 +8,7 @@ Props:
 */
 
 export const SwapCard = (props) => {
-  const { h, w, height, width, price, title, subTitle, imgSrc } = props;
+  const { h, w, height, width, price, title, imgSrc } = props;
   return (
     <Box
       bg="colors.primary.900"
