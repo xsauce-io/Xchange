@@ -20,8 +20,6 @@ Props:
 */
 
 export const Markets = (props) => {
-  //TODO: Implement breadcrumb using this pathname.
-
   var items = [];
   for (let i = 0; i < 10; i++) {
     items.push(
