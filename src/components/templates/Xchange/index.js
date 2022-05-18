@@ -34,7 +34,7 @@ export const Xchange = () => {
             >
               Xchange
             </Heading>
-            <Box width={140} height={1} bg="colors.secondary.500" />
+            <Box width={270} height={1} bg="colors.secondary.500" />
           </Flex>
         </Box>
 
