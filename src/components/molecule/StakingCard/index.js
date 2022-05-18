@@ -52,7 +52,10 @@ export const StakingCard = (props) => {
           </Text>
           <Spacer />
 
-          <Link to="nowhere" className="staking-card-link">
+          <Link
+            to="/xchange/markets/category/productId"
+            className="staking-card-link"
+          >
             More Details
             <ArrowForwardIcon />
           </Link>

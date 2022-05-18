@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { useLocation } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
+import { parsePathname } from "../../../utils";
 
 /*
 Props:
@@ -28,6 +29,32 @@ const images = [
 export const ProductCell = (props) => {
   const location = useLocation();
   console.log(location.pathname); //TODO: Implement breadcrumb using this pathname.
+
+  const parsedPathname = parsePathname(location.pathname); //parsedPathname
+  console.log(parsedPathname);
+
+  var breadcrumb = [];
+
+  for (let i = 1; i < parsedPathname.length; i++) {
+    var tempPath = "";
+    if (i === 1) {
+      tempPath = "/xchange/markets";
+    } else if (i === 2) {
+      tempPath = "/xchange/markets/all";
+    } else {
+      for (let j = 1; j <= i; j++) {
+        tempPath += "/" + parsedPathname[j];
+      }
+    }
+    breadcrumb.push(
+      <BreadcrumbItem>
+        <BreadcrumbLink href={tempPath}>
+          {parsedPathname[i].replace(/^./, (str) => str.toUpperCase())}
+        </BreadcrumbLink>
+      </BreadcrumbItem>
+    );
+  }
+
   return (
     <VStack
       marginTop={0}
@@ -45,24 +72,7 @@ export const ProductCell = (props) => {
         <Text color="colors.white" fontSize="xl">
           Sneaker xAssets
         </Text>
-        <Breadcrumb fontSize="xs">
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#">Xchange</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#">Markets</BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Sneakers</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">
-              XJ1 Retro Chicago 2022 first edition
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
+        <Breadcrumb fontSize="xs">{breadcrumb}</Breadcrumb>
       </Box>
       <Box
         bg="colors.primary.900"
