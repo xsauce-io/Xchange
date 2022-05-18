@@ -1,19 +1,15 @@
 import { StarIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Checkbox,
   CheckboxGroup,
   HStack,
   Text,
   VStack,
-  Wrap,
   WrapItem,
 } from "@chakra-ui/react";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Divider from "../../atomic/Divider";
 import { StakingCard } from "../../molecule/StakingCard";
 
@@ -24,8 +20,7 @@ Props:
 */
 
 export const Markets = (props) => {
-  const location = useLocation();
-  console.log(location.pathname); //TODO: Implement breadcrumb using this pathname.
+  //TODO: Implement breadcrumb using this pathname.
 
   var items = [];
   for (let i = 0; i < 10; i++) {
@@ -49,41 +44,41 @@ export const Markets = (props) => {
         {/* Category*/}
         <Box width={200} height={1300}>
           <Box>
-            <Text
-              to="Footwear"
+            <NavLink
+              to="/xchange/markets/footwear"
               className="filter-category-link"
-              activeClassName="filter-category-link-active"
+              activeclassname="filter-category-link-active"
             >
-              Footwear
-            </Text>
-            <Text
-              to="Footwear"
+              <Text>Footwear</Text>
+            </NavLink>
+            <NavLink
+              to="/xchange/markets/sneakers"
               className="filter-category-link"
-              activeClassName="filter-category-link-active"
+              activeclassname="filter-category-link-active"
             >
-              Sneakers
-            </Text>
-            <Text
-              to="Footwear"
+              <Text>Sneakers</Text>
+            </NavLink>
+            <NavLink
+              to="/xchange/markets/watches"
               className="filter-category-link"
-              activeClassName="filter-category-link-active"
+              activeclassname="filter-category-link-active"
             >
-              Watches
-            </Text>
-            <Text
-              to="Footwear"
+              <Text>Watches</Text>
+            </NavLink>
+            <NavLink
+              to="/xchange/markets/bags"
               className="filter-category-link"
-              activeClassName="filter-category-link-active"
+              activeclassname="filter-category-link-active"
             >
-              Bags
-            </Text>
-            <Text
-              to="Footwear"
+              <Text>Bags</Text>
+            </NavLink>
+            <NavLink
+              to="/xchange/markets/nft"
               className="filter-category-link"
-              activeClassName="filter-category-link-active"
+              activeclassname="filter-category-link-active"
             >
-              NFT
-            </Text>
+              <Text>NFT</Text>
+            </NavLink>
           </Box>
           <Divider spacing={8} />
 
@@ -175,49 +170,7 @@ export const Markets = (props) => {
         </Box>
       </VStack>
 
-      <VStack
-        marginTop={0}
-        minHeight="fit-content"
-        bg="colors.primary.900"
-        alignItems="left"
-        border="0.5px solid"
-        borderColor="colors.gray.700"
-        borderRadius="xl"
-        alignSelf="flex-start"
-        Box
-        minH={1300}
-      >
-        <Box padding={4}>
-          <Text color="colors.white" fontSize="xl">
-            Sneaker xAssets
-          </Text>
-          <Breadcrumb fontSize="xs" color="colors.gray.500">
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#">Xchange</BreadcrumbLink>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#">Markets</BreadcrumbLink>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink href="#">Sneakers</BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-        </Box>
-        <Box
-          bg="colors.primary.900"
-          alignItems="left"
-          padding={8}
-          border="0.5px solid"
-          width="100%"
-          borderColor="colors.gray.700"
-          borderRadius="xl"
-          minH={"1210px"}
-        >
-          <Wrap spacing={[30, 20, 8]}>{items}</Wrap>
-        </Box>
-      </VStack>
+      <Outlet />
     </HStack>
   );
 };

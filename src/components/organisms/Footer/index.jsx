@@ -134,22 +134,28 @@ export const Footer = () => {
             fontSize="sm"
           >
             <HStack>
-              <Link to="/whitepaper" activeClassName="selected">
+              <Link to="/whitepaper">
                 <Text padding={2}>Whitepaper</Text>
               </Link>
-              <Link to="/xvault" activeClassName="selected">
+              <Link to="/xvault">
                 <Text padding={2}>Xvault</Text>
               </Link>
-              <Link to="/xhibit" activeClassName="selected">
+              <Link to="/xhibit">
                 <Text padding={2}>Xhibit</Text>
               </Link>
-              <Link to="/xchange" activeClassName="selected">
+              <Link to="/xchange">
                 <Text padding={2}>Xchange</Text>
               </Link>
-              <Link to="/xhibit" activeClassName="selected">
+              <Link
+                to={{
+                  pathname:
+                    "//https://docs.xsauce.io/getting-started/introduction",
+                }}
+                target="_blank"
+              >
                 <Text padding={2}>Docs</Text>
               </Link>
-              <Link to="/xhibit" activeClassName="selected">
+              <Link to="/xhibit">
                 <Text padding={2}>Resources</Text>
               </Link>
             </HStack>
