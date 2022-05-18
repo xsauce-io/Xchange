@@ -134,7 +134,12 @@ export const Footer = () => {
             fontSize="sm"
           >
             <HStack>
-              <Link to="/whitepaper">
+              <Link
+                to={{
+                  pathname: "//docs.xsauce.io/getting-started/introduction",
+                }}
+                target="_blank"
+              >
                 <Text padding={2}>Whitepaper</Text>
               </Link>
               <Link to="/xvault">
@@ -148,14 +153,18 @@ export const Footer = () => {
               </Link>
               <Link
                 to={{
-                  pathname:
-                    "//https://docs.xsauce.io/getting-started/introduction",
+                  pathname: "//docs.xsauce.io/getting-started/introduction",
                 }}
                 target="_blank"
               >
                 <Text padding={2}>Docs</Text>
               </Link>
-              <Link to="/xhibit">
+              <Link
+                to={{
+                  pathname: "//docs.xsauce.io/getting-started/introduction",
+                }}
+                target="_blank"
+              >
                 <Text padding={2}>Resources</Text>
               </Link>
             </HStack>

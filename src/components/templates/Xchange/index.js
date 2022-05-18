@@ -1,9 +1,13 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, HStack, Text } from "@chakra-ui/react";
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 export const Xchange = () => {
+  let navigate = useNavigate();
+
+  const goToPreviousPath = () => navigate(-1);
+
   return (
     <Box w="100%" minHeight="800px">
       {/* Core Header Section */}
@@ -14,6 +18,7 @@ export const Xchange = () => {
             size="xs"
             variant={"solid"}
             fontSize="xs"
+            onClick={goToPreviousPath}
           >
             Go Back
           </Button>
