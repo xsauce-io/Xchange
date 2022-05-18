@@ -1,11 +1,11 @@
-import { ArrowBackIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, LinkIcon } from "@chakra-ui/icons";
 import {
   AspectRatio,
   Box,
-  Button,
   Container,
   Flex,
   HStack,
+  Select,
   Spacer,
   Text,
 } from "@chakra-ui/react";
@@ -84,11 +84,23 @@ export const Header = () => {
             justifyContent="right"
             flex={1}
           >
-            <Button width="120px" borderRadius="2xl" variant="outline">
-              <Text fontSize={"xs"} color="colors.white">
-                Polygone
-              </Text>
-            </Button>
+            <Select
+              placeholder="Polygone"
+              width="130px"
+              borderRadius="2xl"
+              variant="unstyled"
+              height="35px"
+              fontSize={"xs"}
+              color="colors.white"
+              textAlign={"center"}
+              icon={<LinkIcon />}
+              iconSize={"sm"}
+              iconColor="purple"
+              border="1px solid #30403F"
+            >
+              <option value="option2">Polygone</option>
+              <option value="option3">Polygone</option>
+            </Select>
 
             <Spacer maxWidth={2} />
             <ConnectWallet />
