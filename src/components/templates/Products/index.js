@@ -5,28 +5,20 @@ import {
   BreadcrumbLink,
   Text,
   VStack,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import React from "react";
 import { useLocation } from "react-router-dom";
-import SimpleImageSlider from "react-simple-image-slider";
 import { parsePathname } from "../../../utils";
-
+import { StakingCard } from "../../molecule/StakingCard";
 /*
 Props:
     height: number
     width: number
 */
 
-//Images for the slider
-const images = [
-  { url: "https://via.placeholder.com/150" },
-  { url: "https://via.placeholder.com/150" },
-  { url: "https://via.placeholder.com/150" },
-  { url: "https://via.placeholder.com/150" },
-  { url: "https://via.placeholder.com/150" },
-];
-
-export const ProductCell = (props) => {
+export const Products = (props) => {
   const location = useLocation();
   console.log(location.pathname); //TODO: Implement breadcrumb using this pathname.
 
@@ -55,46 +47,47 @@ export const ProductCell = (props) => {
     );
   }
 
+  var items = [];
+  for (let i = 0; i < 10; i++) {
+    items.push(
+      <WrapItem>
+        <StakingCard w="217px" h="274px" />
+      </WrapItem>
+    );
+  }
+
   return (
     <VStack
       marginTop={0}
-      marginBottom="3%"
-      width={props.width}
-      height={props.height}
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
       border="0.5px solid"
       borderColor="colors.gray.700"
       borderRadius="xl"
+      alignSelf="flex-start"
+      Box
+      minH={1300}
     >
       <Box padding={4}>
         <Text color="colors.white" fontSize="xl">
           Sneaker xAssets
         </Text>
-        <Breadcrumb fontSize="xs">{breadcrumb}</Breadcrumb>
+        <Breadcrumb fontSize="xs" color="colors.gray.500">
+          {breadcrumb}
+        </Breadcrumb>
       </Box>
       <Box
         bg="colors.primary.900"
         alignItems="left"
-        padding={12}
+        padding={8}
         border="0.5px solid"
         width="100%"
         borderColor="colors.gray.700"
         borderRadius="xl"
+        minH={"1210px"}
       >
-        <Text color="colors.white" fontSize="2xl">
-          XJ1 Retro Chicago 2022 first edition
-        </Text>
-        <Box h="410px" padding={4}>
-          <SimpleImageSlider
-            width="630px"
-            height="inherit"
-            images={images}
-            showBullets={true}
-            showNavs={true}
-          />
-        </Box>
+        <Wrap spacing={[30, 20, 8]}>{items}</Wrap>
       </Box>
     </VStack>
   );

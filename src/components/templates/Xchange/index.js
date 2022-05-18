@@ -40,17 +40,17 @@ export const Xchange = () => {
           borderBottomColor="colors.gray.700"
           color="colors.gray.500"
         >
-          <NavLink to="portfolio" activeClassName="selected">
+          <NavLink to="/xchange/portfolio" activeclassname="selected">
             <Text padding={2} fontSize={"md"}>
               Portfolio
             </Text>
           </NavLink>
-          <NavLink to="markets" activeClassName="selected">
+          <NavLink to="/xchange/markets" activeclassname="selected">
             <Text padding={2} fontSize={"md"}>
               Markets
             </Text>
           </NavLink>
-          <NavLink to="swaps" activeClassName="selected">
+          <NavLink to="/xchange/swaps" activeclassname="selected">
             <Text padding={2} fontSize={"md"}>
               Swaps
             </Text>

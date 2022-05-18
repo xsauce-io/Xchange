@@ -28,7 +28,6 @@ export const SwapCell = (props) => {
       h={h || height}
       color="colors.gray.700"
       overflow="hidden"
-      alignItem={"center"}
     >
       <Box padding={5} maxH={"25%"}>
         <Box>
