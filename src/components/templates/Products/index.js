@@ -8,10 +8,12 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { parsePathname } from "../../../utils";
 import { StakingCard } from "../../molecule/StakingCard";
+
 /*
 Props:
     height: number
@@ -47,11 +49,57 @@ export const Products = (props) => {
     );
   }
 
+  const options = {
+    method: "GET",
+    url: "https://7004dufqxk.execute-api.us-east-1.amazonaws.com/v2/sneakers?limit=10&brand=adidas",
+  };
+
+  const [Image, setImage] = useState("");
+  const [Story, setStory] = useState("");
+  const [Price, setPrice] = useState("");
+  const [response, setResponse] = useState("");
+  const resultNum = "5";
+
+  const resultNum2 = () => {
+    for (let i = 0; i < 10; i++) {
+      return i;
+    }
+  };
+
+  const getSneaker = () => {
+    axios
+      .request(options)
+      .then(function (response) {
+        setImage(response.data.results[resultNum].image.thumbnail);
+        setStory(response.data.results[resultNum].story);
+        setPrice(response.data.results[resultNum].estimatedMarketValue);
+        setResponse(response);
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    getSneaker();
+  }, []);
+
   var items = [];
-  for (let i = 0; i < 10; i++) {
+
+  // response.map((el) => {
+  //   console.log(el);
+  //   return (
+  //     <WrapItem>
+  //       <StakingCard w="217px" h="274px" price={Price} imgSrc={Image} />
+  //     </WrapItem>
+  //   );
+  // });
+
+  for (let i = 0; i < 100; i++) {
     items.push(
       <WrapItem>
-        <StakingCard w="217px" h="274px" />
+        <StakingCard w="217px" h="274px" price={Price} imgSrc={Image} />
       </WrapItem>
     );
   }
