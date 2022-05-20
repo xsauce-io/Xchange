@@ -29,7 +29,7 @@ root.render(
           <Route path="/xchange" element={<Xchange />}>
             <Route path="/xchange/portfolio" element={<Portfolio />} />
             <Route path="/xchange/markets/" element={<Markets />}>
-              <Route path="/xchange/markets/all" element={<Products />} />
+              {/* //<Route path="/xchange/markets/all" element={<Products />} /> */}
               <Route path="/xchange/markets/:category" element={<Products />} />
             </Route>
             <Route

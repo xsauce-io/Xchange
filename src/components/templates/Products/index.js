@@ -12,8 +12,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { parsePathname } from "../../../utils";
-import { StakingCard } from "../../molecule/StakingCard";
-
+import { StakingCard } from "../../molecule/StakingCard/index";
 /*
 Props:
     height: number
@@ -22,10 +21,7 @@ Props:
 
 export const Products = (props) => {
   const location = useLocation();
-  console.log(location.pathname); //TODO: Implement breadcrumb using this pathname.
-
   const parsedPathname = parsePathname(location.pathname); //parsedPathname
-  console.log(parsedPathname);
 
   var breadcrumb = [];
 
@@ -41,8 +37,8 @@ export const Products = (props) => {
       }
     }
     breadcrumb.push(
-      <BreadcrumbItem>
-        <BreadcrumbLink href={tempPath}>
+      <BreadcrumbItem key={i}>
+        <BreadcrumbLink href={tempPath} key={i}>
           {parsedPathname[i].replace(/^./, (str) => str.toUpperCase())}
         </BreadcrumbLink>
       </BreadcrumbItem>
@@ -51,30 +47,17 @@ export const Products = (props) => {
 
   const options = {
     method: "GET",
-    url: "https://7004dufqxk.execute-api.us-east-1.amazonaws.com/v2/sneakers?limit=10&brand=adidas",
+    url: process.env.REACT_APP_API_URL,
   };
 
-  const [Image, setImage] = useState("");
-  const [Story, setStory] = useState("");
-  const [Price, setPrice] = useState("");
-  const [response, setResponse] = useState("");
-  const resultNum = "5";
-
-  const resultNum2 = () => {
-    for (let i = 0; i < 10; i++) {
-      return i;
-    }
-  };
+  const [response, setResponse] = useState([]);
 
   const getSneaker = () => {
     axios
       .request(options)
       .then(function (response) {
-        setImage(response.data.results[resultNum].image.thumbnail);
-        setStory(response.data.results[resultNum].story);
-        setPrice(response.data.results[resultNum].estimatedMarketValue);
-        setResponse(response);
-        console.log(response);
+        setResponse(response.data.results);
+        console.log(response.data.results);
       })
       .catch(function (error) {
         console.error(error);
@@ -84,25 +67,6 @@ export const Products = (props) => {
   useEffect(() => {
     getSneaker();
   }, []);
-
-  var items = [];
-
-  // response.map((el) => {
-  //   console.log(el);
-  //   return (
-  //     <WrapItem>
-  //       <StakingCard w="217px" h="274px" price={Price} imgSrc={Image} />
-  //     </WrapItem>
-  //   );
-  // });
-
-  for (let i = 0; i < 100; i++) {
-    items.push(
-      <WrapItem>
-        <StakingCard w="217px" h="274px" price={Price} imgSrc={Image} />
-      </WrapItem>
-    );
-  }
 
   return (
     <VStack
@@ -135,7 +99,22 @@ export const Products = (props) => {
         borderRadius="xl"
         minH={"1210px"}
       >
-        <Wrap spacing={[30, 20, 8]}>{items}</Wrap>
+        <Wrap spacing={[30, 20, 8]}>
+          {" "}
+          {response.map((el) => (
+            <WrapItem key={el.id}>
+              <StakingCard
+                w="217px"
+                h="274px"
+                price={el.estimatedMarketValue}
+                imgSrc={el.image.original}
+                id={el.id}
+                name={el.name}
+                subTitle={el.colorway}
+              />
+            </WrapItem>
+          ))}
+        </Wrap>
       </Box>
     </VStack>
   );

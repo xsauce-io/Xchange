@@ -1,15 +1,18 @@
-import { QuestionIcon, TriangleUpIcon } from "@chakra-ui/icons";
+import { TriangleUpIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   Divider,
   Flex,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
   Spacer,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import ButtonGroup from "../../atomic/ButtonGroup";
 
 /*
 Props:
@@ -17,7 +20,7 @@ Props:
     width: number
 */
 
-export const MintingCell = (props) => {
+export const MintingCell = ({ width, height, product }) => {
   const [isLong, setIsLong] = useState(true);
 
   const printButtonLabel = (event) => {
@@ -33,8 +36,8 @@ export const MintingCell = (props) => {
     <VStack
       marginTop={0}
       marginBottom="5%"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
@@ -45,8 +48,8 @@ export const MintingCell = (props) => {
       borderRadius={"xl"}
     >
       <Box>
-        <Text color="colors.white" fontSize={"4xl"}>
-          XJ1 Retro Chicago <br /> 2022 first edition
+        <Text color="colors.white" fontSize={"4xl"} whiteSpace="normal">
+          {product.name}
         </Text>
       </Box>
       <Divider color="colors.gray.700" />
@@ -119,9 +122,9 @@ export const MintingCell = (props) => {
         </Flex>
       </Box>
 
-      <Box paddingBottom={5} paddingTop={5}>
-        {/*This "double button will be removed later*/}
-        <Box
+      {/* <Box paddingBottom={5} paddingTop={5}>
+
+         <Box
           display={"flex"}
           borderRadius={"xl"}
           width="100%"
@@ -133,28 +136,30 @@ export const MintingCell = (props) => {
             buttons={["Long 2x", "Short 2x"]}
             onClick={printButtonLabel}
           />
-        </Box>
-      </Box>
+        </Box> 
+      </Box> */}
 
-      <Box width="100%" paddingBottom={5}>
-        <Flex border="1px solid" borderRadius="xl" padding={4}>
-          <QuestionIcon color="orange" alignSelf="center" />
-          <Text color="colors.white" whiteSpace={"pre-wrap"}>
-            {" "}
-            DAI
-          </Text>
-          <Spacer />
-          <Text whiteSpace={"pre-wrap"}>923 </Text>
-          <Text>MAX</Text>
-        </Flex>
+      <Box width="100%" paddingBottom={5} paddingTop={5}>
+        <InputGroup size="lg">
+          <InputLeftAddon
+            bg={"colors.primary.900"}
+            color="colors.gray.500"
+            children="DAI"
+          />
+          <Input placeholder="00.00" textAlign={"right"} />
+          <InputRightAddon bg={"colors.primary.900"} children="MAX" />
+        </InputGroup>
         <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
           Balance: 2,333,333 DAI
         </Text>
       </Box>
-
       <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
-        {isLong ? "Mint Long Position" : "Mint Short Position"}
+        Mint
       </Button>
+
+      {/* <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
+      {isLong ? "Mint Long Position" : "Mint Short Position"}
+    </Button> */}
     </VStack>
   );
 };
