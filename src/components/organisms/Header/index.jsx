@@ -85,7 +85,7 @@ export const Header = () => {
             flex={1}
           >
             <Select
-              placeholder="Polygone"
+              placeholder="Polygon"
               width="130px"
               borderRadius="2xl"
               variant="unstyled"
@@ -98,8 +98,8 @@ export const Header = () => {
               iconColor="purple"
               border="1px solid #30403F"
             >
-              <option value="option2">Polygone</option>
-              <option value="option3">Polygone</option>
+              <option value="option2">Polygon</option>
+              <option value="option3">Polygon</option>
             </Select>
 
             <Spacer maxWidth={2} />
