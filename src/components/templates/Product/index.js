@@ -12,7 +12,7 @@ export const Product = () => {
 
   const options = {
     method: "GET",
-    url: "https://7004dufqxk.execute-api.us-east-1.amazonaws.com/v2/sneakers?limit=10&brand=nike&silhouette=dunk&gender=men",
+    url: process.env.REACT_APP_API_URL,
   };
 
   //const [response, setResponse] = useState([]);
