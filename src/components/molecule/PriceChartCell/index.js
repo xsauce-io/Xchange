@@ -19,13 +19,13 @@ import PriceChartGraph from "../PriceChartGraph";
       width: number
   */
 
-export const PriceChartCell = (props) => {
+export const PriceChartCell = ({ width, height, product }) => {
   return (
     <VStack
       marginTop={0}
       marginBottom="5%"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
@@ -75,7 +75,7 @@ export const PriceChartCell = (props) => {
         borderRadius="xl"
       >
         <Text color="colors.white" fontSize="md">
-          XJ1 Retro Chicago 2022 first edition
+          {product.name}
         </Text>
         <Box justifyContent="center" textAlign={"left"}>
           <Text color="colors.gray.500" fontSize={"sm"}>
