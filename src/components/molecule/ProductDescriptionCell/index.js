@@ -5,7 +5,7 @@ import {
   Flex,
   Spacer,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -15,13 +15,15 @@ Props:
     width: number
 */
 
-export const ProductDescriptionCell = (props) => {
+export const ProductDescriptionCell = ({ width, height, product }) => {
+  const retailPrice = (Math.round(product.retailPrice * 100) / 100).toFixed(2);
+
   return (
     <VStack
       marginTop={0}
       marginBottom="5%"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
@@ -54,7 +56,7 @@ export const ProductDescriptionCell = (props) => {
           <Spacer />
           <Box justifyContent={"center"}>
             <Text color="colors.white" fontSize="xs">
-              $100.01
+              ${retailPrice}
             </Text>
           </Box>
         </Flex>
@@ -69,7 +71,7 @@ export const ProductDescriptionCell = (props) => {
           <Spacer />
           <Box justifyContent={"center"}>
             <Text color="colors.white" fontSize="xs">
-              $120.01
+              {product.releaseDate}
             </Text>
           </Box>
         </Flex>

@@ -1,7 +1,18 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { AspectRatio, Box, Flex, Image, Spacer, Text } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Flex,
+  Image,
+  Link,
+  Spacer,
+  Text,
+  Tooltip
+} from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 
 /*
 Props:
@@ -9,8 +20,16 @@ Props:
     width: number
 */
 
-export const StakingCard = (props) => {
-  const { h, w, height, width, price, title, subTitle, imgSrc } = props;
+export const StakingCard = ({ h, w, height, width, price, name, subTitle, imgSrc, id }) => {
+  //const { h, w, height, width, price, name, subTitle, imgSrc, id } = props;
+
+  const navigate = useNavigate();
+
+  const { category } = useParams();
+  const categoryDisplayName = category.replace(/^./, (str) =>
+    str.toUpperCase()
+  );
+
   return (
     <Box
       bg="colors.primary.900"
@@ -23,21 +42,31 @@ export const StakingCard = (props) => {
       overflow="hidden"
     >
       <AspectRatio width="100%" height="45%">
-        <Image
-          src={
-            imgSrc === undefined ? "https://via.placeholder.com/150" : imgSrc
-          }
-        />
+        <Image src={!imgSrc ? "https://via.placeholder.com/150" : imgSrc} />
       </AspectRatio>
       <Box padding={5} maxH={"55%"}>
+        <Tooltip label={name === undefined ? "" : name}>
+          <Box
+            height={"50px"}
+            overflow={"hidden"}
+            textOverflow={"ellipsis"}
+            width={"100%"}
+          >
+            <Text fontSize="xl" color="colors.white" lineHeight="normal">
+              {name === undefined ? "" : name}
+            </Text>
+          </Box>
+        </Tooltip>
         <Box>
-          <Text fontSize="xl" color="colors.white" lineHeight="normal">
-            {title === undefined ? "XJ1 Retro Chicago 2022 Edition" : title}
-          </Text>
-        </Box>
-        <Box>
-          <Text fontSize="xs" color="colors.gray.500" marginTop={1}>
-            {subTitle === undefined ? "Retro White Black (2021)" : subTitle}
+          <Text
+            fontSize="xs"
+            color="colors.gray.500"
+            marginTop={1}
+            overflow={"hidden"}
+            textOverflow={"ellipsis"}
+            whiteSpace={"nowrap"}
+          >
+            {subTitle === undefined ? "" : subTitle}
           </Text>
         </Box>
 
@@ -48,13 +77,20 @@ export const StakingCard = (props) => {
             height={"100%"}
             color="colors.gray.500"
           >
-            {price === undefined ? "$400.90" : price}
+            {price === undefined ? "" : "$" + price}
           </Text>
           <Spacer />
 
           <Link
-            to="/xchange/markets/category/productId"
+            // to={`/xchange/markets/category/${name}`}
             className="staking-card-link"
+            fontSize={"xs"}
+            color="colors.white"
+            onClick={() =>
+              navigate(`${id}`, {
+                state: { name: name, category: categoryDisplayName, id: id },
+              })
+            }
           >
             More Details
             <ArrowForwardIcon />
@@ -64,3 +100,16 @@ export const StakingCard = (props) => {
     </Box>
   );
 };
+
+StakingCard.propTypes = {
+  h: PropTypes.number || PropTypes.string,
+   w: PropTypes.number || PropTypes.string,
+  height: PropTypes.number || PropTypes.string, 
+  width: PropTypes.number || PropTypes.string, 
+  price: PropTypes.number || PropTypes.string, 
+  name: PropTypes.string, 
+  subTitle:PropTypes.string , 
+  imgSrc: PropTypes.string,
+  id: PropTypes.string ||PropTypes.number,
+  
+}
