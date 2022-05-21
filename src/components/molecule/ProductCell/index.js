@@ -12,7 +12,6 @@ import PropTypes from 'prop-types';
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-
 /*
 Props:
     height: number
