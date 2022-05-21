@@ -7,7 +7,9 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React from "react";
+
 
 /*
 Props:
@@ -43,7 +45,7 @@ export const ProductDescriptionCell = ({ width, height, product }) => {
           actual sneaker stored within our Xsauce Vault, which has been verified
           via Xsauce’s authentication process. Note only 250 out of 500 editions
           will be made available for initial purchase, with the remaining 250
-          being reserved for potential "shock drops" by Xsauce.
+          being reserved for potential &apos;shock drops&apos; by Xsauce.
         </Text>
       </Container>
       {/* Price Statistics Section */}
@@ -144,3 +146,14 @@ export const ProductDescriptionCell = ({ width, height, product }) => {
     </VStack>
   );
 };
+
+ProductDescriptionCell.propTypes = {
+ 
+  height: PropTypes.number || PropTypes.string, 
+  width: PropTypes.number || PropTypes.string, 
+  product: PropTypes.object, 
+  name: PropTypes.string, 
+  image: PropTypes.string,
+  
+  
+}

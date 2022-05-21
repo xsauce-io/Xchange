@@ -8,8 +8,10 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React from "react";
 import { useLocation } from "react-router-dom";
+
 
 /*
 Props:
@@ -31,8 +33,10 @@ export const ProductCell = ({ width, height, product }) => {
 
   //const parsedPathname = parsePathname(location.pathname); //parsedPathname
 
+  const lowerCaseCategory = state.category.toLowerCase();
+
   const categoryLink = "/xchange/markets/" + state.category;
-  const productLink = "/xchange/markets/" + state.category + "/" + state.id;
+  const productLink = "/xchange/markets/" + lowerCaseCategory + "/" + state.id;
 
   // var breadcrumb = [];
   // for (let i = 1; i < parsedPathname.length; i++) {
@@ -124,3 +128,11 @@ export const ProductCell = ({ width, height, product }) => {
     </VStack>
   );
 };
+
+ProductCell.propTypes = {
+  height: PropTypes.number || PropTypes.string, 
+  width: PropTypes.number || PropTypes.string, 
+  product: PropTypes.object, 
+  name: PropTypes.string, 
+  image: PropTypes.string,
+}

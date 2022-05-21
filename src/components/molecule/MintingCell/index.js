@@ -12,7 +12,7 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 
 /*
 Props:
@@ -21,16 +21,15 @@ Props:
 */
 
 export const MintingCell = ({ width, height, product }) => {
-  const [isLong, setIsLong] = useState(true);
-
-  const printButtonLabel = (event) => {
-    console.log(event.target.value);
-    if (event.target.value === "Long 2x") {
-      setIsLong(true);
-    } else if (event.target.value === "Short 2x") {
-      setIsLong(false);
-    }
-  };
+  // const [isLong, setIsLong] = useState(true);
+  // const printButtonLabel = (event) => {
+  //   console.log(event.target.value);
+  //   if (event.target.value === "Long 2x") {
+  //     setIsLong(true);
+  //   } else if (event.target.value === "Short 2x") {
+  //     setIsLong(false);
+  //   }
+  // };
 
   return (
     <VStack
@@ -144,10 +143,9 @@ export const MintingCell = ({ width, height, product }) => {
           <InputLeftAddon
             bg={"colors.primary.900"}
             color="colors.gray.500"
-            children="DAI"
-          />
+          >DAI</InputLeftAddon>
           <Input placeholder="00.00" textAlign={"right"} />
-          <InputRightAddon bg={"colors.primary.900"} children="MAX" />
+          <InputRightAddon bg={"colors.primary.900"} >MAX</InputRightAddon>
         </InputGroup>
         <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
           Balance: 2,333,333 DAI

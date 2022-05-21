@@ -8,11 +8,13 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "../../../App.css";
 import PriceChartGraph from "../PriceChartGraph";
+
 /*
   Props:
       height: number
@@ -102,3 +104,13 @@ export const PriceChartCell = ({ width, height, product }) => {
     </VStack>
   );
 };
+
+PriceChartCell.propTypes = {
+ 
+  height: PropTypes.number || PropTypes.string, 
+  width: PropTypes.number || PropTypes.string, 
+  product: PropTypes.object, 
+  name: PropTypes.string, 
+  
+  
+}
