@@ -12,7 +12,7 @@ export const Product = () => {
 
   const options = {
     method: "GET",
-    url: process.env.REACT_APP_API_URL,
+    url: "https://xchange-temporary-server.herokuapp.com/api/v1/products",
   };
 
   //const [response, setResponse] = useState([]);

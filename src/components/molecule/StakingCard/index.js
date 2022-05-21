@@ -103,7 +103,7 @@ export const StakingCard = ({ h, w, height, width, price, name, subTitle, imgSrc
 
 StakingCard.propTypes = {
   h: PropTypes.number || PropTypes.string,
-   w: PropTypes.number || PropTypes.string,
+  w: PropTypes.number || PropTypes.string,
   height: PropTypes.number || PropTypes.string, 
   width: PropTypes.number || PropTypes.string, 
   price: PropTypes.number || PropTypes.string, 
