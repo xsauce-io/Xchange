@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { MintingCell } from "../../molecule/MintingCell/index.js";
+import { OracleCell } from "../../molecule/OracleCell/index.js";
 import { PriceChartCell } from "../../molecule/PriceChartCell";
 import { ProductCell } from "../../molecule/ProductCell";
 import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
@@ -89,6 +90,7 @@ export const Product = () => {
         </GridItem>
         <GridItem colStart={4} rowSpan={5} minHeight={"530px"}>
           <MintingCell width="100%" product={product} />
+          <OracleCell width="100%" product={product}/>
           <ProductDescriptionCell width="100%" product={product} />
         </GridItem>
       </Grid>
