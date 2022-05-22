@@ -36,6 +36,10 @@ export const MintingCell = ({ width, height, product }) => {
     await contract.enter(parseEther("10"), answer);
   }, []);
 
+  const claim = useCallback(async () => {
+    await contract.claim();
+  }, []);
+
   // const getDaiBalance = useCallback(async () => {
   //   if (daiContract) {
   //     const balance = await daiContract.balanceOf(address);
@@ -270,6 +274,7 @@ export const MintingCell = ({ width, height, product }) => {
           variant="dimmy"
           size={"md"}
           height={53}
+          onClick={claim}
           fontWeight={"bold"}
           width={"50%"}
           // isDisabled={canRedeem ? false : true}
