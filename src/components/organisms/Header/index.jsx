@@ -1,4 +1,4 @@
-import { ArrowBackIcon, LinkIcon } from "@chakra-ui/icons";
+import { LinkIcon } from "@chakra-ui/icons";
 import {
   AspectRatio,
   Box,
@@ -57,7 +57,7 @@ export const Header = () => {
             color="colors.gray.500"
             spacing={8}
           >
-            <NavLink to="/xvault" activeclassname="selected">
+            {/* <NavLink to="/xvault" activeclassname="selected">
               <Box display="flex" justifyContent={"center"} alignItems="center">
                 <ArrowBackIcon />
                 <Text fontSize={"xs"}>Xvault</Text>
@@ -68,10 +68,10 @@ export const Header = () => {
                 <ArrowBackIcon />
                 <Text fontSize={"xs"}>Xhibit</Text>
               </Box>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/xchange" activeclassname="selected">
               <Box display="flex" justifyContent={"center"} alignItems="center">
-                <ArrowBackIcon />
+                {/* <ArrowBackIcon /> */}
                 <Text fontSize={"xs"}>Xchange</Text>
               </Box>
             </NavLink>

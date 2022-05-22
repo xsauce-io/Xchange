@@ -71,6 +71,7 @@ export const Product = () => {
   return (
     <Box w="100%" minHeight="fit-content" color="colors.gray.500">
       {/* Product Tab */}
+   
       <Grid
         templateColumns="repeat(auto-fit, 1fr)"
         templateRows="repeat(auto-fit, 1fr)"

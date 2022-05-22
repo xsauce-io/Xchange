@@ -55,11 +55,11 @@ export const Xchange = () => {
               Markets
             </Text>
           </NavLink>
-          <NavLink to="/xchange/swaps" activeclassname="selected">
+          {/* <NavLink to="/xchange/swaps" activeclassname="selected">
             <Text padding={2} fontSize={"md"}>
               Swaps
             </Text>
-          </NavLink>
+          </NavLink> */}
         </HStack>
         <Box paddingTop={5} paddingBottom={5}>
           <Outlet />

@@ -41,11 +41,7 @@ export const ProductDescriptionCell = ({ width, height, product }) => {
       </Box>
       <Container paddingInlineStart={0}>
         <Text color="colors.gray.500" fontSize="sm" alignContent="left">
-          This Xsauce Vault NFT represents and tracks proof of ownership of the
-          actual sneaker stored within our Xsauce Vault, which has been verified
-          via Xsauce’s authentication process. Note only 250 out of 500 editions
-          will be made available for initial purchase, with the remaining 250
-          being reserved for potential &apos;shock drops&apos; by Xsauce.
+          {!product.story ? 'No story was provided for the ' + product.name : product.story}
         </Text>
       </Container>
       {/* Price Statistics Section */}
@@ -154,6 +150,6 @@ ProductDescriptionCell.propTypes = {
   product: PropTypes.object, 
   name: PropTypes.string, 
   image: PropTypes.string,
-  
+  story: PropTypes.string,
   
 }
