@@ -1,18 +1,7 @@
-import {
-  Box,
-  Button, Divider,
-  Flex,
-  HStack,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
-  Spacer,
-  Text,
-  VStack
-} from "@chakra-ui/react";
-import React, { useState } from "react";
-import ButtonGroup from "../../atomic/ButtonGroup";
+import { Box, Button, Divider, HStack, Text, VStack } from "@chakra-ui/react";
+import { parseEther } from "ethers/lib/utils";
+import React, { useCallback, useState } from "react";
+import { useAuthContext } from "../../../context";
 
 /*
 Props:
@@ -23,6 +12,7 @@ Props:
 export const MintingCell = ({ width, height, product }) => {
   const [isYes, setIsYes] = useState(true);
   const [canRedeem, setCanRedeem] = useState(false);
+  const { daiContract, address, contract } = useAuthContext();
 
   const setCanRedeemYes = () => {
     setCanRedeem(true);
@@ -37,7 +27,24 @@ export const MintingCell = ({ width, height, product }) => {
     }
   };
 
+  const enterContract = useCallback(async (answer) => {
+    await daiContract.approve(
+      "0x175f9d9bBc1937D0B1243f605141991bcCc10905",
+      parseEther("20")
+    );
 
+    await contract.enter(parseEther("10"), answer);
+  }, []);
+
+  // const getDaiBalance = useCallback(async () => {
+  //   if (daiContract) {
+  //     const balance = await daiContract.balanceOf(address);
+  //     console.log({ balance });
+  //     return BigNumber.from(balance).toString();
+  //   }
+
+  //   return 0;
+  // }, [daiContract]);
 
   return (
     <VStack
@@ -57,9 +64,16 @@ export const MintingCell = ({ width, height, product }) => {
       <Box>
         <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal">
           {/* {product.name} */}
-          Will the price of {product.name} be equal or above to 300USD by May 22nd 2022?
+          Will the price of {product.name} be equal or above to 300USD by May
+          22nd 2022?
         </Text>
-        <Text color="colors.gray.500" fontSize={"md"} whiteSpace="normal" textAlign={"center"} padding={4}>
+        <Text
+          color="colors.gray.500"
+          fontSize={"md"}
+          whiteSpace="normal"
+          textAlign={"center"}
+          padding={4}
+        >
           {/* {product.name} */}
           Status: Open
         </Text>
@@ -67,7 +81,7 @@ export const MintingCell = ({ width, height, product }) => {
       <Divider color="colors.gray.700" />
 
       {/* Price Statistics Section */}
-      <Box>
+      {/* <Box>
         <Flex
           width="100%"
           borderBottom={"1px solid"}
@@ -85,7 +99,6 @@ export const MintingCell = ({ width, height, product }) => {
             <Text color="colors.gray.500" fontSize={"sm"}>
               Probability: 10.00%
             </Text>
-
           </Box>
           <Spacer />
           <Box
@@ -95,12 +108,11 @@ export const MintingCell = ({ width, height, product }) => {
             paddingTop={3}
           >
             <Text fontSize={"sm"} color="colors.white">
-              My balance: 0 DAI
+              My balance: {0} DAI
             </Text>
           </Box>
         </Flex>
         <Spacer />
-        {/* Last Sale Section  */}
         <Flex
           width="100%"
           borderBottom={"1px solid"}
@@ -118,7 +130,6 @@ export const MintingCell = ({ width, height, product }) => {
             <Text color="colors.gray.500" fontSize={"sm"}>
               Probability: 90.00%
             </Text>
-
           </Box>
           <Spacer />
           <Box
@@ -132,8 +143,7 @@ export const MintingCell = ({ width, height, product }) => {
             </Text>
           </Box>
         </Flex>
-      </Box>
-
+      </Box> */}
 
       {/*
        Retail price Section
@@ -202,9 +212,8 @@ export const MintingCell = ({ width, height, product }) => {
           </Box>
         </Flex>
       </Box> */}
-
+      {/* 
       <Box paddingBottom={5} paddingTop={5}>
-
         <Box
           display={"flex"}
           borderRadius={"xl"}
@@ -213,47 +222,62 @@ export const MintingCell = ({ width, height, product }) => {
           sizes={"md"}
           height={"63px"}
         >
-          <ButtonGroup
-            buttons={["YES", "NO"]}
-            onClick={printButtonLabel}
-          />
-
+          <ButtonGroup buttons={["YES", "NO"]} onClick={printButtonLabel} />
         </Box>
-      </Box>
+      </Box> */}
 
-      <Box width="100%" paddingBottom={5} paddingTop={5}>
+      {/* <Box width="100%" paddingBottom={5} paddingTop={5}>
         <InputGroup size="lg">
-          <InputLeftAddon
-            bg={"orange"}
-            color="colors.white"
-          >DAI</InputLeftAddon>
+          <InputLeftAddon bg={"orange"} color="colors.white">
+            DAI
+          </InputLeftAddon>
           <Input placeholder="00.00" textAlign={"right"} />
-          <InputRightAddon bg={"colors.gray.500"}
-            color="colors.white">MAX</InputRightAddon>
+          <InputRightAddon bg={"colors.gray.500"} color="colors.white">
+            MAX
+          </InputRightAddon>
         </InputGroup>
         <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
-          Balance: 2,333,333 DAI
-          {/* //TODO: Add user balance */}
+          Balance: 0 DAI
         </Text>
-      </Box>
+      </Box> */}
       {/* <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
         Mint
       </Button> */}
 
       <HStack>
-        <Button flex={2} variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
-          {isYes ? "Buy Yes Position" : "Buy No Position"}
+        <Button
+          flex={2}
+          onClick={() => enterContract(1)}
+          variant={"flashy"}
+          size={"md"}
+          height={53}
+          fontWeight={"bold"}
+        >
+          Buy Yes Position
         </Button>
-        <Button flex={2} variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
-          {isYes ? "Sell Yes Position" : "Sell No Position"}
+        <Button
+          flex={2}
+          variant={"flashy"}
+          onClick={() => enterContract(2)}
+          size={"md"}
+          height={53}
+          fontWeight={"bold"}
+        >
+          Buy No Position
         </Button>
-        <Button flex={1} variant="dimmy" size={"md"} height={53} fontWeight={"bold"} width={"50%"} isDisabled={canRedeem ? false : true} alignSelf={"center"} >
+        <Button
+          flex={1}
+          variant="dimmy"
+          size={"md"}
+          height={53}
+          fontWeight={"bold"}
+          width={"50%"}
+          // isDisabled={canRedeem ? false : true}
+          alignSelf={"center"}
+        >
           Redeem
         </Button>
-
-
       </HStack>
-
     </VStack>
   );
 };
