@@ -99,7 +99,6 @@ export const Header = () => {
               border="1px solid #30403F"
             >
               <option value="option2">Polygon</option>
-              <option value="option3">Polygon</option>
             </Select>
 
             <Spacer maxWidth={2} />
