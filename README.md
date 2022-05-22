@@ -1,1 +1,1 @@
-Contract Repo: https://github.com/xsauce-io/Xchange-Contracts
+Contracts Repo: https://github.com/xsauce-io/Xchange-Contracts
