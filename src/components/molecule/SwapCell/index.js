@@ -5,7 +5,7 @@ import {
   Input,
   InputGroup,
   InputRightAddon,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -51,7 +51,7 @@ export const SwapCell = (props) => {
               bg={"colors.gray.100"}
               color={"colors.primary.900"}
             />
-            <InputRightAddon children="MAX" />
+            <InputRightAddon  >MAX</InputRightAddon>
           </InputGroup>
           <Button
             width={"50%"}

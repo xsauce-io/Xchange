@@ -5,9 +5,11 @@ import {
   Flex,
   Spacer,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React from "react";
+
 
 /*
 Props:
@@ -15,13 +17,15 @@ Props:
     width: number
 */
 
-export const ProductDescriptionCell = (props) => {
+export const ProductDescriptionCell = ({ width, height, product }) => {
+  const retailPrice = (Math.round(product.retailPrice * 100) / 100).toFixed(2);
+  
   return (
     <VStack
       marginTop={0}
       marginBottom="5%"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
@@ -37,11 +41,7 @@ export const ProductDescriptionCell = (props) => {
       </Box>
       <Container paddingInlineStart={0}>
         <Text color="colors.gray.500" fontSize="sm" alignContent="left">
-          This Xsauce Vault NFT represents and tracks proof of ownership of the
-          actual sneaker stored within our Xsauce Vault, which has been verified
-          via Xsauce’s authentication process. Note only 250 out of 500 editions
-          will be made available for initial purchase, with the remaining 250
-          being reserved for potential "shock drops" by Xsauce.
+          {!product.story ? 'No story was provided for the ' + product.name : product.story}
         </Text>
       </Container>
       {/* Price Statistics Section */}
@@ -54,7 +54,7 @@ export const ProductDescriptionCell = (props) => {
           <Spacer />
           <Box justifyContent={"center"}>
             <Text color="colors.white" fontSize="xs">
-              $100.01
+              ${retailPrice}
             </Text>
           </Box>
         </Flex>
@@ -69,7 +69,7 @@ export const ProductDescriptionCell = (props) => {
           <Spacer />
           <Box justifyContent={"center"}>
             <Text color="colors.white" fontSize="xs">
-              $120.01
+              {product.releaseDate}
             </Text>
           </Box>
         </Flex>
@@ -115,7 +115,7 @@ export const ProductDescriptionCell = (props) => {
             paddingBottom={3}
             paddingTop={3}
           >
-            <Text fontSize="xs"> All-time low</Text>
+            <Text fontSize="xs">All-time low</Text>
           </Box>
           <Spacer />
           <Box
@@ -142,3 +142,14 @@ export const ProductDescriptionCell = (props) => {
     </VStack>
   );
 };
+
+ProductDescriptionCell.propTypes = {
+ 
+  height: PropTypes.number || PropTypes.string, 
+  width: PropTypes.number || PropTypes.string, 
+  product: PropTypes.object, 
+  name: PropTypes.string, 
+  image: PropTypes.string,
+  story: PropTypes.string,
+  
+}

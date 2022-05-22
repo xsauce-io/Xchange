@@ -1,12 +1,15 @@
-import { QuestionIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Button,
-  Divider,
+  Button, Divider,
   Flex,
+  HStack,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
   Spacer,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import ButtonGroup from "../../atomic/ButtonGroup";
@@ -17,24 +20,31 @@ Props:
     width: number
 */
 
-export const MintingCell = (props) => {
-  const [isLong, setIsLong] = useState(true);
+export const MintingCell = ({ width, height, product }) => {
+  const [isYes, setIsYes] = useState(true);
+  const [canRedeem, setCanRedeem] = useState(false);
+
+  const setCanRedeemYes = () => {
+    setCanRedeem(true);
+  };
 
   const printButtonLabel = (event) => {
     console.log(event.target.value);
-    if (event.target.value === "Long 2x") {
-      setIsLong(true);
-    } else if (event.target.value === "Short 2x") {
-      setIsLong(false);
+    if (event.target.value === "YES") {
+      setIsYes(true);
+    } else if (event.target.value === "NO") {
+      setIsYes(false);
     }
   };
+
+
 
   return (
     <VStack
       marginTop={0}
       marginBottom="5%"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
@@ -45,15 +55,89 @@ export const MintingCell = (props) => {
       borderRadius={"xl"}
     >
       <Box>
-        <Text color="colors.white" fontSize={"4xl"}>
-          XJ1 Retro Chicago <br /> 2022 first edition
+        <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal">
+          {/* {product.name} */}
+          Will the price of {product.name} be equal or above to 300USD by May 22nd 2022?
+        </Text>
+        <Text color="colors.gray.500" fontSize={"md"} whiteSpace="normal" textAlign={"center"} padding={4}>
+          {/* {product.name} */}
+          Status: Open
         </Text>
       </Box>
       <Divider color="colors.gray.700" />
 
       {/* Price Statistics Section */}
       <Box>
-        {/* All time high Section  */}
+        <Flex
+          width="100%"
+          borderBottom={"1px solid"}
+          borderColor="colors.gray.700"
+        >
+          <Box
+            justifyContent="center"
+            paddingBottom={3}
+            paddingTop={3}
+            textAlign={"left"}
+          >
+            <Text color="colors.white" fontSize={"md"}>
+              YES
+            </Text>
+            <Text color="colors.gray.500" fontSize={"sm"}>
+              Probability: 10.00%
+            </Text>
+
+          </Box>
+          <Spacer />
+          <Box
+            justifyContent="center"
+            alignSelf="center"
+            paddingBottom={3}
+            paddingTop={3}
+          >
+            <Text fontSize={"sm"} color="colors.white">
+              My balance: 0 DAI
+            </Text>
+          </Box>
+        </Flex>
+        <Spacer />
+        {/* Last Sale Section  */}
+        <Flex
+          width="100%"
+          borderBottom={"1px solid"}
+          borderColor="colors.gray.700"
+        >
+          <Box
+            justifyContent="center"
+            paddingBottom={3}
+            paddingTop={3}
+            textAlign={"left"}
+          >
+            <Text color="colors.white" fontSize={"md"}>
+              NO
+            </Text>
+            <Text color="colors.gray.500" fontSize={"sm"}>
+              Probability: 90.00%
+            </Text>
+
+          </Box>
+          <Spacer />
+          <Box
+            justifyContent="center"
+            alignSelf="center"
+            paddingBottom={3}
+            paddingTop={3}
+          >
+            <Text fontSize={"sm"} color="colors.white">
+              My balance: 10 DAI
+            </Text>
+          </Box>
+        </Flex>
+      </Box>
+
+
+      {/*
+       Retail price Section
+       <Box>
         <Flex
           width="100%"
           borderBottom={"1px solid"}
@@ -101,7 +185,7 @@ export const MintingCell = (props) => {
           </Box>
         </Flex>
         <Spacer />
-        {/* Release Date Section  */}
+        {/* Last Sale Section  
         <Flex
           width="100%"
           borderBottom={"1px solid"}
@@ -117,10 +201,10 @@ export const MintingCell = (props) => {
             </Text>
           </Box>
         </Flex>
-      </Box>
+      </Box> */}
 
       <Box paddingBottom={5} paddingTop={5}>
-        {/*This "double button will be removed later*/}
+
         <Box
           display={"flex"}
           borderRadius={"xl"}
@@ -130,31 +214,46 @@ export const MintingCell = (props) => {
           height={"63px"}
         >
           <ButtonGroup
-            buttons={["Long 2x", "Short 2x"]}
+            buttons={["YES", "NO"]}
             onClick={printButtonLabel}
           />
+
         </Box>
       </Box>
 
-      <Box width="100%" paddingBottom={5}>
-        <Flex border="1px solid" borderRadius="xl" padding={4}>
-          <QuestionIcon color="orange" alignSelf="center" />
-          <Text color="colors.white" whiteSpace={"pre-wrap"}>
-            {" "}
-            DAI
-          </Text>
-          <Spacer />
-          <Text whiteSpace={"pre-wrap"}>923 </Text>
-          <Text>MAX</Text>
-        </Flex>
+      <Box width="100%" paddingBottom={5} paddingTop={5}>
+        <InputGroup size="lg">
+          <InputLeftAddon
+            bg={"orange"}
+            color="colors.white"
+          >DAI</InputLeftAddon>
+          <Input placeholder="00.00" textAlign={"right"} />
+          <InputRightAddon bg={"colors.gray.500"}
+            color="colors.white">MAX</InputRightAddon>
+        </InputGroup>
         <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
           Balance: 2,333,333 DAI
+          {/* //TODO: Add user balance */}
         </Text>
       </Box>
+      {/* <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
+        Mint
+      </Button> */}
 
-      <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
-        {isLong ? "Mint Long Position" : "Mint Short Position"}
-      </Button>
+      <HStack>
+        <Button flex={2} variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
+          {isYes ? "Buy Yes Position" : "Buy No Position"}
+        </Button>
+        <Button flex={2} variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
+          {isYes ? "Sell Yes Position" : "Sell No Position"}
+        </Button>
+        <Button flex={1} variant="dimmy" size={"md"} height={53} fontWeight={"bold"} width={"50%"} isDisabled={canRedeem ? false : true} alignSelf={"center"} >
+          Redeem
+        </Button>
+
+
+      </HStack>
+
     </VStack>
   );
 };

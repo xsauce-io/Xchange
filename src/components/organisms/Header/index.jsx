@@ -1,4 +1,4 @@
-import { ArrowBackIcon, LinkIcon } from "@chakra-ui/icons";
+import { LinkIcon } from "@chakra-ui/icons";
 import {
   AspectRatio,
   Box,
@@ -7,7 +7,7 @@ import {
   HStack,
   Select,
   Spacer,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -57,7 +57,7 @@ export const Header = () => {
             color="colors.gray.500"
             spacing={8}
           >
-            <NavLink to="/xvault" activeclassname="selected">
+            {/* <NavLink to="/xvault" activeclassname="selected">
               <Box display="flex" justifyContent={"center"} alignItems="center">
                 <ArrowBackIcon />
                 <Text fontSize={"xs"}>Xvault</Text>
@@ -68,10 +68,10 @@ export const Header = () => {
                 <ArrowBackIcon />
                 <Text fontSize={"xs"}>Xhibit</Text>
               </Box>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/xchange" activeclassname="selected">
               <Box display="flex" justifyContent={"center"} alignItems="center">
-                <ArrowBackIcon />
+                {/* <ArrowBackIcon /> */}
                 <Text fontSize={"xs"}>Xchange</Text>
               </Box>
             </NavLink>
@@ -85,7 +85,7 @@ export const Header = () => {
             flex={1}
           >
             <Select
-              placeholder="Polygone"
+              placeholder="Polygon"
               width="130px"
               borderRadius="2xl"
               variant="unstyled"
@@ -98,8 +98,7 @@ export const Header = () => {
               iconColor="purple"
               border="1px solid #30403F"
             >
-              <option value="option2">Polygone</option>
-              <option value="option3">Polygone</option>
+              <option value="option2">Polygon</option>
             </Select>
 
             <Spacer maxWidth={2} />

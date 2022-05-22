@@ -6,26 +6,28 @@ import {
   HStack,
   Spacer,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "../../../App.css";
 import PriceChartGraph from "../PriceChartGraph";
+
 /*
   Props:
       height: number
       width: number
   */
 
-export const PriceChartCell = (props) => {
+export const PriceChartCell = ({ width, height, product }) => {
   return (
     <VStack
       marginTop={0}
       marginBottom="5%"
-      width={props.width}
-      height={props.height}
+      width={width}
+      height={height}
       minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
@@ -75,7 +77,7 @@ export const PriceChartCell = (props) => {
         borderRadius="xl"
       >
         <Text color="colors.white" fontSize="md">
-          XJ1 Retro Chicago 2022 first edition
+          {product.name}
         </Text>
         <Box justifyContent="center" textAlign={"left"}>
           <Text color="colors.gray.500" fontSize={"sm"}>
@@ -102,3 +104,13 @@ export const PriceChartCell = (props) => {
     </VStack>
   );
 };
+
+PriceChartCell.propTypes = {
+ 
+  height: PropTypes.number || PropTypes.string, 
+  width: PropTypes.number || PropTypes.string, 
+  product: PropTypes.object, 
+  name: PropTypes.string, 
+  
+  
+}

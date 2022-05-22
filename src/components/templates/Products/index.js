@@ -6,24 +6,22 @@ import {
   Text,
   VStack,
   Wrap,
-  WrapItem,
+  WrapItem
 } from "@chakra-ui/react";
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { parsePathname } from "../../../utils";
-import { StakingCard } from "../../molecule/StakingCard";
+import { StakingCard } from "../../molecule/StakingCard/index";
 /*
 Props:
     height: number
     width: number
 */
 
-export const Products = (props) => {
+export const Products = () => {
   const location = useLocation();
-  console.log(location.pathname); //TODO: Implement breadcrumb using this pathname.
-
   const parsedPathname = parsePathname(location.pathname); //parsedPathname
-  console.log(parsedPathname);
 
   var breadcrumb = [];
 
@@ -39,22 +37,37 @@ export const Products = (props) => {
       }
     }
     breadcrumb.push(
-      <BreadcrumbItem>
-        <BreadcrumbLink href={tempPath}>
+      <BreadcrumbItem key={i}>
+        <BreadcrumbLink href={tempPath} key={i}>
           {parsedPathname[i].replace(/^./, (str) => str.toUpperCase())}
         </BreadcrumbLink>
       </BreadcrumbItem>
     );
   }
 
-  var items = [];
-  for (let i = 0; i < 10; i++) {
-    items.push(
-      <WrapItem>
-        <StakingCard w="217px" h="274px" />
-      </WrapItem>
-    );
-  }
+  const options = {
+    method: "GET",
+    url: "https://xchange-temporary-server.herokuapp.com/api/v1/products",
+  };
+
+  const [response, setResponse] = useState([]);
+
+  const getSneaker = () => {
+    axios
+      .request(options)
+      .then(function (response) {
+        setResponse(response.data.results);
+        console.log(response.data.results);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    
+    getSneaker();
+  }, []);
 
   return (
     <VStack
@@ -87,7 +100,22 @@ export const Products = (props) => {
         borderRadius="xl"
         minH={"1210px"}
       >
-        <Wrap spacing={[30, 20, 8]}>{items}</Wrap>
+        <Wrap spacing={[30, 20, 8]}>
+          {" "}
+          {response.map((el) => (
+            <WrapItem key={el.id}>
+              <StakingCard
+                w="217px"
+                h="274px"
+                price={el.estimatedMarketValue}
+                imgSrc={el.image.original}
+                id={el.id}
+                name={el.name}
+                subTitle={el.colorway}
+              />
+            </WrapItem>
+          ))}
+        </Wrap>
       </Box>
     </VStack>
   );
