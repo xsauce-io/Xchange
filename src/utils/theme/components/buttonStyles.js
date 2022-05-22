@@ -40,6 +40,12 @@ export const ButtonStyles = {
       color: "colors.primary.900",
       border: "0px solid",
     },
+    flashyOutline: {
+      bg: "colors.primary.900",
+      color: "colors.secondary.500",
+      border: "1px solid",
+      borderColor:"colors.secondary.500",
+    },
 
     dimmy: {
       bg: "colors.gray.700",

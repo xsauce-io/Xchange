@@ -19,7 +19,7 @@ Props:
 
 export const ProductDescriptionCell = ({ width, height, product }) => {
   const retailPrice = (Math.round(product.retailPrice * 100) / 100).toFixed(2);
-
+  
   return (
     <VStack
       marginTop={0}
@@ -115,7 +115,7 @@ export const ProductDescriptionCell = ({ width, height, product }) => {
             paddingBottom={3}
             paddingTop={3}
           >
-            <Text fontSize="xs"> All-time low</Text>
+            <Text fontSize="xs">All-time low</Text>
           </Box>
           <Spacer />
           <Box
