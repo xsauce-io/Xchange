@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Flex, HStack, VStack } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -70,14 +70,33 @@ export const Product = () => {
   }, []);
 
   return (
-    <Box w="100%" minHeight="fit-content" color="colors.gray.500">
+    <Flex minW="100%" maxW={"100%"} minHeight="fit-content" color="colors.gray.500" margin={"auto"} flexWrap="wrap">
       {/* Product Tab */}
+
+<HStack flexWrap="wrap">
+
+    <VStack >
+          <ProductCell width="100%" product={product} />
+          <PriceChartCell width="100%" product={product} />
+     </VStack>
+      <VStack > 
+          <MintingCell width="475px" product={product} />
+          <OracleCell width="475px" product={product}/>
+          <ProductDescriptionCell width="475px" product={product} />
+          </VStack>
+
+
+</HStack>
+
+      
    
-      <Grid
+      {/* <Grid
         templateColumns="repeat(auto-fit, 1fr)"
         templateRows="repeat(auto-fit, 1fr)"
         gap={6}
+        width={"100%"}
       >
+
         <GridItem
           colSpan={3}
           colStart={1}
@@ -93,7 +112,7 @@ export const Product = () => {
           <OracleCell width="100%" product={product}/>
           <ProductDescriptionCell width="100%" product={product} />
         </GridItem>
-      </Grid>
-    </Box>
+      </Grid> */}
+    </Flex>
   );
 };

@@ -76,7 +76,7 @@ export const Xchange = () => {
             Approve Spending
           </Button>
         </Box>
-        <Box paddingTop={5} paddingBottom={5}>
+        <Box paddingTop={5} paddingBottom={5} >
           <Outlet />
         </Box>
       </Flex>
