@@ -75,18 +75,18 @@ export const Product = () => {
 
 <HStack flexWrap="wrap">
 
-    <VStack >
+    <VStack width={"60%"} >
 
-          <ProductCell width="500px" product={product} />
-          <PriceChartCell width="500px" product={product} />
+          <ProductCell width="100%" product={product} />
+          <PriceChartCell width="200" product={product} />
 
      </VStack>
-      <VStack > 
-          <MintingCell width="345px" product={product} />
-          <OracleCell width="345px" product={product}/>
-          <ProductDescriptionCell width="345px" product={product} />
+      <VStack width={"30%"} > 
+          <MintingCell width="100%" product={product} />
+          <OracleCell width="100%" product={product}/>
+          <ProductDescriptionCell  width="100%" product={product} />
 
-          </VStack>
+      </VStack>
 
 
 </HStack>

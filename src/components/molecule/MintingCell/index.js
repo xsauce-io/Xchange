@@ -56,7 +56,6 @@ export const MintingCell = ({ width, height, product }) => {
       marginBottom="5%"
       width={width}
       height={height}
-      minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
@@ -256,6 +255,7 @@ export const MintingCell = ({ width, height, product }) => {
           size={"md"}
           height={53}
           fontWeight={"bold"}
+          whiteSpace={"normal"} 
         >
           Buy Yes Position
         </Button>
@@ -266,6 +266,8 @@ export const MintingCell = ({ width, height, product }) => {
           size={"md"}
           height={53}
           fontWeight={"bold"}
+          whiteSpace={"normal"} 
+
         >
           Buy No Position
         </Button>
@@ -279,6 +281,8 @@ export const MintingCell = ({ width, height, product }) => {
           width={"50%"}
           // isDisabled={canRedeem ? false : true}
           alignSelf={"center"}
+          whiteSpace={"normal"} 
+
         >
           Redeem
         </Button>

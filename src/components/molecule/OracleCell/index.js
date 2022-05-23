@@ -48,7 +48,6 @@ export const OracleCell = ({ width, height, product }) => {
       marginBottom="5%"
       width={width}
       height={height}
-      minW="fit-content"
       minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"

@@ -129,8 +129,8 @@ export const ProductCell = ({ width, height, product }) => {
 };
 
 ProductCell.propTypes = {
-  height: PropTypes.number || PropTypes.string, 
-  width: PropTypes.number || PropTypes.string, 
+  height:  PropTypes.string, 
+  width: PropTypes.string, 
   product: PropTypes.object, 
   name: PropTypes.string, 
   image: PropTypes.string,
