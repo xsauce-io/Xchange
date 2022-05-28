@@ -60,11 +60,8 @@ export const ProductCell = ({ width, height, product }) => {
 
   return (
     <VStack
-      marginTop={0}
-      marginBottom="3%"
       width={width}
       height={height}
-      minHeight="fit-content"
       bg="colors.primary.900"
       alignItems="left"
       border="0.5px solid"
@@ -76,7 +73,7 @@ export const ProductCell = ({ width, height, product }) => {
           Sneaker xAssets
         </Text>
 
-        <Breadcrumb fontSize="xs">
+        <Breadcrumb fontSize="xs" color={"colors.gray.500"}>
           <BreadcrumbItem>
             <BreadcrumbLink href={"/xchange"}>Xchange</BreadcrumbLink>
           </BreadcrumbItem>
@@ -129,9 +126,9 @@ export const ProductCell = ({ width, height, product }) => {
 };
 
 ProductCell.propTypes = {
-  height:  PropTypes.string, 
-  width: PropTypes.string, 
-  product: PropTypes.object, 
-  name: PropTypes.string, 
+  height: PropTypes.string,
+  width: PropTypes.string,
+  product: PropTypes.object,
+  name: PropTypes.string,
   image: PropTypes.string,
 }

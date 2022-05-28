@@ -1,10 +1,9 @@
-import { Flex, HStack, VStack } from "@chakra-ui/react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { MintingCell } from "../../molecule/MintingCell/index.js";
-import { OracleCell } from "../../molecule/OracleCell/index.js";
-import { PriceChartCell } from "../../molecule/PriceChartCell";
+import { CallOptionCell } from "../../molecule/CallOptionCell/index.js";
+import { LockPositionCell } from "../../molecule/LockPositionCell/index.js";
 import { ProductCell } from "../../molecule/ProductCell";
 import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
 
@@ -70,52 +69,25 @@ export const Product = () => {
   }, []);
 
   return (
-    <Flex minW="100%" maxW={"100%"} minHeight="fit-content" color="colors.gray.500" margin={"auto"} flexWrap="wrap">
-      {/* Product Tab */}
 
-<HStack flexWrap="wrap">
+    <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
 
-    <VStack width={"60%"} >
+      <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
 
-          <ProductCell width="100%" product={product} />
-          <PriceChartCell width="200" product={product} />
+        <ProductCell width="60%" product={product} />
+        <ProductDescriptionCell width={"40%"} product={product} />
 
-     </VStack>
-      <VStack width={"30%"} > 
-          <MintingCell width="100%" product={product} />
-          <OracleCell width="100%" product={product}/>
-          <ProductDescriptionCell  width="100%" product={product} />
+        {/* <PriceChartCell width="200" product={product} /> */}
 
-      </VStack>
+      </HStack>
+      <Box width={"100%"} >
+        <CallOptionCell />
+      </Box>
+      <Box width={"100%"} >
+        <LockPositionCell/>
+      </Box>
 
+    </VStack >
 
-</HStack>
-
-      
-   
-      {/* <Grid
-        templateColumns="repeat(auto-fit, 1fr)"
-        templateRows="repeat(auto-fit, 1fr)"
-        gap={6}
-        width={"100%"}
-      >
-
-        <GridItem
-          colSpan={3}
-          colStart={1}
-          colEnd={4}
-          rowSpan={5}
-          minHeight={"530px"}
-        >
-          <ProductCell width="100%" product={product} />
-          <PriceChartCell product={product} />
-        </GridItem>
-        <GridItem colStart={4} rowSpan={5} minHeight={"530px"}>
-          <MintingCell width="100%" product={product} />
-          <OracleCell width="100%" product={product}/>
-          <ProductDescriptionCell width="100%" product={product} />
-        </GridItem>
-      </Grid> */}
-    </Flex>
   );
 };

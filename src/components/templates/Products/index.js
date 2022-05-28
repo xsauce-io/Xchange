@@ -80,7 +80,7 @@ export const Products = () => {
       borderRadius="xl"
       alignSelf="flex-start"
       Box
-      minH={1300}
+    
     >
       <Box padding={4}>
         <Text color="colors.white" fontSize="xl">

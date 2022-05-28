@@ -2,6 +2,9 @@ export const styles = {
   //global styles
 
   global: {
+    "*":{
+    boxSizing: "border-box",
+  },
     html: {
       height: "100%",
       width: "100%",
@@ -73,6 +76,12 @@ export const styles = {
     ".select-BlockChain": {
       color: "colors.white",
       borderColor: "colors.gray.500",
+    },
+    ".table-header-item": {
+      color: "colors.white",
+      fontSize: "xl",
+      fontWeight: "bold",
+      
     },
   },
 };

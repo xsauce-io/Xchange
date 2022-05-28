@@ -6,7 +6,7 @@ import {
   HStack,
   Text,
   VStack,
-  WrapItem,
+  WrapItem
 } from "@chakra-ui/react";
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";

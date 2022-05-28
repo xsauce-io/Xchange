@@ -19,23 +19,22 @@ Props:
 
 export const ProductDescriptionCell = ({ width, height, product }) => {
   const retailPrice = (Math.round(product.retailPrice * 100) / 100).toFixed(2);
-  
+
   return (
     <VStack
       marginTop={0}
-      marginBottom="5%"
       width={width}
-      height={height}
-      minHeight="fit-content"
+      height={""}
       bg="colors.primary.900"
       alignItems="left"
       padding={12}
       border="1px solid"
       borderColor="colors.gray.700"
       borderRadius={"xl"}
+      color="colors.white"
     >
-      <Box>
-        <Text color="colors.white" fontSize="lg">
+      <Box paddingBottom={5}>
+        <Text color="colors.white" fontSize="xl">
           Product description
         </Text>
       </Box>
@@ -139,17 +138,17 @@ export const ProductDescriptionCell = ({ width, height, product }) => {
           </Box>
         </Flex>
       </Box>
-    </VStack>
+    </VStack >
   );
 };
 
 ProductDescriptionCell.propTypes = {
- 
-  height: PropTypes.number || PropTypes.string, 
-  width: PropTypes.number || PropTypes.string, 
-  product: PropTypes.object, 
-  name: PropTypes.string, 
+
+  height: PropTypes.string || PropTypes.number,
+  width: PropTypes.number || PropTypes.string,
+  product: PropTypes.object,
+  name: PropTypes.string,
   image: PropTypes.string,
   story: PropTypes.string,
-  
+
 }
