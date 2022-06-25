@@ -1,13 +1,25 @@
 import { CopyIcon } from "@chakra-ui/icons";
-import { Box, Button, Spinner, Text } from "@chakra-ui/react";
+import { Button, Spinner, Text } from "@chakra-ui/react";
 import React from "react";
 import { useAuthContext } from "../../../context/AuthContext";
 
-export const ConnectWallet = () => {
+
+/*
+--------  Connect Wallet Component -----
+* @Description : 
+* Button to allow user to connect to wallet. 
+* The component access authContext variable.
+*/
+
+const ConnectWallet = () => {
   const { connecting, address, connectWallet } = useAuthContext();
 
+  /*-------------------------------------
+  *-------- RENDERED CONTENT ------------
+  *------------------------------------*/
+
   return (
-    <Box>
+    <React.Fragment>
       {connecting ? (
         <Spinner />
       ) : address ? (
@@ -38,6 +50,8 @@ export const ConnectWallet = () => {
           Connect Wallet
         </Button>
       )}
-    </Box>
+    </React.Fragment>
   );
 };
+
+export default ConnectWallet;

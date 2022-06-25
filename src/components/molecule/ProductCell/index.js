@@ -12,11 +12,13 @@ import PropTypes from 'prop-types';
 import React from "react";
 import { useLocation } from "react-router-dom";
 
+
 /*
-Props:
-    height: number
-    width: number
+--------  ProductCell Component -----
+* @Description : 
+*  ProductCell the core cell of the minting functionality.
 */
+
 
 //Images for the slider
 // const images = [
@@ -27,7 +29,7 @@ Props:
 //   { url: "https://via.placeholder.com/150" },
 // ];
 
-export const ProductCell = ({ width, height, product }) => {
+const ProductCell = ({ width, height, product }) => {
   const { state } = useLocation();
 
   //const parsedPathname = parsePathname(location.pathname); //parsedPathname
@@ -58,72 +60,83 @@ export const ProductCell = ({ width, height, product }) => {
   //   );
   // }
 
-  return (
-    <VStack
-      width={width}
-      height={height}
-      bg="colors.primary.900"
-      alignItems="left"
-      border="0.5px solid"
-      borderColor="colors.gray.700"
-      borderRadius="xl"
-    >
-      <Box padding={4}>
-        <Text color="colors.white" fontSize="xl">
-          Sneaker xAssets
-        </Text>
+  /*-------------------------------------
+  *-------- RENDERED CONTENT ------------
+  *------------------------------------*/
 
-        <Breadcrumb fontSize="xs" color={"colors.gray.500"}>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={"/xchange"}>Xchange</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={"/xchange/markets/all"}>
-              Markets
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={categoryLink}>
-              {state.category}
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={productLink}>{state.name}</BreadcrumbLink>
-          </BreadcrumbItem>
-        </Breadcrumb>
-      </Box>
-      <Box
+  return (
+
+    <React.Fragment>
+      <VStack
+        width={width}
+        height={height}
         bg="colors.primary.900"
         alignItems="left"
-        padding={12}
         border="0.5px solid"
-        width="100%"
         borderColor="colors.gray.700"
         borderRadius="xl"
       >
-        <Text color="colors.white" fontSize="4xl">
-          {product.name}
-        </Text>
-        <Box h="410px" padding={4}>
-          {/* <SimpleImageSlider
+        <Box padding={4}>
+          <Text color="colors.white" fontSize="xl">
+            Sneaker xAssets
+          </Text>
+
+          <Breadcrumb fontSize="xs" color={"colors.gray.500"}>
+            <BreadcrumbItem>
+              <BreadcrumbLink href={"/xchange"}>Xchange</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href={"/xchange/markets/all"}>
+                Markets
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href={categoryLink}>
+                {state.category}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href={productLink}>{state.name}</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </Box>
+        <Box
+          bg="colors.primary.900"
+          alignItems="left"
+          padding={12}
+          border="0.5px solid"
+          width="100%"
+          borderColor="colors.gray.700"
+          borderRadius="xl"
+        >
+          <Text color="colors.white" fontSize="4xl">
+            {product.name}
+          </Text>
+          <Box h="410px" padding={4}>
+            {/* <SimpleImageSlider
             width="630px"
             height="inherit"
             images={images}
             showBullets={true}
             showNavs={true}
           /> */}
-          <AspectRatio maxW="650px" ratio={5 / 3} alignItems="center">
-            <Image
-              width="630px"
-              height="inherit"
-              src={!product.image ? "" : product.image}
-            />
-          </AspectRatio>
+            <AspectRatio maxW="650px" ratio={5 / 3} alignItems="center">
+              <Image
+                width="630px"
+                height="inherit"
+                src={!product.image ? "" : product.image}
+              />
+            </AspectRatio>
+          </Box>
         </Box>
-      </Box>
-    </VStack>
+      </VStack>
+    </React.Fragment>
   );
 };
+
+/*-------------------------------------
+*------------- PropTypes  -------------
+*------------------------------------*/
 
 ProductCell.propTypes = {
   height: PropTypes.string,
@@ -132,3 +145,5 @@ ProductCell.propTypes = {
   name: PropTypes.string,
   image: PropTypes.string,
 }
+
+export default ProductCell;
