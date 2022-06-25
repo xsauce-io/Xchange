@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
 import { Box, Button, Divider, HStack, Text, VStack } from "@chakra-ui/react";
 import { parseEther } from "ethers/lib/utils";
+import PropTypes from 'prop-types';
 import React, { useCallback, useState } from "react";
 import { useAuthContext } from "../../../context";
 
 /*
-Props:
-    height: number
-    width: number
+--------  MintingCell Component -----
+* @Description : 
+*  MintingCell the core cell of the minting functionality.
 */
 
 export const MintingCell = ({ width, height, product }) => {
@@ -50,41 +52,46 @@ export const MintingCell = ({ width, height, product }) => {
   //   return 0;
   // }, [daiContract]);
 
-  return (
-    <VStack
-      marginTop={0}
-      marginBottom="5%"
-      width={width}
-      height={height}
-      minHeight="fit-content"
-      bg="colors.primary.900"
-      alignItems="left"
-      padding={12}
-      border="1px solid"
-      borderColor="colors.gray.700"
-      borderRadius={"xl"}
-    >
-      <Box>
-        <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal">
-          {/* {product.name} */}
-          Will the price of {product.name} be equal or above to 300USD by May
-          22nd 2022?
-        </Text>
-        <Text
-          color="colors.gray.500"
-          fontSize={"md"}
-          whiteSpace="normal"
-          textAlign={"center"}
-          padding={4}
-        >
-          {/* {product.name} */}
-          Status: Open
-        </Text>
-      </Box>
-      <Divider color="colors.gray.700" />
+  /*-------------------------------------
+  *-------- RENDERED CONTENT ------------
+  *------------------------------------*/
 
-      {/* Price Statistics Section */}
-      {/* <Box>
+  return (
+    <React.Fragment>
+      <VStack
+        marginTop={0}
+        marginBottom="5%"
+        width={width}
+        height={height}
+        minHeight="fit-content"
+        bg="colors.primary.900"
+        alignItems="left"
+        padding={12}
+        border="1px solid"
+        borderColor="colors.gray.700"
+        borderRadius={"xl"}
+      >
+        <Box>
+          <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal">
+            {/* {product.name} */}
+            Will the price of {product.name} be equal or above to 300USD by May
+            22nd 2022?
+          </Text>
+          <Text
+            color="colors.gray.500"
+            fontSize={"md"}
+            whiteSpace="normal"
+            textAlign={"center"}
+            padding={4}
+          >
+            {/* {product.name} */}
+            Status: Open
+          </Text>
+        </Box>
+        <Divider color="colors.gray.700" />
+
+        {/* Price Statistics Section */}
+        {/* <Box>
         <Flex
           width="100%"
           borderBottom={"1px solid"}
@@ -148,7 +155,7 @@ export const MintingCell = ({ width, height, product }) => {
         </Flex>
       </Box> */}
 
-      {/*
+        {/*
        Retail price Section
        <Box>
         <Flex
@@ -215,7 +222,7 @@ export const MintingCell = ({ width, height, product }) => {
           </Box>
         </Flex>
       </Box> */}
-      {/* 
+        {/* 
       <Box paddingBottom={5} paddingTop={5}>
         <Box
           display={"flex"}
@@ -229,7 +236,7 @@ export const MintingCell = ({ width, height, product }) => {
         </Box>
       </Box> */}
 
-      {/* <Box width="100%" paddingBottom={5} paddingTop={5}>
+        {/* <Box width="100%" paddingBottom={5} paddingTop={5}>
         <InputGroup size="lg">
           <InputLeftAddon bg={"orange"} color="colors.white">
             DAI
@@ -243,50 +250,64 @@ export const MintingCell = ({ width, height, product }) => {
           Balance: 0 DAI
         </Text>
       </Box> */}
-      {/* <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
+        {/* <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
         Mint
       </Button> */}
 
-      <HStack>
-        <Button
-          flex={2}
-          onClick={() => enterContract(1)}
-          variant={"flashy"}
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-          whiteSpace={"normal"} 
-        >
-          Buy Yes Position
-        </Button>
-        <Button
-          flex={2}
-          variant={"flashy"}
-          onClick={() => enterContract(2)}
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-          whiteSpace={"normal"} 
+        <HStack>
+          <Button
+            flex={2}
+            onClick={() => enterContract(1)}
+            variant={"flashy"}
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+            whiteSpace={"normal"}
+          >
+            Buy Yes Position
+          </Button>
+          <Button
+            flex={2}
+            variant={"flashy"}
+            onClick={() => enterContract(2)}
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+            whiteSpace={"normal"}
 
-        >
-          Buy No Position
-        </Button>
-        <Button
-          flex={1}
-          variant="dimmy"
-          size={"md"}
-          height={53}
-          onClick={claim}
-          fontWeight={"bold"}
-          width={"50%"}
-          // isDisabled={canRedeem ? false : true}
-          alignSelf={"center"}
-          whiteSpace={"normal"} 
+          >
+            Buy No Position
+          </Button>
+          <Button
+            flex={1}
+            variant="dimmy"
+            size={"md"}
+            height={53}
+            onClick={claim}
+            fontWeight={"bold"}
+            width={"50%"}
+            // isDisabled={canRedeem ? false : true}
+            alignSelf={"center"}
+            whiteSpace={"normal"}
 
-        >
-          Redeem
-        </Button>
-      </HStack>
-    </VStack>
+          >
+            Redeem
+          </Button>
+        </HStack>
+      </VStack>
+    </React.Fragment>
   );
 };
+
+/*-------------------------------------
+*------------- PropTypes  -------------
+*------------------------------------*/
+
+MintingCell.propTypes = {
+  width: PropTypes.string || PropTypes.number,
+  height: PropTypes.string || PropTypes.number,
+  product: PropTypes.object,
+};
+
+
+export default MintingCell;

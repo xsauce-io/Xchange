@@ -11,11 +11,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ConnectWallet } from "../../molecule/ConnectWallet";
+import ConnectWallet from "../../molecule/ConnectWallet";
 
 /* */
-export const Header = () => {
+const Header = () => {
   return (
+    <React.Fragment>
     <Box
       width="100%"
       bg="colors.primary.900"
@@ -107,5 +108,9 @@ export const Header = () => {
         </Flex>
       </Container>
     </Box>
+    </React.Fragment>
   );
 };
+
+
+export default Header;

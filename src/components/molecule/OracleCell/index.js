@@ -1,12 +1,19 @@
+/* eslint-disable no-unused-vars */
 import { Button, HStack, Text, VStack } from "@chakra-ui/react";
+import PropTypes from 'prop-types';
 import React, { useCallback, useState } from "react";
 import { useAuthContext } from "../../../context";
 
+
+
 /*
-Props:
-    height: number
-    width: number
+--------  MintingCell Component -----
+* @Description : 
+* Deprecated Component used for Hackthon
+* OracleCell the core cell of the minting functionality.
 */
+
+
 
 export const OracleCell = ({ width, height, product }) => {
   const [isYes, setIsYes] = useState(true);
@@ -42,103 +49,121 @@ export const OracleCell = ({ width, height, product }) => {
     await contract.PickWinner(isTrue);
   }, []);
 
+  /*-------------------------------------
+ *-------- RENDERED CONTENT ------------
+ *------------------------------------*/
   return (
-    <VStack
-      marginTop={0}
-      marginBottom="5%"
-      width={width}
-      height={height}
-      minHeight="fit-content"
-      bg="colors.primary.900"
-      alignItems="left"
-      padding={12}
-      border="1px solid"
-      borderColor="colors.gray.700"
-      borderRadius={"xl"}
-    >
-      <Text
-        flex={2}
-        color="colors.white"
-        lineHeight="normal"
-        fontSize={"xl"}
-        height={53}
-        fontWeight={"bold"}
-        textAlign={"center"}
+    <React.Fragment>
+      <VStack
+        marginTop={0}
+        marginBottom="5%"
+        width={width}
+        height={height}
+        minHeight="fit-content"
+        bg="colors.primary.900"
+        alignItems="left"
+        padding={12}
+        border="1px solid"
+        borderColor="colors.gray.700"
+        borderRadius={"xl"}
       >
-        Control Market
-      </Text>
+        <Text
+          flex={2}
+          color="colors.white"
+          lineHeight="normal"
+          fontSize={"xl"}
+          height={53}
+          fontWeight={"bold"}
+          textAlign={"center"}
+        >
+          Control Market
+        </Text>
 
-      <HStack>
-        <Button
-          onClick={openContract}
-          flex={2}
-          variant={"flashy"}
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-        >
-          Open
-        </Button>
-        <Button
-          onClick={pauseContract}
-          flex={2}
-          variant={"flashy"}
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-        >
-          Pause
-        </Button>
-        <Button
-          onClick={closeContract}
-          flex={2}
-          variant="dimmy"
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-          width={"50%"}
-        >
-          Close
-        </Button>
-      </HStack>
+        <HStack>
+          <Button
+            onClick={openContract}
+            flex={2}
+            variant={"flashy"}
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+          >
+            Open
+          </Button>
+          <Button
+            onClick={pauseContract}
+            flex={2}
+            variant={"flashy"}
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+          >
+            Pause
+          </Button>
+          <Button
+            onClick={closeContract}
+            flex={2}
+            variant="dimmy"
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+            width={"50%"}
+          >
+            Close
+          </Button>
+        </HStack>
 
-      <Text
-        flex={2}
-        color="colors.white"
-        lineHeight="normal"
-        fontSize={"xl"}
-        height={53}
-        fontWeight={"bold"}
-        textAlign={"center"}
-        paddingTop={4}
-      >
-        Pick Winner
-      </Text>
+        <Text
+          flex={2}
+          color="colors.white"
+          lineHeight="normal"
+          fontSize={"xl"}
+          height={53}
+          fontWeight={"bold"}
+          textAlign={"center"}
+          paddingTop={4}
+        >
+          Pick Winner
+        </Text>
 
-      <HStack>
-        <Button
-          onClick={() => pickWinner(true)}
-          flex={2}
-          variant={"flashy"}
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-        >
-          Yes
-        </Button>
-        <Button
-          onClick={() => pickWinner(false)}
-          flex={2}
-          variant={"flashy"}
-          size={"md"}
-          height={53}
-          fontWeight={"bold"}
-          width={"50%"}
-          alignSelf={"center"}
-        >
-          No
-        </Button>
-      </HStack>
-    </VStack>
+        <HStack>
+          <Button
+            onClick={() => pickWinner(true)}
+            flex={2}
+            variant={"flashy"}
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+          >
+            Yes
+          </Button>
+          <Button
+            onClick={() => pickWinner(false)}
+            flex={2}
+            variant={"flashy"}
+            size={"md"}
+            height={53}
+            fontWeight={"bold"}
+            width={"50%"}
+            alignSelf={"center"}
+          >
+            No
+          </Button>
+        </HStack>
+      </VStack>
+    </React.Fragment>
   );
 };
+
+/*-------------------------------------
+*------------- PropTypes  -------------
+*------------------------------------*/
+
+OracleCell.propTypes = {
+  width: PropTypes.string || PropTypes.number,
+  height: PropTypes.string || PropTypes.number,
+  product: PropTypes.object,
+};
+
+
+export default OracleCell;

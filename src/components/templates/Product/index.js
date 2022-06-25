@@ -2,12 +2,18 @@ import { Box, HStack, VStack } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { CallOptionCell } from "../../molecule/CallOptionCell/index.js";
-import { LockPositionCell } from "../../molecule/LockPositionCell/index.js";
-import { ProductCell } from "../../molecule/ProductCell";
-import { ProductDescriptionCell } from "../../molecule/ProductDescriptionCell";
+import CallOptionCell from "../../molecule/CallOptionCell";
+import LockPositionCell from "../../molecule/LockPositionCell";
+import ProductCell from "../../molecule/ProductCell";
+import ProductDescriptionCell from "../../molecule/ProductDescriptionCell";
 
-export const Product = () => {
+/*
+--------  Product Component -----
+* @Description : 
+*  
+*/
+
+const Product = () => {
   let { productId } = useParams();
 
   const options = {
@@ -68,26 +74,29 @@ export const Product = () => {
     getSneaker();
   }, []);
 
+  /*-------------------------------------
+  *-------- RENDERED CONTENT ------------
+  *------------------------------------*/
+
   return (
 
-    <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
 
-      <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
-
-        <ProductCell width="60%" product={product} />
-        <ProductDescriptionCell width={"40%"} product={product} />
-
-        {/* <PriceChartCell width="200" product={product} /> */}
-
-      </HStack>
-      <Box width={"100%"} >
-        <CallOptionCell />
-      </Box>
-      <Box width={"100%"} >
-        <LockPositionCell/>
-      </Box>
-
-    </VStack >
-
+    <React.Fragment>
+      <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
+        <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
+          <ProductCell width="60%" product={product} />
+          <ProductDescriptionCell width={"40%"} product={product} />
+          {/* <PriceChartCell width="200" product={product} /> */}
+        </HStack>
+        <Box width={"100%"} >
+          <CallOptionCell />
+        </Box>
+        <Box width={"100%"} >
+          <LockPositionCell />
+        </Box>
+      </VStack>
+    </React.Fragment>
   );
 };
+
+export default Product;
