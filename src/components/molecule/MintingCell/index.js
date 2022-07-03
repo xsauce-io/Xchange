@@ -73,19 +73,17 @@ export const MintingCell = ({ width, height, product }) => {
         borderRadius={"xl"}
       >
         <Box>
-          <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal">
+          <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal" textAlign={'center'}
+          >
             {product.name}
-            Will the price of {product.name} be equal or above to 300USD by May
-            22nd 2022?
           </Text>
           <Text
             color="colors.gray.500"
             fontSize={"md"}
             whiteSpace="normal"
-            textAlign={"center"}
+            textAlign={'center'}
             padding={4}
           >
-            {product.name}
             Status: Open
           </Text>
         </Box>

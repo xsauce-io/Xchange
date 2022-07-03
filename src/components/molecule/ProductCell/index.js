@@ -109,7 +109,7 @@ const ProductCell = ({ width, height, product }) => {
           borderColor="colors.gray.700"
           borderRadius="xl"
         >
-          <Text color="colors.white" fontSize="4xl">
+          <Text color="colors.white" fontSize="2xl">
             {product.name}
           </Text>
           <Box h="410px" padding={4}>

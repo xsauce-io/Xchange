@@ -1,4 +1,4 @@
-import { HStack, VStack } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -82,7 +82,14 @@ const Product = () => {
 
 
     <React.Fragment>
-      <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
+      <SimpleGrid columns={[1, null, 2]} spacing='40px' width={'100%'} height={'50%'}>
+        <ProductCell width="100%" height="100%" product={product} />
+        <MintingCell width={"100%"} height="100%" product={product} />
+        <PriceChartCell width={"100%"} product={product} />
+        <ProductDescriptionCell width={"100%"} product={product} />
+
+      </SimpleGrid>
+      {/* <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
         <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
           <ProductCell width="60%" product={product} />
           <MintingCell width={"40%"} product={product} />
@@ -91,7 +98,7 @@ const Product = () => {
           <PriceChartCell width={"60%"} product={product} />
           <ProductDescriptionCell width={"40%"} product={product} />
         </HStack>
-      </VStack>
+      </VStack> */}
     </React.Fragment>
   );
 };
