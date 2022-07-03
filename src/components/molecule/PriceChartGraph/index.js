@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis
 } from "recharts";
-import { CustomTooltip } from "./CustomTooltip";
+import CustomTooltip from "./CustomTooltip";
 
 //----Mock Data---
 const data = [];

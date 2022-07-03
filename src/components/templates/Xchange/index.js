@@ -1,6 +1,5 @@
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, HStack, Text } from "@chakra-ui/react";
-import { parseEther } from "ethers/lib/utils";
 import React from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../context";
@@ -75,7 +74,7 @@ const Xchange = () => {
             </Text>
           </NavLink> */}
           </HStack>
-          <Box>
+          {/* <Box>
             <Button
               onClick={() =>
                 daiContract.approve(
@@ -86,7 +85,7 @@ const Xchange = () => {
             >
               Approve Spending
             </Button>
-          </Box>
+          </Box> */}
           <Box paddingTop={5} paddingBottom={5} >
             <Outlet />
           </Box>

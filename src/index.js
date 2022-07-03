@@ -37,7 +37,6 @@ root.render(
               element={<Product />}
             />
             <Route path="/xchange/swaps" element={<Swaps />} />
-
             <Route index element={<Core />} />
           </Route>
           <Route path="/xhibit" element={<Xhibit />} />

@@ -1,9 +1,9 @@
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { HStack, VStack } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import CallOptionCell from "../../molecule/CallOptionCell";
-import LockPositionCell from "../../molecule/LockPositionCell";
+import MintingCell from "../../molecule/MintingCell";
+import PriceChartCell from "../../molecule/PriceChartCell";
 import ProductCell from "../../molecule/ProductCell";
 import ProductDescriptionCell from "../../molecule/ProductDescriptionCell";
 
@@ -85,15 +85,12 @@ const Product = () => {
       <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
         <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
           <ProductCell width="60%" product={product} />
-          <ProductDescriptionCell width={"40%"} product={product} />
-          {/* <PriceChartCell width="200" product={product} /> */}
+          <MintingCell width={"40%"} product={product} />
         </HStack>
-        <Box width={"100%"} >
-          <CallOptionCell />
-        </Box>
-        <Box width={"100%"} >
-          <LockPositionCell />
-        </Box>
+        <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
+          <PriceChartCell width={"60%"} product={product} />
+          <ProductDescriptionCell width={"40%"} product={product} />
+        </HStack>
       </VStack>
     </React.Fragment>
   );

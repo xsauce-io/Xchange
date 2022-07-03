@@ -29,6 +29,7 @@ export const PageLayout = () => {
           <Header />
         </Flex>
 
+        {/*Core Content */}
         <Container maxWidth="85%">
           <Outlet />
         </Container>
