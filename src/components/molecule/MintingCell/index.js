@@ -89,7 +89,7 @@ export const MintingCell = ({ width, height, product }) => {
         </Box>
         <Divider color="colors.gray.700" />
 
-        {/* Price Statistics Section */}
+        {/* Price Statistics Section
         <Box>
           <Flex
             width="100%"
@@ -152,7 +152,7 @@ export const MintingCell = ({ width, height, product }) => {
               </Text>
             </Box>
           </Flex>
-        </Box>
+        </Box> */}
 
 
         {/* Retail price Section */}

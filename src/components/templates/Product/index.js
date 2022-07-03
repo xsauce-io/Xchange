@@ -82,7 +82,7 @@ const Product = () => {
 
 
     <React.Fragment>
-      <SimpleGrid columns={[1, null, 2]} spacing='40px' width={'100%'} height={'50%'}>
+      <SimpleGrid columns={[1, null, 2]} spacing='40px' width={'100%'} height={'30%'}>
         <ProductCell width="100%" height="100%" product={product} />
         <MintingCell width={"100%"} height="100%" product={product} />
         <PriceChartCell width={"100%"} product={product} />
