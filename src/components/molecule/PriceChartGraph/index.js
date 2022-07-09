@@ -1,4 +1,5 @@
 import { format, parseISO, subDays } from "date-fns";
+import PropTypes from "prop-types";
 import React from "react";
 import {
   Area,
@@ -25,11 +26,11 @@ for (let x = 356; x >= 0; x = x - 3) {
 * @Description : 
 *  PriceChartGraph component dependent on rechart library.
 */
-export const PriceChartGraph = () => {
+export const PriceChartGraph = ({ width, height }) => {
 
   return (
     <React.Fragment>
-      <ResponsiveContainer width={650} height={250}>
+      <ResponsiveContainer width={width} height={height}>
         <AreaChart data={data}>
           <defs>
             <linearGradient id="gradientColor" x1="0" y1="0" x2="0" y2="1">
@@ -82,5 +83,9 @@ export const PriceChartGraph = () => {
   );
 };
 
+PriceChartGraph.propTypes = {
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+};
 
 export default PriceChartGraph;

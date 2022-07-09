@@ -70,16 +70,6 @@ const Xchange = () => {
                 Markets
               </Text>
             </CustomLink>
-            {/* <NavLink to="/xchange/markets/all" style={{ color: match ? "white" : "#6c7979" }} >
-              <Text padding={2} fontSize={"md"}>
-                Markets
-              </Text>
-            </NavLink> */}
-            {/* <NavLink to="/xchange/swaps" activeclassname="selected">
-            <Text padding={2} fontSize={"md"}>
-              Swaps
-            </Text>
-          </NavLink> */}
           </HStack>
           {/* <Box>
             <Button

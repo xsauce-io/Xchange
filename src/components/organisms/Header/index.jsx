@@ -59,22 +59,21 @@ const Header = () => {
               color="colors.gray.500"
               spacing={8}
             >
-              {/* <NavLink to="/xvault" activeclassname="selected">
-              <Box display="flex" justifyContent={"center"} alignItems="center">
-                <ArrowBackIcon />
-                <Text fontSize={"xs"}>Xvault</Text>
-              </Box>
-            </NavLink>
-            <NavLink to="/xhibit" activeclassname="selected">
-              <Box display="flex" justifyContent={"center"} alignItems="center">
-                <ArrowBackIcon />
-                <Text fontSize={"xs"}>Xhibit</Text>
-              </Box>
-            </NavLink> */}
+              <CustomLink to="/xvault" >
+                <Box display="flex" justifyContent={"center"} alignItems="center">
+
+                  <Text fontSize={"sm"}>Xvault</Text>
+                </Box>
+              </CustomLink>
+              <CustomLink to="/xhibit" >
+                <Box display="flex" justifyContent={"center"} alignItems="center">
+                  <Text fontSize={"sm"}>Xhibit</Text>
+                </Box>
+              </CustomLink>
               <CustomLink to="/xchange/markets/all" customResolved={"/xchange"}  >
                 <Box display="flex" justifyContent={"center"} alignItems="center">
                   {/* <ArrowBackIcon /> */}
-                  <Text fontSize={"xs"}>Xchange</Text>
+                  <Text fontSize={"sm"}>Xchange</Text>
                 </Box>
               </CustomLink>
             </HStack>
@@ -108,8 +107,8 @@ const Header = () => {
             </Flex>
           </Flex>
         </Container>
-      </Box>
-    </React.Fragment>
+      </Box >
+    </React.Fragment >
   );
 };
 

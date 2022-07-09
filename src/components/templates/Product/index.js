@@ -3,7 +3,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import MintingCell from "../../molecule/MintingCell";
-import PriceChartCell from "../../molecule/PriceChartCell";
 import ProductCell from "../../molecule/ProductCell";
 import ProductDescriptionCell from "../../molecule/ProductDescriptionCell";
 
@@ -82,24 +81,24 @@ const Product = () => {
 
 
     <React.Fragment>
-      <SimpleGrid columns={[1, null, 2]} spacing='40px' width={'100%'} height={'30%'}>
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing='40px' width={'100%'} height={'10%'} >
         <ProductCell width="100%" height="100%" product={product} />
         <MintingCell width={"100%"} height="100%" product={product} />
-        <PriceChartCell width={"100%"} product={product} />
-        <ProductDescriptionCell width={"100%"} product={product} />
 
       </SimpleGrid>
-      {/* <VStack flexWrap="wrap" marginTop={0} Box spacing={6}>
-        <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
-          <ProductCell width="60%" product={product} />
-          <MintingCell width={"40%"} product={product} />
-        </HStack>
-        <HStack width={"100%"} height={"100%"} spacing={6} alignItems={"stretch"}>
-          <PriceChartCell width={"60%"} product={product} />
-          <ProductDescriptionCell width={"40%"} product={product} />
-        </HStack>
-      </VStack> */}
-    </React.Fragment>
+      <SimpleGrid columns={{ sm: 1, md: 1 }} spacing='40px' width={'100%'} height={'30%'} marginTop={"40px"} >
+        <ProductDescriptionCell width={"100%"} height={"100%"} product={product} />
+      </SimpleGrid>
+      {/*   ---- Option that includes chart PriceGrpah
+      
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing='40px' width={'100%'} height={'30%'} >
+        <ProductCell width="100%" height="100%" product={product} />
+        <MintingCell width={"100%"} height="100%" product={product} />
+        <PriceChartCell width={"100%"} height="100%" product={product} />
+        <ProductDescriptionCell width={"100%"} height={"100%"} product={product} />
+        
+      </SimpleGrid> */}
+    </React.Fragment >
   );
 };
 

@@ -64,10 +64,10 @@ const SwapCard = ({ h, w, height, width, price, title, imgSrc }) => {
 *------------------------------------*/
 
 SwapCard.propTypes = {
-  width: PropTypes.string || PropTypes.number,
-  height: PropTypes.string || PropTypes.number,
-  w: PropTypes.string || PropTypes.number,
-  h: PropTypes.string || PropTypes.number,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  w: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  h: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   price: PropTypes.string,
   title: PropTypes.string,
   imgSrc: PropTypes.string,

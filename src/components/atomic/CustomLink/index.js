@@ -8,7 +8,7 @@ import {
 
 // eslint-disable-next-line react/prop-types
 const CustomLink = ({ children, to, selectedColor, unselectedColor, customResolved, ...props }) => {
-    let resolved = useResolvedPath(customResolved);
+    let resolved = useResolvedPath(customResolved ? customResolved : to);
     let match = useMatch({ path: resolved.pathname, end: false });
 
     return (

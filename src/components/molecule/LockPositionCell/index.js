@@ -67,8 +67,8 @@ export const LockPositionCell = ({ width, height }) => {
 *------------------------------------*/
 
 LockPositionCell.propTypes = {
-  width: PropTypes.string || PropTypes.number,
-  height: PropTypes.string || PropTypes.number,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default LockPositionCell;
