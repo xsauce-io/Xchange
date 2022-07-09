@@ -33,8 +33,8 @@ const CustomTooltip = ({ active, payload, label }) => {
 *------------------------------------*/
 
 CustomTooltip.propTypes = {
-    active: PropTypes.object,
-    payload: PropTypes.object,
+    active: PropTypes.bool,
+    payload: PropTypes.array,
     label: PropTypes.string
 
 };

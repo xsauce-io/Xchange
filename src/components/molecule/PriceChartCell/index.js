@@ -2,10 +2,7 @@ import { TriangleUpIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  Flex,
-  HStack,
-  Spacer,
-  Text,
+  Flex, HStack, Spacer, Text,
   VStack
 } from "@chakra-ui/react";
 import PropTypes from 'prop-types';
@@ -13,7 +10,6 @@ import React from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "../../../App.css";
-import PriceChartGraph from "../PriceChartGraph";
 
 /*
 --------  PriceChartCell Component -----
@@ -30,7 +26,6 @@ const PriceChartCell = ({ width, height, product }) => {
         marginBottom="5%"
         width={width}
         height={height}
-        minW="fit-content"
         minHeight="fit-content"
         bg="colors.primary.900"
         alignItems="left"
@@ -41,6 +36,7 @@ const PriceChartCell = ({ width, height, product }) => {
         {/*Cell Heading  */}
 
         <Flex padding={4}>
+
           <Text color="colors.white" fontSize="xl">
             Pie Chart
           </Text>
@@ -100,7 +96,8 @@ const PriceChartCell = ({ width, height, product }) => {
                 &nbsp; Last 6 days
               </Text>
             </Box>
-            <PriceChartGraph />
+
+            {/* <PriceChartGraph height={"100%"} width={"100%"} /> */}
           </Box>
         </Flex>
       </VStack>
@@ -110,8 +107,8 @@ const PriceChartCell = ({ width, height, product }) => {
 
 PriceChartCell.propTypes = {
 
-  height: PropTypes.number || PropTypes.string,
-  width: PropTypes.number || PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   product: PropTypes.object,
   name: PropTypes.string,
 

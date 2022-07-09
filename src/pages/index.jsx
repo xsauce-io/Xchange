@@ -23,12 +23,14 @@ export const PageLayout = () => {
         paddingInlineEnd={0}
         bg="colors.primary.900"
         alignItems={"center"}
+        minW={"fit-content"}
       >
         {/* Header */}
         <Flex w="100%" marginTop={0} marginBottom="5%">
           <Header />
         </Flex>
 
+        {/*Core Content */}
         <Container maxWidth="85%">
           <Outlet />
         </Container>

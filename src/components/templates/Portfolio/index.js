@@ -21,7 +21,7 @@ const Portfolio = () => {
         border="1px solid"
         borderRadius="xl"
         borderColor="colors.primary.700"
-        background={"colors.secondary.500"}
+        background={"colors.gray.500"}
         padding={5}
         alignItems="flex-start"
       >

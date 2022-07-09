@@ -29,7 +29,6 @@ root.render(
           <Route path="/xchange" element={<Xchange />}>
             <Route path="/xchange/portfolio" element={<Portfolio />} />
             <Route path="/xchange/markets/" element={<Markets />}>
-              {/* //<Route path="/xchange/markets/all" element={<Products />} /> */}
               <Route path="/xchange/markets/:category" element={<Products />} />
             </Route>
             <Route
@@ -37,7 +36,6 @@ root.render(
               element={<Product />}
             />
             <Route path="/xchange/swaps" element={<Swaps />} />
-
             <Route index element={<Core />} />
           </Route>
           <Route path="/xhibit" element={<Xhibit />} />

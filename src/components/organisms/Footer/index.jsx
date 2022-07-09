@@ -9,15 +9,13 @@ import {
   AspectRatio,
   Box,
   Button,
-  Container,
-  Flex,
+  Container, Flex,
   HStack,
   IconButton,
   Input,
   InputGroup,
   InputRightAddon,
-  Spacer,
-  Text
+  Spacer, Stack, Text
 } from "@chakra-ui/react";
 
 import React from "react";
@@ -51,15 +49,16 @@ const Footer = () => {
               </AspectRatio>
             </Box>
             {/* Message and Subscription to whitepaper section */}
-            <Flex bg="colors.primary.900" flexDirection="row">
+            <Flex bg="colors.primary.900" flexDirection={{ sm: "column", md: "row" }} >
               {/* Message */}
               <Container flex={1} paddingInlineEnd={0} paddingInlineStart={0}>
                 <Flex flexDirection="column">
                   <Text
                     alignSelf="left"
                     alignContent="left"
-                    fontSize="5xl"
+                    fontSize={{ sm: "4xl", md: "5xl" }}
                     color="colors.white"
+
                   >
                     Suite of tools that empower the evolution of cultural assets.
                   </Text>
@@ -74,12 +73,13 @@ const Footer = () => {
               </Container>
 
               {/* Subscription to whitepaper section */}
-              <Flex flex={1} justifyContent="right">
+              <Flex flex={1} justifyContent={{ md: "right" }} marginTop={{ sm: 6, }}>
                 <InputGroup
                   width="75%"
                   alignSelf="center"
                   border="0px"
                   maxW={400}
+                  minW={300}
                 >
                   <Input
                     type="email"
@@ -145,24 +145,26 @@ const Footer = () => {
               borderColor="colors.gray.700"
               color="colors.gray.500"
               fontSize="sm"
+
             >
-              <HStack>
+              <Stack direction={{ sm: 'column', md: 'row' }} alignContent={{ sm: 'stretch' }}>
                 <Link
                   to={{
                     pathname: "//docs.xsauce.io/getting-started/introduction",
                   }}
                   target="_blank"
+
                 >
-                  <Text padding={2}>Whitepaper</Text>
+                  <Text padding={2} fontSize={{ sm: 'xs', md: 'sm' }}>Whitepaper</Text>
                 </Link>
                 <Link to="/xvault">
-                  <Text padding={2}>Xvault</Text>
+                  <Text padding={2} fontSize={{ sm: 'xs', md: 'sm' }}>Xvault</Text>
                 </Link>
                 <Link to="/xhibit">
-                  <Text padding={2}>Xhibit</Text>
+                  <Text padding={2} fontSize={{ sm: 'xs', md: 'sm' }}>Xhibit</Text>
                 </Link>
                 <Link to="/xchange">
-                  <Text padding={2}>Xchange</Text>
+                  <Text padding={2} fontSize={{ sm: 'xs', md: 'sm' }}>Xchange</Text>
                 </Link>
                 <Link
                   to={{
@@ -170,7 +172,7 @@ const Footer = () => {
                   }}
                   target="_blank"
                 >
-                  <Text padding={2}>Docs</Text>
+                  <Text padding={2} fontSize={{ sm: 'xs', md: 'sm' }}>Docs</Text>
                 </Link>
                 <Link
                   to={{
@@ -178,16 +180,24 @@ const Footer = () => {
                   }}
                   target="_blank"
                 >
-                  <Text padding={2}>Resources</Text>
+                  <Text padding={2} fontSize={{ sm: 'xs', md: 'sm' }}>Resources</Text>
                 </Link>
-              </HStack>
+
+                {/* <Box alignSelf={"center"} justifySelf={"self-end"}>
+                  <Text color="colors.gray.500" fontSize="xs">
+                    © 2022 Xsauce platform
+                  </Text>
+                </Box> */}
+
+              </Stack>
               <Spacer />
-              <Box>
+              <Box marginRight={0} alignSelf={{ sm: 'flex-end', md: 'center' }}>
                 <Text color="colors.gray.500" fontSize="xs">
                   © 2022 Xsauce platform
                 </Text>
               </Box>
             </Flex>
+
           </Flex>
         </Container>
       </Box>

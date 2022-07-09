@@ -150,8 +150,8 @@ const ProductDescriptionCell = ({ width, height, product }) => {
 
 ProductDescriptionCell.propTypes = {
 
-  height: PropTypes.string || PropTypes.number,
-  width: PropTypes.number || PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   product: PropTypes.object,
   name: PropTypes.string,
   image: PropTypes.string,

@@ -112,15 +112,15 @@ export const StakingCard = ({ h, w, height, width, price, name, subTitle, imgSrc
 *------------------------------------*/
 
 StakingCard.propTypes = {
-  h: PropTypes.number || PropTypes.string,
-  w: PropTypes.number || PropTypes.string,
-  height: PropTypes.number || PropTypes.string,
-  width: PropTypes.number || PropTypes.string,
-  price: PropTypes.number || PropTypes.string,
+  h: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  w: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   name: PropTypes.string,
   subTitle: PropTypes.string,
   imgSrc: PropTypes.string,
-  id: PropTypes.string || PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 
 }
 
