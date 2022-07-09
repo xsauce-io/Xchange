@@ -3,6 +3,7 @@ import { Box, Button, Flex, Heading, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../context";
+import CustomLink from "../../atomic/CustomLink";
 
 /*
 --------  Xchange Component -----
@@ -11,6 +12,7 @@ import { useAuthContext } from "../../../context";
 */
 
 const Xchange = () => {
+
   let navigate = useNavigate();
   const { daiContract } = useAuthContext();
 
@@ -63,11 +65,16 @@ const Xchange = () => {
                 Portfolio
               </Text>
             </NavLink>
-            <NavLink to="/xchange/markets" activeclassname="selected">
+            <CustomLink to="/xchange/markets/all" customResolved="/xchange/markets/">
               <Text padding={2} fontSize={"md"}>
                 Markets
               </Text>
-            </NavLink>
+            </CustomLink>
+            {/* <NavLink to="/xchange/markets/all" style={{ color: match ? "white" : "#6c7979" }} >
+              <Text padding={2} fontSize={"md"}>
+                Markets
+              </Text>
+            </NavLink> */}
             {/* <NavLink to="/xchange/swaps" activeclassname="selected">
             <Text padding={2} fontSize={"md"}>
               Swaps
