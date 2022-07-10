@@ -109,13 +109,13 @@ const Products = () => {
           borderRadius="xl"
           minH={"1210px"}
         >
-          <Wrap spacing={[30, 20, 8]}>
+          <Wrap spacing={[30, 5]}>
             {" "}
             {response.map((el) => (
               <WrapItem key={el.id}>
                 <StakingCard
-                  w="217px"
-                  h="274px"
+                  w={275}
+                  h={280}
                   price={el.estimatedMarketValue}
                   imgSrc={el.image.original}
                   id={el.id}

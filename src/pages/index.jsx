@@ -3,7 +3,7 @@ import React from "react";
 import { Outlet } from "react-router";
 import Footer from "../components/organisms/Footer";
 import Header from "../components/organisms/Header";
-
+import { useWindowDimensions } from "../utils";
 /*
 --------  PageLayout Component -----
 * @Description : 
@@ -11,6 +11,7 @@ import Header from "../components/organisms/Header";
 */
 
 export const PageLayout = () => {
+  const { width, height } = useWindowDimensions();
 
   /*-------------------------------------
   *-------- RENDERED CONTENT ------------
@@ -31,7 +32,7 @@ export const PageLayout = () => {
         </Flex>
 
         {/*Core Content */}
-        <Container maxWidth="85%">
+        <Container minW={"85%"} paddingX={20} >
           <Outlet />
         </Container>
 

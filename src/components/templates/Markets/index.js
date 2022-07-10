@@ -2,9 +2,7 @@ import { StarIcon } from "@chakra-ui/icons";
 import {
   Box,
   Checkbox,
-  CheckboxGroup,
-  HStack,
-  Text,
+  CheckboxGroup, Stack, Text,
   VStack,
   WrapItem
 } from "@chakra-ui/react";
@@ -38,13 +36,14 @@ export const Markets = () => {
 
   return (
     <React.Fragment>
-      <HStack spacing={5} marginBottom="3%">
+      <Stack direction={{ sm: 'column', md: 'row' }} spacing={5} marginBottom="3%">
         <VStack
           marginTop={0}
           minHeight="fit-content"
           bg="colors.primary.900"
           alignItems="left"
           alignSelf="flex-start"
+          minW={"fit-content"}
         >
           {/* Filters */}
           {/* Category*/}
@@ -177,8 +176,8 @@ export const Markets = () => {
         </VStack>
 
         <Outlet />
-      </HStack>
-    </React.Fragment>
+      </Stack>
+    </React.Fragment >
   );
 };
 
