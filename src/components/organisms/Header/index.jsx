@@ -84,7 +84,7 @@ const Header = () => {
                   <CustomLink to="/xchange/markets/all" customResolved={"/xchange"}  >
                     <Box display="flex" justifyContent={"center"} alignItems="center">
                       {/* <ArrowBackIcon /> */}
-                      <Text >Xchange</Text>
+                      <Text>Xchange</Text>
                     </Box>
                   </CustomLink>
                 </HStack>

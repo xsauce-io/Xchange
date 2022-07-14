@@ -3,8 +3,7 @@ import {
   Box,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
-  Image,
+  BreadcrumbLink, Image,
   Text,
   VStack
 } from "@chakra-ui/react";
@@ -70,13 +69,14 @@ const ProductCell = ({ width, height, product }) => {
       <VStack
         width={width}
         height={height}
+        maxHeight={"600px"}
         bg="colors.primary.900"
         alignItems="left"
         border="0.5px solid"
         borderColor="colors.gray.700"
         borderRadius="xl"
       >
-        <Box padding={4}>
+        <Box padding={4} bg="red">
           <Text color="colors.white" fontSize="xl">
             Sneaker xAssets
           </Text>
@@ -101,33 +101,30 @@ const ProductCell = ({ width, height, product }) => {
           </Breadcrumb>
         </Box>
         <Box
-          bg="colors.primary.900"
+          //bg="colors.primary.900"
           alignItems="left"
           padding={12}
           border="0.5px solid"
           width="100%"
+          height="100%"
           borderColor="colors.gray.700"
           borderRadius="xl"
           borderBottom={0}
           borderLeft={0}
           borderRight={0}
+          bg="blue"
         >
           <Text color="colors.white" fontSize="2xl">
             {product.name}
           </Text>
-          <Box h="410px" padding={4}>
-            {/* <SimpleImageSlider
-            width="630px"
-            height="inherit"
-            images={images}
-            showBullets={true}
-            showNavs={true}
-          /> */}
-            <AspectRatio maxW="650px" ratio={5 / 3} alignItems="center">
+          <Box h="100%" alignSelf={'center'} bg="green" justifyItems={"center"}>
+            <AspectRatio maxW="650px" ratio={[5 / 3,]} alignItems="center">
               <Image
-                width="630px"
+                width="inherit"
                 height="inherit"
                 src={!product.image ? "" : product.image}
+                justifySelf={"center"}
+                bg="purple"
               />
             </AspectRatio>
           </Box>

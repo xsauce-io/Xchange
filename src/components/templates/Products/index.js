@@ -101,7 +101,7 @@ const Products = () => {
         </Box>
         <Box
           bg="colors.primary.900"
-          alignItems="left"
+          alignItems="center"
           padding={8}
           border="0.5px solid"
           width="100%"
@@ -109,10 +109,10 @@ const Products = () => {
           borderRadius="xl"
           minH={"1210px"}
         >
-          <Wrap spacing={[30, 5]}>
+          <Wrap spacing={[30, 5]} justify='center' >
             {" "}
             {response.map((el) => (
-              <WrapItem key={el.id}>
+              <WrapItem key={el.id} >
                 <StakingCard
                   w={275}
                   h={280}
@@ -121,6 +121,7 @@ const Products = () => {
                   id={el.id}
                   name={el.name}
                   subTitle={el.colorway}
+
                 />
               </WrapItem>
             ))}

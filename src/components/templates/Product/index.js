@@ -80,16 +80,15 @@ const Product = () => {
   return (
 
 
-    <React.Fragment>
-      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing='40px' width={'100%'} height={'10%'} >
+    <>
+      <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing='40px' width={'100%'}  >
         <ProductCell width="100%" height="100%" product={product} />
         <MintingCell width={"100%"} height="100%" product={product} />
-
       </SimpleGrid>
-      <SimpleGrid columns={{ sm: 1, md: 1 }} spacing='40px' width={'100%'} height={'30%'} marginTop={"40px"} >
+      <SimpleGrid columns={{ sm: 1, md: 1 }} spacing='40px' width={'100%'} marginTop={"40px"} >
         <ProductDescriptionCell width={"100%"} height={"100%"} product={product} />
       </SimpleGrid>
-      {/*   ---- Option that includes chart PriceGrpah
+      {/*   ---- Option that includes chart PriceGraph
       
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing='40px' width={'100%'} height={'30%'} >
         <ProductCell width="100%" height="100%" product={product} />
@@ -98,7 +97,7 @@ const Product = () => {
         <ProductDescriptionCell width={"100%"} height={"100%"} product={product} />
         
       </SimpleGrid> */}
-    </React.Fragment >
+    </ >
   );
 };
 

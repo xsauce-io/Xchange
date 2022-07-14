@@ -13,7 +13,7 @@ import ButtonGroup from "../../atomic/ButtonGroup";
 */
 
 export const MintingCell = ({ width, height, product }) => {
-  const [isYes, setIsYes] = useState(true);
+  const [isLong, setIsLong] = useState(true);
   const [canRedeem, setCanRedeem] = useState(false);
   const { daiContract, address, contract } = useAuthContext();
 
@@ -23,10 +23,10 @@ export const MintingCell = ({ width, height, product }) => {
 
   const printButtonLabel = (event) => {
     console.log(event.target.value);
-    if (event.target.value === "YES") {
-      setIsYes(true);
-    } else if (event.target.value === "NO") {
-      setIsYes(false);
+    if (event.target.value === "Long") {
+      setIsLong(true);
+    } else if (event.target.value === "Short") {
+      setIsLong(false);
     }
   };
 
@@ -61,9 +61,10 @@ export const MintingCell = ({ width, height, product }) => {
     <React.Fragment>
       <VStack
         marginTop={0}
-        marginBottom="5%"
+        marginBottom={1}
         width={width}
         height={height}
+        maxHeight={"600px"}
         minHeight="fit-content"
         bg="colors.primary.900"
         alignItems="left"
@@ -73,88 +74,11 @@ export const MintingCell = ({ width, height, product }) => {
         borderRadius={"xl"}
       >
         <Box>
-          <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal" textAlign={'center'}
-          >
+          <Text color="colors.white" fontSize={"3xl"} whiteSpace="normal" textAlign={'center'}>
             {product.name}
           </Text>
-          <Text
-            color="colors.gray.500"
-            fontSize={"md"}
-            whiteSpace="normal"
-            textAlign={'center'}
-            padding={4}
-          >
-            Status: Open
-          </Text>
         </Box>
-        <Divider color="colors.gray.700" />
-
-        {/* Price Statistics Section
-        <Box>
-          <Flex
-            width="100%"
-            borderBottom={"1px solid"}
-            borderColor="colors.gray.700"
-          >
-            <Box
-              justifyContent="center"
-              paddingBottom={3}
-              paddingTop={3}
-              textAlign={"left"}
-            >
-              <Text color="colors.white" fontSize={"md"}>
-                YES
-              </Text>
-              <Text color="colors.gray.500" fontSize={"sm"}>
-                Probability: 10.00%
-              </Text>
-            </Box>
-            <Spacer />
-            <Box
-              justifyContent="center"
-              alignSelf="center"
-              paddingBottom={3}
-              paddingTop={3}
-            >
-              <Text fontSize={"sm"} color="colors.white">
-                My balance: {0} DAI
-              </Text>
-            </Box>
-          </Flex>
-          <Spacer />
-          <Flex
-            width="100%"
-            borderBottom={"1px solid"}
-            borderColor="colors.gray.700"
-          >
-            <Box
-              justifyContent="center"
-              paddingBottom={3}
-              paddingTop={3}
-              textAlign={"left"}
-            >
-              <Text color="colors.white" fontSize={"md"}>
-                NO
-              </Text>
-              <Text color="colors.gray.500" fontSize={"sm"}>
-                Probability: 90.00%
-              </Text>
-            </Box>
-            <Spacer />
-            <Box
-              justifyContent="center"
-              alignSelf="center"
-              paddingBottom={3}
-              paddingTop={3}
-            >
-              <Text fontSize={"sm"} color="colors.white">
-                My balance: 10 DAI
-              </Text>
-            </Box>
-          </Flex>
-        </Box> */}
-
-
+        <Divider color="colors.gray.500" />
         {/* Retail price Section */}
         <Box>
           <Flex
@@ -228,14 +152,13 @@ export const MintingCell = ({ width, height, product }) => {
             borderRadius={"xl"}
             width="100%"
             bg="colors.gray.700"
-            sizes={"md"}
-            height={"63px"}
+            height={"50px"}
           >
-            <ButtonGroup buttons={["YES", "NO"]} onClick={printButtonLabel} />
+            <ButtonGroup buttons={["Long", "Short"]} onClick={printButtonLabel} />
           </Box>
         </Box>
 
-        <Box width="100%" paddingBottom={5} paddingTop={5}>
+        <Box width="100%" paddingBottom={5} >
           <InputGroup size="lg">
             <InputLeftAddon bg={"orange"} color="colors.white">
               DAI
@@ -245,56 +168,15 @@ export const MintingCell = ({ width, height, product }) => {
               MAX
             </InputRightAddon>
           </InputGroup>
-          <Text fontSize={"xs"} paddingBottom={2} paddingTop={2}>
+          <Text fontSize={"xs"} paddingTop={2} color={"colors.gray.500"}>
             Balance: 0 DAI
           </Text>
         </Box>
-        <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"}>
-          Mint
+        <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"} paddingBottom={4}>
+          {isLong ? "Mint Long Position" : "Mint Short Position"}
         </Button>
-        {/* 
-        <HStack>
-          <Button
-            flex={2}
-            onClick={() => enterContract(1)}
-            variant={"flashy"}
-            size={"md"}
-            height={53}
-            fontWeight={"bold"}
-            whiteSpace={"normal"}
-          >
-            Buy Yes Position
-          </Button>
-          <Button
-            flex={2}
-            variant={"flashy"}
-            onClick={() => enterContract(2)}
-            size={"md"}
-            height={53}
-            fontWeight={"bold"}
-            whiteSpace={"normal"}
-
-          >
-            Buy No Position
-          </Button>
-          <Button
-            flex={1}
-            variant="dimmy"
-            size={"md"}
-            height={53}
-            onClick={claim}
-            fontWeight={"bold"}
-            width={"50%"}
-            // isDisabled={canRedeem ? false : true}
-            alignSelf={"center"}
-            whiteSpace={"normal"}
-
-          >
-            Redeem
-          </Button>
-        </HStack> */}
       </VStack>
-    </React.Fragment>
+    </React.Fragment >
   );
 };
 
