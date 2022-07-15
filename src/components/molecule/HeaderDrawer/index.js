@@ -1,4 +1,4 @@
-import { LinkIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, LinkIcon } from "@chakra-ui/icons";
 import {
     Box,
     Button, Divider, Drawer,
@@ -17,8 +17,8 @@ const HeaderDrawer = () => {
 
     return (
         <React.Fragment>
-            <Button colorScheme='teal' onClick={onOpen}>
-                Open
+            <Button colorScheme='teal' onClick={onOpen} border="1px solid #30403F">
+                <HamburgerIcon boxSize={5} />
             </Button>
             <Drawer
                 isOpen={isOpen}
