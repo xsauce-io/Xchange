@@ -4,8 +4,7 @@ import {
   Box, Container, Flex,
   HStack, Select,
   Spacer,
-  Text,
-  useDisclosure
+  Text
 } from "@chakra-ui/react";
 import React from "react";
 import { useWindowDimensions } from "../../../utils/hooks/use-window-dimensions";
@@ -16,8 +15,8 @@ import HeaderDrawer from "../../molecule/HeaderDrawer";
 
 /* */
 const Header = () => {
-  const { width, height } = useWindowDimensions();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { width } = useWindowDimensions();
+  //const { isOpen, onOpen, onClose } = useDisclosure();
 
 
   return (
@@ -126,6 +125,4 @@ const Header = () => {
     </React.Fragment >
   );
 };
-
-
 export default Header;
