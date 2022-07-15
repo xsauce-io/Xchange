@@ -16,9 +16,8 @@ import HeaderDrawer from "../../molecule/HeaderDrawer";
 
 /* */
 const Header = () => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
 
   return (
     <React.Fragment>
@@ -126,6 +125,4 @@ const Header = () => {
     </React.Fragment >
   );
 };
-
-
 export default Header;

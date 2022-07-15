@@ -3,6 +3,7 @@ import { Button, Spinner, Text } from "@chakra-ui/react";
 import React from "react";
 import { useAuthContext } from "../../../context/AuthContext";
 
+import PropTypes from 'prop-types';
 
 /*
 --------  Connect Wallet Component -----
@@ -11,7 +12,7 @@ import { useAuthContext } from "../../../context/AuthContext";
 * The component access authContext variable.
 */
 
-const ConnectWallet = () => {
+const ConnectWallet = ({ variant, fontSize, height, width, borderRadius, bg, padding }) => {
   const { connecting, address, connectWallet } = useAuthContext();
 
   /*-------------------------------------
@@ -24,13 +25,14 @@ const ConnectWallet = () => {
         <Spinner />
       ) : address ? (
         <Button
-          variant="outline"
-          fontSize="xs"
-          height="0"
-          padding={4}
-          width="120px"
-          borderRadius="2xl"
-          //onclick it will copy
+          variant={variant}
+          fontSize={fontSize}
+          height={height}
+          padding={padding}
+          width={width}
+          borderRadius={borderRadius}
+          bg={bg}
+        //onclick it will copy
         >
           <Text overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
             {address}
@@ -39,19 +41,44 @@ const ConnectWallet = () => {
         </Button>
       ) : (
         <Button
-          variant="outline"
-          fontSize="xs"
+          variant={variant}
+          fontSize={fontSize}
+          height={height}
+          padding={padding}
+          width={width}
+          borderRadius={borderRadius}
           onClick={connectWallet}
-          height="0"
-          padding={4}
-          width="140px"
-          borderRadius="2xl"
+          bg={bg}
         >
           Connect Wallet
         </Button>
-      )}
-    </React.Fragment>
+      )
+      }
+    </React.Fragment >
   );
+};
+
+
+ConnectWallet.defaultProps = {
+  variant: "outline",
+  fontSize: "xs",
+  height: "0px",
+  width: "140px",
+  borderRadius: "2xl",
+  bg: "colors.primary.900",
+  padding: 4
+
+}
+
+ConnectWallet.propTypes = {
+  variant: PropTypes.string,
+  fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  borderRadius: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  bg: PropTypes.string,
+  padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
 };
 
 export default ConnectWallet;
