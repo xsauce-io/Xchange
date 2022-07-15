@@ -24,7 +24,8 @@ const Xchange = () => {
 
   return (
     <React.Fragment>
-      <Box w="100%" minHeight="800px">
+      <Box w="100%" minHeight="800px"
+      >
         {/* Core Header Section */}
         <Flex flexDirection="column">
           <Box bg="colors.primary.900" padding={1}>

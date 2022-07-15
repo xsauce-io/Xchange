@@ -101,21 +101,20 @@ const Products = () => {
         </Box>
         <Box
           bg="colors.primary.900"
-          alignItems="left"
+          alignItems="center"
           padding={8}
           border="0.5px solid"
           width="100%"
           borderColor="colors.gray.700"
           borderRadius="xl"
-          minH={"1210px"}
+          minH={"fit-content"}
         >
-          <Wrap spacing={[30, 20, 8]}>
-            {" "}
+          <Wrap spacing={[30, 5]} justify='center' >
             {response.map((el) => (
-              <WrapItem key={el.id}>
+              <WrapItem key={el.id} >
                 <StakingCard
-                  w="217px"
-                  h="274px"
+                  width={275}
+                  height={280}
                   price={el.estimatedMarketValue}
                   imgSrc={el.image.original}
                   id={el.id}

@@ -3,8 +3,7 @@ import {
   Box,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
-  Image,
+  BreadcrumbLink, Image,
   Text,
   VStack
 } from "@chakra-ui/react";
@@ -70,6 +69,7 @@ const ProductCell = ({ width, height, product }) => {
       <VStack
         width={width}
         height={height}
+        maxHeight={"600px"}
         bg="colors.primary.900"
         alignItems="left"
         border="0.5px solid"
@@ -101,36 +101,30 @@ const ProductCell = ({ width, height, product }) => {
           </Breadcrumb>
         </Box>
         <Box
-          bg="colors.primary.900"
-          alignItems="left"
+          //bg="colors.primary.900"
+          alignItems="center"
           padding={12}
           border="0.5px solid"
           width="100%"
+          height="100%"
           borderColor="colors.gray.700"
           borderRadius="xl"
           borderBottom={0}
           borderLeft={0}
           borderRight={0}
+
         >
-          <Text color="colors.white" fontSize="2xl">
+          <Text color="colors.white" fontSize="2xl"  >
             {product.name}
           </Text>
-          <Box h="410px" padding={4}>
-            {/* <SimpleImageSlider
-            width="630px"
-            height="inherit"
-            images={images}
-            showBullets={true}
-            showNavs={true}
-          /> */}
-            <AspectRatio maxW="650px" ratio={5 / 3} alignItems="center">
-              <Image
-                width="630px"
-                height="inherit"
-                src={!product.image ? "" : product.image}
-              />
-            </AspectRatio>
-          </Box>
+
+
+          <AspectRatio maxW="600px" minH={"100%"} ratio={[2 / 3, 3 / 2]} >
+            <Image
+              src={!product.image ? "" : product.image}
+            />
+          </AspectRatio>
+
         </Box>
       </VStack>
     </React.Fragment>

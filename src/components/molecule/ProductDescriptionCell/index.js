@@ -38,7 +38,7 @@ const ProductDescriptionCell = ({ width, height, product }) => {
         borderRadius={"xl"}
         color="colors.white"
       >
-        <Box paddingBottom={5}>
+        <Box paddingBottom={4}>
           <Text color="colors.white" fontSize="xl">
             Product description
           </Text>
@@ -53,11 +53,11 @@ const ProductDescriptionCell = ({ width, height, product }) => {
           {/* Retail Price Secion  */}
           <Flex width="100%" paddingBottom={3} paddingTop={3}>
             <Box justifyContent="center">
-              <Text fontSize="xs">Retail</Text>
+              <Text fontSize="sm">Retail</Text>
             </Box>
             <Spacer />
             <Box justifyContent={"center"}>
-              <Text color="colors.white" fontSize="xs">
+              <Text color="colors.white" fontSize="sm">
                 ${retailPrice}
               </Text>
             </Box>
@@ -68,11 +68,11 @@ const ProductDescriptionCell = ({ width, height, product }) => {
           {/* Release Date Section  */}
           <Flex width="100%" paddingBottom={3} paddingTop={3}>
             <Box justifyContent={"center"}>
-              <Text fontSize="xs">Release Date</Text>
+              <Text fontSize="sm">Release Date</Text>
             </Box>
             <Spacer />
             <Box justifyContent={"center"}>
-              <Text color="colors.white" fontSize="xs">
+              <Text color="colors.white" fontSize="sm">
                 {product.releaseDate}
               </Text>
             </Box>
@@ -86,7 +86,7 @@ const ProductDescriptionCell = ({ width, height, product }) => {
               paddingBottom={3}
               paddingTop={3}
             >
-              <Text fontSize="xs">All-time high</Text>
+              <Text fontSize="sm">All-time high</Text>
             </Box>
             <Spacer />
             <Box
@@ -96,16 +96,16 @@ const ProductDescriptionCell = ({ width, height, product }) => {
               textAlign={"right"}
             >
               <Box display={"inline-flex"} flexDirection="row">
-                <Text color="colors.white" fontSize="xs">
+                <Text color="colors.white" fontSize="sm">
                   $460.48
                 </Text>
 
-                <Text color="colors.alert" fontSize="xs">
+                <Text color="colors.alert" fontSize="sm">
                   &nbsp;-81.6%
                 </Text>
               </Box>
 
-              <Text color="colors.gray.500" fontSize="xs">
+              <Text color="colors.gray.500" fontSize="sm">
                 Jul 09, 2020 (over 1 year)
               </Text>
             </Box>
@@ -119,25 +119,24 @@ const ProductDescriptionCell = ({ width, height, product }) => {
               paddingBottom={3}
               paddingTop={3}
             >
-              <Text fontSize="xs">All-time low</Text>
+              <Text fontSize="sm">All-time low</Text>
             </Box>
             <Spacer />
             <Box
               justifyContent="center"
-              paddingBottom={3}
               paddingTop={3}
               textAlign={"right"}
             >
               <Box display={"inline-flex"} flexDirection="row">
-                <Text color="colors.white" fontSize="xs">
+                <Text color="colors.white" fontSize="sm">
                   $231.28
                 </Text>
 
-                <Text color="colors.success" fontSize="xs">
+                <Text color="colors.success" fontSize="sm">
                   &nbsp;+81.6%
                 </Text>
               </Box>
-              <Text color="colors.gray.500" fontSize="xs">
+              <Text color="colors.gray.500" fontSize="sm">
                 Jul 09, 2020 (over 1 year)
               </Text>
             </Box>
