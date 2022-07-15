@@ -43,11 +43,11 @@ export const Markets = () => {
           bg="colors.primary.900"
           alignItems="left"
           alignSelf="flex-start"
-          minW={"fit-content"}
+          minWidth={"fit-content"}
         >
           {/* Filters */}
           {/* Category*/}
-          <Box width={200} height={1300}>
+          <Box width={200} minHeight={"fit-content"}>
             <Box>
               <NavLink
                 to="/xchange/markets/footwear"

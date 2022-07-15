@@ -107,21 +107,19 @@ const Products = () => {
           width="100%"
           borderColor="colors.gray.700"
           borderRadius="xl"
-          minH={"1210px"}
+          minH={"fit-content"}
         >
           <Wrap spacing={[30, 5]} justify='center' >
-            {" "}
             {response.map((el) => (
               <WrapItem key={el.id} >
                 <StakingCard
-                  w={275}
-                  h={280}
+                  width={275}
+                  height={280}
                   price={el.estimatedMarketValue}
                   imgSrc={el.image.original}
                   id={el.id}
                   name={el.name}
                   subTitle={el.colorway}
-
                 />
               </WrapItem>
             ))}

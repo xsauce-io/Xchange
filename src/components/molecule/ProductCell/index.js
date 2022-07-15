@@ -76,7 +76,7 @@ const ProductCell = ({ width, height, product }) => {
         borderColor="colors.gray.700"
         borderRadius="xl"
       >
-        <Box padding={4} bg="red">
+        <Box padding={4}>
           <Text color="colors.white" fontSize="xl">
             Sneaker xAssets
           </Text>
@@ -102,7 +102,7 @@ const ProductCell = ({ width, height, product }) => {
         </Box>
         <Box
           //bg="colors.primary.900"
-          alignItems="left"
+          alignItems="center"
           padding={12}
           border="0.5px solid"
           width="100%"
@@ -112,22 +112,19 @@ const ProductCell = ({ width, height, product }) => {
           borderBottom={0}
           borderLeft={0}
           borderRight={0}
-          bg="blue"
+
         >
-          <Text color="colors.white" fontSize="2xl">
+          <Text color="colors.white" fontSize="2xl" paddingBottom={2} >
             {product.name}
           </Text>
-          <Box h="100%" alignSelf={'center'} bg="green" justifyItems={"center"}>
-            <AspectRatio maxW="650px" ratio={[5 / 3,]} alignItems="center">
-              <Image
-                width="inherit"
-                height="inherit"
-                src={!product.image ? "" : product.image}
-                justifySelf={"center"}
-                bg="purple"
-              />
-            </AspectRatio>
-          </Box>
+
+
+          <AspectRatio maxW="600px" ratio={[2 / 3, 3 / 2]}  >
+            <Image
+              src={!product.image ? "" : product.image}
+            />
+          </AspectRatio>
+
         </Box>
       </VStack>
     </React.Fragment>
