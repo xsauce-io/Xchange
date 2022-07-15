@@ -114,12 +114,12 @@ const ProductCell = ({ width, height, product }) => {
           borderRight={0}
 
         >
-          <Text color="colors.white" fontSize="2xl" paddingBottom={2} >
+          <Text color="colors.white" fontSize="2xl"  >
             {product.name}
           </Text>
 
 
-          <AspectRatio maxW="600px" ratio={[2 / 3, 3 / 2]}  >
+          <AspectRatio maxW="600px" minH={"100%"} ratio={[2 / 3, 3 / 2]} >
             <Image
               src={!product.image ? "" : product.image}
             />
