@@ -30,18 +30,18 @@ const ButtonGroup = ({ buttons, onClick }) => {
 
   return (
     <React.Fragment>
-      {buttons.map((buttonLabel, i) => (
+      {buttons.map((buttonObject, i) => (
         <chakra.button
           height={"100%"}
           borderRadius={"xl"}
           flex={1}
           key={i}
-          name={buttonLabel}
-          value={buttonLabel}
+          name={buttonObject.name}
+          value={buttonObject.value}
           onClick={(event) => handleClick(event, i)}
           className={i === clickedId ? "active" : "inactive"}
         >
-          {buttonLabel}
+          {buttonObject.name}
         </chakra.button>
       ))}
     </React.Fragment>
@@ -53,8 +53,8 @@ const ButtonGroup = ({ buttons, onClick }) => {
 *------------------------------------*/
 
 ButtonGroup.propTypes = {
-    buttons: PropTypes.array,
-    onClick: PropTypes.func,
+  buttons: PropTypes.array,
+  onClick: PropTypes.func,
 };
 
 

@@ -23,9 +23,9 @@ export const MintingCell = ({ width, height, product }) => {
 
   const printButtonLabel = (event) => {
     console.log(event.target.value);
-    if (event.target.value === "Long") {
+    if (event.target.value === "1") {
       setIsLong(true);
-    } else if (event.target.value === "Short") {
+    } else if (event.target.value === "2") {
       setIsLong(false);
     }
   };
@@ -154,7 +154,7 @@ export const MintingCell = ({ width, height, product }) => {
             bg="colors.gray.700"
             height={"50px"}
           >
-            <ButtonGroup buttons={["Long", "Short"]} onClick={printButtonLabel} />
+            <ButtonGroup buttons={[{ value: 1, name: "Yes" }, { value: 2, name: "No" }]} onClick={printButtonLabel} />
           </Box>
         </Box>
 
@@ -173,7 +173,7 @@ export const MintingCell = ({ width, height, product }) => {
           </Text>
         </Box>
         <Button variant={"flashy"} size={"md"} height={53} fontWeight={"bold"} paddingBottom={4}>
-          {isLong ? "Mint Long Position" : "Mint Short Position"}
+          {isLong ? "Mint Yes Position" : "Mint No Position"}
         </Button>
       </VStack>
     </React.Fragment >
